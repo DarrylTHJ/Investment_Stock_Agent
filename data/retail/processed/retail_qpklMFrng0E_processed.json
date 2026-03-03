@@ -1,0 +1,74 @@
+{
+    "meta": {
+        "source": "retail_qpklMFrng0E.txt",
+        "model": "gemini-3-flash-preview",
+        "time": 1772507699.4124577
+    },
+    "data": [
+        {
+            "asset_class": "Corporate Restructuring / Dividend Stocks",
+            "metrics_used": [
+                "Accumulated Losses",
+                "Share Capital",
+                "Retained Earnings"
+            ],
+            "metrics_ignored": [
+                "Current Year P&L"
+            ],
+            "logic_rule": "IF a company has accumulated losses that legally prevent dividend payouts, THEN it may perform a capital reduction to offset those losses against share capital to create distributable retained earnings.",
+            "embedding_summary": "This rule outlines the accounting maneuver used by companies with historical losses to enable dividend payments. By reducing share capital to wipe out accumulated losses, a company 'beautifies' its balance sheet, allowing it to distribute cash to shareholders as a special dividend or capital repayment even if it hasn't been recently profitable."
+        },
+        {
+            "asset_class": "Event-Driven / Information Arbitrage",
+            "metrics_used": [
+                "Official Exchange Proposals",
+                "Public Announcements",
+                "Timeline of Corporate Exercises"
+            ],
+            "metrics_ignored": [
+                "Daily price fluctuations",
+                "Mainstream news headlines"
+            ],
+            "logic_rule": "IF an investor monitors official exchange 'proposals' rather than waiting for execution news, THEN they can exploit information asymmetry before the market fully prices in the event.",
+            "embedding_summary": "Investment logic based on the 'information gap' between technical filings on stock exchanges and mainstream financial news. Investors who track early corporate proposals regarding capital changes can identify opportunities months before the general retail market reacts to the final execution of the plan."
+        },
+        {
+            "asset_class": "Real Estate / Capital Intensive Sectors",
+            "metrics_used": [
+                "Interest Rates (OPR)",
+                "Construction Costs",
+                "Inflation vs. Property Price Growth",
+                "Inventory Clearance Rate"
+            ],
+            "metrics_ignored": [
+                "Historical Land Bank value"
+            ],
+            "logic_rule": "IF macro interest rates and construction costs rise faster than asset price appreciation, THEN the company should halt new developments, liquidate inventory, and return cash to shareholders.",
+            "embedding_summary": "A defensive strategy for property developers during inflationary and high-interest-rate environments. When the cost of capital and construction makes new projects unviable, the heuristic suggests that returning capital to shareholders is a more responsible use of funds than reinvesting in low-margin or risky new developments."
+        },
+        {
+            "asset_class": "Fundamental / Value Investing",
+            "metrics_used": [
+                "Return on Equity (ROE)",
+                "Shareholder Equity",
+                "Net Profit"
+            ],
+            "metrics_ignored": [
+                "Gross Revenue"
+            ],
+            "logic_rule": "IF a company reduces its total shareholder equity (the denominator), THEN the Return on Equity (ROE) will mathematically increase, potentially improving the stock's valuation as a 'leaner' and more efficient entity.",
+            "embedding_summary": "This heuristic focuses on the efficiency of capital. By shrinking the capital base through capital reduction, a company can artificially or structurally boost its ROE. This makes the company appear more attractive from a financial ratio perspective when it eventually returns to profitability, as it requires less equity to generate the same level of return."
+        },
+        {
+            "asset_class": "General Equity",
+            "metrics_used": [
+                "Capital Deployment vs. Future Earnings"
+            ],
+            "metrics_ignored": [
+                "Historical dividend yield"
+            ],
+            "logic_rule": "IF a company significantly reduces its operating capital, THEN an investor must expect a corresponding reduction in future absolute earnings capacity, unless efficiency improves drastically.",
+            "embedding_summary": "A cautionary rule stating that capital reduction is often a double-edged sword: while it provides immediate cash to shareholders, it reduces the 'firepower' for future business expansion. It signals a shift from a 'growth' phase to a 'liquidation' or 'consolidation' phase."
+        }
+    ]
+}

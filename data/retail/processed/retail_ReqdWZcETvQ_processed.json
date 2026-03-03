@@ -1,0 +1,49 @@
+{
+    "meta": {
+        "source": "retail_ReqdWZcETvQ.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1772507748.5481868
+    },
+    "data": [
+        {
+            "asset_class": "Tech/Blockchain",
+            "metrics_used": [
+                "Net Profit Margin",
+                "Net Profit Growth",
+                "Market Consensus",
+                "Regulatory Approval"
+            ],
+            "metrics_ignored": [
+                "Daily Charts"
+            ],
+            "logic_rule": "IF a company (like Zetrix/MYEG) demonstrates significant net profit growth (3x in 3 years) BUT the stock price remains stagnant, THEN a potential catalyst (like a Ringgit Stablecoin launch) could re-align the stock price with its fundamental value, especially if it addresses market concerns about the sustainability of the growth and potential 'water' in the reported earnings.",
+            "embedding_summary": "This rule focuses on identifying fundamentally strong companies in the tech/blockchain sector, specifically those exhibiting rapid profit growth that isn't reflected in their stock price. The investor believes a catalyst, such as the introduction of a Ringgit Stablecoin, could correct this mispricing by boosting market confidence and addressing concerns about the legitimacy and sustainability of the company's earnings. Regulatory approval is a key factor in assessing the viability of this catalyst."
+        },
+        {
+            "asset_class": "Malaysian Equities",
+            "metrics_used": [
+                "Ringgit Internationalization",
+                "Asset Valuation",
+                "Regulatory Sandbox Approval"
+            ],
+            "metrics_ignored": [
+                "Short-term price fluctuations"
+            ],
+            "logic_rule": "IF the Ringgit becomes partially internationalized (through a stablecoin), THEN assets denominated in Ringgit, including Malaysian stocks, may experience a re-evaluation by international markets, potentially leading to higher valuations.",
+            "embedding_summary": "This rule centers on the potential impact of Ringgit internationalization on the Malaysian stock market. The investor believes that a Ringgit stablecoin could be a key step towards this internationalization, leading to a more accurate and potentially higher valuation of Malaysian assets by global investors. The approval and structure of the 'Regulatory Sandbox' are crucial for this to occur."
+        },
+        {
+            "asset_class": "Cryptocurrency/Stablecoins",
+            "metrics_used": [
+                "Regulatory Backing",
+                "Collateralization (Cash/Government Bonds)",
+                "Issuing Entity Reputation"
+            ],
+            "metrics_ignored": [
+                "Purely technical aspects of the blockchain"
+            ],
+            "logic_rule": "IF a stablecoin is backed by a reputable entity (like a royal family member's company) AND is fully collateralized with cash or high-quality government bonds AND operates within a regulated framework (Regulatory Sandbox), THEN it is more likely to be a legitimate and valuable asset.",
+            "embedding_summary": "This rule emphasizes the importance of regulatory oversight and strong backing for stablecoins. The investor prioritizes stablecoins issued by credible entities, fully collateralized with safe assets, and operating within a regulated environment. This reduces the risk of the stablecoin being 'just code' with no real value."
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+    "meta": {
+        "source": "retail_srd1mHlPuNU.txt",
+        "model": "gemini-2.5-flash",
+        "time": 1772507960.43623
+    },
+    "data": [
+        {
+            "asset_class": "Export-oriented companies",
+            "metrics_used": [
+                "Local currency depreciation (e.g., MYR depreciation)",
+                "Export revenue",
+                "Earnings/profits (expected future quarters)",
+                "Exchange rates"
+            ],
+            "metrics_ignored": [
+                "Short-term stock price fluctuations"
+            ],
+            "logic_rule": "IF a company is export-oriented AND the local currency is experiencing ongoing depreciation, THEN its profits are likely to be boosted by favorable exchange rates, and its stock price downward pressure will be reduced, making it less likely to fall to very low levels.",
+            "embedding_summary": "This rule suggests that export-oriented companies benefit significantly from local currency depreciation. Such an environment can lead to higher reported profits due to favorable exchange rates, thereby reducing the downward pressure on the stock price and making it less prone to significant drops."
+        },
+        {
+            "asset_class": "Fundamentally strong companies, growth stocks",
+            "metrics_used": [
+                "Consistent earnings growth",
+                "Return on Equity (ROE) (especially consistent double-digit or 20-30%)",
+                "Price-to-Earnings (PE) ratio",
+                "Price-to-Book (PB) ratio"
+            ],
+            "metrics_ignored": [
+                "Sole reliance on Price-to-Earnings (PE) or Price-to-Book (PB) ratios in isolation without considering underlying profitability and ROE",
+                "Simply looking at short-term stock price percentage gains"
+            ],
+            "logic_rule": "IF a company's earnings are consistently rising AND its ROE is consistently high (e.g., 20-30% for 5 years), THEN a higher market valuation (e.g., higher PE, higher PB ratio) is justifiable and not necessarily overvalued, especially if the PB ratio aligns with the strong ROE.",
+            "embedding_summary": "This rule asserts that robust and consistent earnings growth coupled with a high Return on Equity (ROE) can fundamentally support a seemingly high market valuation. When a company's financial performance, particularly its ROE, is strong and improving, elevated PE and PB ratios may be considered reasonable rather than indicators of overvaluation."
+        },
+        {
+            "asset_class": "Long-term dividend income stocks",
+            "metrics_used": [
+                "Dividend per share",
+                "Original cost basis",
+                "Time horizon",
+                "Effective cost basis",
+                "Dividend yield on cost"
+            ],
+            "metrics_ignored": [
+                "Short-term capital gains",
+                "The perceived slowness of dividend accumulation compared to immediate selling"
+            ],
+            "logic_rule": "IF a company consistently pays stable dividends over a long period, THEN the accumulated dividends significantly reduce the effective cost basis of the investment over time, potentially reaching levels below historical market prices.",
+            "embedding_summary": "This rule describes how consistent dividend payments over an extended period can drastically lower the effective cost basis of a stock. As dividends are received, they subtract from the initial investment cost, potentially leading to a cost basis that is even lower than the stock's historical minimum market prices."
+        },
+        {
+            "asset_class": "Long-term dividend income stocks",
+            "metrics_used": [
+                "Effective cost basis (especially below historical lows)",
+                "Dividend per share",
+                "Company's business stability and profitability",
+                "Dividend yield on cost"
+            ],
+            "metrics_ignored": [
+                "Current market price movements as a sole reason to sell",
+                "Fear of 'leaving money on the table' from minor price adjustments"
+            ],
+            "logic_rule": "IF the effective cost basis of an investment has been significantly reduced by accumulated dividends to an extremely low level (e.g., below historical market prices), AND the company's business remains stable and profitable, THEN there is no need to sell, as the dividend yield on cost becomes exceptionally high, and the investment offers strong protection against capital loss.",
+            "embedding_summary": "This rule suggests that when an investor's effective cost basis in a stable, dividend-paying company is substantially lowered by accumulated dividends, reaching levels below what the stock has ever traded at, and the company's fundamentals remain strong, holding the investment is often the best strategy. At this point, the dividend yield on the original cost becomes extraordinarily high, providing excellent returns and strong capital protection, negating the need for selling."
+        },
+        {
+            "asset_class": "Value stocks, fundamentally strong companies",
+            "metrics_used": [
+                "Long-term profit growth",
+                "Consistent double-digit Return on Equity (ROE)",
+                "Significant price adjustments/dips"
+            ],
+            "metrics_ignored": [
+                "Missing out on selling at the absolute peak"
+            ],
+            "logic_rule": "IF a company has strong long-term fundamentals (e.g., consistent double-digit ROE, sustained profit growth) AND its stock price experiences a significant adjustment or deep dip, THEN it is an opportune moment to add to the position (average down or increase holdings).",
+            "embedding_summary": "This rule advises that for companies with robust long-term fundamentals, such as consistent double-digit ROE and sustained profit growth, a significant downturn or price correction in their stock should be viewed as a buying opportunity. This strategy allows investors to increase their holdings at a lower price, aligning with value investing principles."
+        },
+        {
+            "asset_class": "High-dividend stocks (tactical trading approach within long-term holdings)",
+            "metrics_used": [
+                "Original cost price",
+                "Current selling price",
+                "Locked-in profit margin (capital gain)",
+                "Dividend per share",
+                "Target re-entry price",
+                "Dividend yield on adjusted cost"
+            ],
+            "metrics_ignored": [
+                "Simply looking at short-term stock price percentage gains as the sole trigger for taking profit without further fundamental analysis or a re-entry plan"
+            ],
+            "logic_rule": "IF a stock has significantly appreciated (e.g., 40% gain) AND the investor aims to accelerate the achievement of a high dividend yield on cost, AND the investor anticipates a subsequent price dip for re-entry, THEN selling at a higher price and buying back at a lower price can reduce the effective cost basis and significantly increase the dividend yield on cost, though this strategy carries the risk of the stock not dipping or continuing to rise, leading to missed gains or higher re-entry costs.",
+            "embedding_summary": "This rule describes a tactical trading strategy where an investor sells a significantly appreciated stock to lock in capital gains, with the intention of buying it back at a lower price after a dip. The goal is to reduce the effective cost basis and enhance the dividend yield on cost. However, this method is highly dependent on accurately predicting market movements and carries the risk of missing out on further gains if the stock continues to rise or failing to re-enter at a lower price."
+        }
+    ]
+}

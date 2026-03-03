@@ -110,20 +110,24 @@ if st.button("Analyze") and query:
             USER QUERY: {query}
             
             ### INSTITUTIONAL DATA:
-            {inst_ctx}
+            {inst_ctx if inst_docs else "NO DATA AVAILABLE."}
             
             ### RETAIL DATA:
-            {retail_ctx}
+            {retail_ctx if retail_docs else "NO DATA AVAILABLE."}
+            
+            INSTRUCTIONS:
+            - Base your analysis STRICTLY on the data provided above.
+            - If a section says "NO DATA AVAILABLE", do NOT use outside knowledge to invent or guess information. Instead, under that heading, explicitly write "No extracted logic rules are currently available in the database for this persona."
             
             OUTPUT FORMAT:
             ## 🏛️ Institutional Perspective
-            [Summary]
+            [Summary or "No data available" message]
             
             ## 🗣️ Retail/Market Sentiment
-            [Summary]
+            [Summary or "No data available" message]
             
             ## ⚖️ Divergence Analysis
-            [Comparison]
+            [Comparison, or if one side is missing, briefly state that a comparative analysis cannot be made until both databases are populated.]
             """
             
             try:
