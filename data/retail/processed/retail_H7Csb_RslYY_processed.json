@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "source": "retail_H7Csb_RslYY.txt",
+        "model": "gemini-2.5-flash-lite",
+        "time": 1772507015.4153135
+    },
+    "data": [
+        {
+            "asset_class": "Data Center Infrastructure",
+            "metrics_used": [
+                "Actual utilization of power (MW)",
+                "Declamped maximum power demand (MW)",
+                "Projected power demand increase (MW/GW)",
+                "Number of data center projects in construction",
+                "Company's revenue growth forecast",
+                "GPU deployment status"
+            ],
+            "metrics_ignored": [],
+            "logic_rule": "IF the actual power utilization of data centers is less than their declared maximum demand AND the projected future power demand is significantly higher than current utilization, THEN the current 'underutilization' is likely a temporary phase due to phased project development and will improve as AI applications drive demand.",
+            "embedding_summary": "An investor focuses on the growth trajectory of data center power consumption. They analyze current utilization against declared capacity, but prioritize future demand projections. They believe current lower-than-expected power usage is a temporary stage in phased project rollouts and that increasing AI application demand will eventually lead to higher actual power consumption, indicating a positive outlook for related infrastructure investments."
+        },
+        {
+            "asset_class": "Construction",
+            "metrics_used": [
+                "Market capitalization",
+                "Price-to-Book (P/B) ratio",
+                "Recent project wins (e.g., data centers)",
+                "Company size (market cap comparison)",
+                "Potential for valuation improvement",
+                "Share swap feasibility"
+            ],
+            "metrics_ignored": [
+                "Daily stock price movements"
+            ],
+            "logic_rule": "IF one construction company (Sunway) has a significantly larger market capitalization than another (IJM), and the smaller company's stock is trading below its book value despite winning projects, THEN a merger between the two could be mutually beneficial, potentially improving the smaller company's valuation and increasing the larger company's market presence.",
+            "embedding_summary": "An investor evaluates potential construction company mergers based on relative market capitalization and valuation. They believe a merger is attractive if a larger, well-valued company can acquire a smaller, undervalued company that is winning significant projects, as this could lead to synergistic benefits and improved overall market standing for the combined entity."
+        },
+        {
+            "asset_class": "Construction",
+            "metrics_used": [
+                "Company ownership structure (GLIC/Government-linked)",
+                "Strategic asset ownership (e.g., toll roads)",
+                "Government sentiment on asset ownership"
+            ],
+            "metrics_ignored": [],
+            "logic_rule": "IF a potential merger involves a private company acquiring strategic government-linked assets (like toll roads) from a government-linked construction company, THEN the government's approval and sentiment regarding asset ownership will be a critical factor in the merger's success.",
+            "embedding_summary": "An investor considers the influence of government policy and sentiment on construction sector mergers. They believe that if a merger would transfer ownership of critical infrastructure, such as toll roads, from a government-linked entity to a private one, the government's perspective on asset control will be a decisive element in whether the deal proceeds."
+        },
+        {
+            "asset_class": "Dividend",
+            "metrics_used": [
+                "Dividend Yield"
+            ],
+            "metrics_ignored": [],
+            "logic_rule": "IF a company has a high Dividend Yield, THEN it is an attractive investment (implied heuristic for certain types of stocks not explicitly mentioned, but dividend is a key metric).",
+            "embedding_summary": "While not explicitly stated as a rule, the mention of 'Dividend Yield' as a metric used suggests a focus on income-generating assets or companies that prioritize returning capital to shareholders."
+        },
+        {
+            "asset_class": "Growth Stocks",
+            "metrics_used": [
+                "Sectoral growth rate",
+                "Magnified growth projections (e.g., 10x, 20x)"
+            ],
+            "metrics_ignored": [],
+            "logic_rule": "IF a sector shows exceptionally high growth rates (e.g., 10x or more), THEN it represents a significant investment opportunity that is difficult to find elsewhere.",
+            "embedding_summary": "An investor actively seeks out sectors with exceptionally high growth potential. They view industries demonstrating exponential growth (e.g., 10-fold or more) as prime investment targets, acknowledging the rarity of such opportunities within the broader market."
+        }
+    ]
+}
