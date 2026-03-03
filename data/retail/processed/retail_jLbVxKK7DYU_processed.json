@@ -1,0 +1,87 @@
+{
+    "meta": {
+        "source": "retail_jLbVxKK7DYU.txt",
+        "model": "gemini-3-flash-preview",
+        "time": 1772507200.6326272
+    },
+    "data": [
+        {
+            "asset_class": "Export-Oriented Stocks",
+            "metrics_used": [
+                "Currency Exchange Rates",
+                "Quarterly Earnings Trends"
+            ],
+            "metrics_ignored": [
+                "Short-term price fluctuations"
+            ],
+            "logic_rule": "IF the local currency is depreciating THEN companies with high export volume are likely to see profit margin expansion, providing a floor for stock price support and reducing downside risk.",
+            "embedding_summary": "This rule focuses on the macro-correlation between currency weakness and export profitability. When the local currency devalues, export companies benefit from exchange rate gains, which bolsters quarterly performance and creates a psychological support level for the stock price, as investors anticipate better-than-expected earnings."
+        },
+        {
+            "asset_class": "Dividend Growth / Value Stocks",
+            "metrics_used": [
+                "ROE (Return on Equity)",
+                "Price-to-Book (P/B) Ratio",
+                "Earnings Growth"
+            ],
+            "metrics_ignored": [
+                "Historical price peaks"
+            ],
+            "logic_rule": "IF P/B ratios increase in tandem with a rising ROE THEN the stock is not necessarily overvalued; however, IF P/B rises while ROE remains stagnant, the stock has detached from its fundamentals.",
+            "embedding_summary": "An assessment of valuation sanity. The investor believes that high valuation multiples (like P/B) are justified as long as they are supported by improving operational efficiency (ROE). A rising ROE indicates the company is becoming more valuable, which should naturally lead to a higher market valuation without signaling an 'overvalued' state."
+        },
+        {
+            "asset_class": "High-Yield Dividend Stocks",
+            "metrics_used": [
+                "Dividend Yield",
+                "Effective Cost Basis",
+                "Capital Gains"
+            ],
+            "metrics_ignored": [
+                "Daily market noise"
+            ],
+            "logic_rule": "IF a capital gain from a price surge exceeds the total expected dividends of several future years THEN consider selling to lock in profit, with the intent to buy back during a correction to lower the net cost basis and maximize future yield.",
+            "embedding_summary": "A heuristic for 'Cost Compression' or yield enhancement. If the market offers an immediate capital gain equivalent to many years of dividends, the investor may rotate out and back into the position. By subtracting realized gains from the future purchase price, the investor 'lowers' their effective cost, which mathematically inflates the recurring dividend yield on the net capital invested."
+        },
+        {
+            "asset_class": "Income / Long-term Compounders",
+            "metrics_used": [
+                "Cumulative Dividends",
+                "Time Horizon",
+                "Purchase Price"
+            ],
+            "metrics_ignored": [
+                "Current Market Value"
+            ],
+            "logic_rule": "IF a stable company consistently pays dividends over a long period (e.g., 6+ years) THEN the cumulative dividends will eventually reduce the effective cost basis to a level below historical market lows, creating a 'no-lose' defensive position.",
+            "embedding_summary": "This rule emphasizes the power of long-term holding in cash-generative businesses. By focusing on the 'net cost' (original price minus all dividends received), the investor aims to reach a point where the investment is essentially 'free' or has such a low cost basis that market volatility cannot threaten the principal, allowing for indefinite holding for yield."
+        },
+        {
+            "asset_class": "Quality Value Stocks",
+            "metrics_used": [
+                "Double-digit ROE",
+                "Dividend Sustainability",
+                "Fundamental Stability"
+            ],
+            "metrics_ignored": [
+                "Sell-side panic",
+                "Market sentiment"
+            ],
+            "logic_rule": "IF a high-quality company with double-digit ROE and stable dividends experiences a significant price correction THEN the investor should increase the position size (average up or add-on) rather than exiting, assuming fundamentals remain intact.",
+            "embedding_summary": "A proactive 'buy the dip' strategy for quality assets. The logic suggests that for companies with strong internal returns (ROE) and consistent payout habits, price drops are opportunities to increase exposure. The goal is to accumulate more shares to benefit from eventual price recovery and larger total dividend payouts in the future."
+        },
+        {
+            "asset_class": "Macro Hedge Stocks",
+            "metrics_used": [
+                "Import/Export Ratio",
+                "Inflation",
+                "Currency Trends"
+            ],
+            "metrics_ignored": [
+                "Local index movements"
+            ],
+            "logic_rule": "IF the domestic currency is structurally weak THEN allocate to export-heavy stocks as a hedge to preserve the purchasing power of assets against currency depreciation.",
+            "embedding_summary": "Using equity selection as a currency hedge. Since export revenues are often denominated in stronger foreign currencies, the domestic value of these earnings increases as the local currency falls, protecting the investor's total portfolio value from the effects of inflation and devaluation."
+        }
+    ]
+}

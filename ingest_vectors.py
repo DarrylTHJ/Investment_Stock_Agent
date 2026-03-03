@@ -32,7 +32,7 @@ def ingest_single_file(file_path, source_type):
     ids = []
     
     # In the new schema, the JSON is a direct list of rule objects
-    items = json_content if isinstance(json_content, list) else []
+    items = json_content.get("data", [])
     
     if not items:
         print(f"⚠️ Warning: No rule objects found in {file_path}")

@@ -1,0 +1,51 @@
+{
+    "meta": {
+        "source": "retail_iVJwgDAep94.txt",
+        "model": "gemma-3-12b-it",
+        "time": 1772507150.8797243
+    },
+    "data": [
+        {
+            "asset_class": "Banking (Islamic)",
+            "metrics_used": [
+                "Stock Price",
+                "Earnings Per Share (EPS)",
+                "Net Profit",
+                "Asset Quality",
+                "Restructuring Events",
+                "Shareholder Structure",
+                "Dividend Yield (implied)"
+            ],
+            "metrics_ignored": [
+                "Daily Charts"
+            ],
+            "logic_rule": "IF a bank (Bank Islam Malaysia Berhad) has undergone a significant restructuring event AND its asset quality has deteriorated AND its net profit has declined due to a change in business structure (no longer benefiting from consolidated profits of an insurance subsidiary) THEN its stock price is likely to decrease.",
+            "embedding_summary": "This investor analyzes Malaysian Islamic banks, specifically Bank Islam, focusing on the impact of restructuring events and changes in business structure. They observe that a restructuring, combined with declining asset quality and a shift in revenue structure (loss of consolidated insurance profits), leads to a decrease in earnings per share and a subsequent decline in the stock price. They consider the historical shareholder structure and the dilution of shares following restructuring as key factors influencing valuation."
+        },
+        {
+            "asset_class": "Banking (General)",
+            "metrics_used": [
+                "Relative Performance within Sector",
+                "Interest Rate Hikes"
+            ],
+            "metrics_ignored": [
+                "Daily Charts"
+            ],
+            "logic_rule": "IF interest rates are rising THEN banks are generally affected, and comparing the performance of individual banks within the sector can highlight those most negatively impacted.",
+            "embedding_summary": "The investor acknowledges the general impact of rising interest rates on the banking sector. They use relative performance within the sector as a comparative tool to identify banks experiencing more significant declines than their peers, suggesting a specific vulnerability or issue beyond the broader interest rate environment."
+        },
+        {
+            "asset_class": "Value Investing",
+            "metrics_used": [
+                "Stock Price Relative to Intrinsic Value",
+                "Profitability",
+                "Shareholder Composition"
+            ],
+            "metrics_ignored": [
+                "Daily Charts"
+            ],
+            "logic_rule": "IF a large, established company (like a major Islamic bank) experiences a significant price decline and reaches new lows THEN it may represent a potential value investment opportunity, but a thorough investigation of underlying reasons (restructuring, asset quality) is required before concluding it is undervalued.",
+            "embedding_summary": "This investor applies a value investing approach, looking for potentially undervalued companies experiencing significant price declines. They specifically consider established companies reaching new lows, but emphasize the importance of understanding the reasons behind the decline (e.g., restructuring, asset quality issues) before making an investment decision."
+        }
+    ]
+}

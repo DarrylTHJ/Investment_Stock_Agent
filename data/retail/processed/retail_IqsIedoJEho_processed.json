@@ -1,0 +1,55 @@
+{
+    "meta": {
+        "source": "retail_IqsIedoJEho.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1772507105.8438315
+    },
+    "data": [
+        {
+            "asset_class": "Growth Stocks",
+            "metrics_used": [
+                "Quarterly Earnings",
+                "Net Profit",
+                "Revenue Growth",
+                "Liquidity (low volume)",
+                "Dividend Yield"
+            ],
+            "metrics_ignored": [
+                "Daily Charts",
+                "Short-term Trading Signals"
+            ],
+            "logic_rule": "IF a stock experiences a limit-up (significant single-day price increase) AND it's a relatively illiquid stock AND the limit-up coincides with or shortly follows a strong quarterly earnings report (especially a significant increase in net profit) AND the company demonstrates sustained earnings growth in subsequent quarters THEN consider it a potential long-term investment opportunity.",
+            "embedding_summary": "This rule focuses on identifying growth stocks that exhibit a 'limit-up' event as a signal of a larger potential uptrend. The investor prioritizes stocks with strong, rapidly growing earnings, particularly those that have been previously overlooked due to low trading volume.  The key is to confirm that the earnings growth is sustainable across multiple quarters, avoiding companies with only a temporary boost in performance. The limit-up is seen as an initial signal, not a take-profit point, and requires further due diligence."
+        },
+        {
+            "asset_class": "Value Investing / Growth at a Discount",
+            "metrics_used": [
+                "Earnings Surprise",
+                "Historical Performance",
+                "Profit Margins",
+                "Dividend Payout"
+            ],
+            "metrics_ignored": [
+                "Market Sentiment",
+                "Day Trading Indicators"
+            ],
+            "logic_rule": "IF a stock's limit-up event is driven by a significant earnings surprise (a substantial increase in quarterly profit compared to previous periods) AND the company has a history of underperformance or being overlooked THEN investigate further to determine if the earnings growth is sustainable and if the stock is undervalued.",
+            "embedding_summary": "This rule highlights the importance of identifying companies where a limit-up event is triggered by unexpectedly strong earnings. The investor looks for situations where a previously undervalued or overlooked stock experiences a sudden surge in profitability, suggesting a potential re-evaluation by the market.  The focus is on fundamental analysis to confirm the sustainability of the earnings growth and assess the stock's intrinsic value."
+        },
+        {
+            "asset_class": "Growth Stocks",
+            "metrics_used": [
+                "Quarterly Earnings Reports",
+                "Earnings Growth Rate",
+                "Historical Trading Volume",
+                "Profitability Trends"
+            ],
+            "metrics_ignored": [
+                "Intraday Price Fluctuations",
+                "Short-Term Technical Indicators"
+            ],
+            "logic_rule": "IF a stock experiences a limit-up event shortly BEFORE or AFTER the release of a positive quarterly earnings report AND the stock historically has low trading volume THEN this may signal the start of a larger, sustained uptrend, but further investigation is required to confirm continued earnings growth.",
+            "embedding_summary": "This rule emphasizes the timing of the limit-up event in relation to quarterly earnings releases. A limit-up occurring around an earnings announcement, especially for a stock with low historical volume, is considered a potential indicator of a significant shift in market perception. However, the investor stresses the need to verify that the earnings growth is not a one-time occurrence and that the company can maintain its positive momentum."
+        }
+    ]
+}

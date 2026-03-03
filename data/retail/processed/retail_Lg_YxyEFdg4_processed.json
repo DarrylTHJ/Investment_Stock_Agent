@@ -1,0 +1,66 @@
+{
+    "meta": {
+        "source": "retail_Lg_YxyEFdg4.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1772507254.4053526
+    },
+    "data": [
+        {
+            "asset_class": "Value Stocks / Dividend Stocks",
+            "metrics_used": [
+                "Revenue Growth",
+                "Net Profit Growth",
+                "Dividend Yield",
+                "Dividend Payout Ratio",
+                "Price-to-Book Ratio (implied by price below net asset value)",
+                "Cash Flow"
+            ],
+            "metrics_ignored": [
+                "Daily Charts",
+                "Short-term price fluctuations",
+                "Market hype"
+            ],
+            "logic_rule": "IF a company has a unique business with a 'moat', demonstrates consistent revenue and profit growth, is trading at a discount to its net asset value, has a stable and growing dividend payout ratio (around 50%), and possesses strong cash flow THEN it is a potential investment for long-term, dividend-focused returns.",
+            "embedding_summary": "This rule focuses on identifying companies with intrinsic value and sustainable growth. The investor prioritizes businesses that are resilient, profitable, and shareholder-friendly, specifically looking for those trading below their net asset value while consistently increasing dividends.  The strategy emphasizes a long-term holding period to benefit from compounding dividend income and capital appreciation, and avoids companies reliant on speculation or short-term gains."
+        },
+        {
+            "asset_class": "Small to Mid-Cap Stocks",
+            "metrics_used": [
+                "Low Trading Volume",
+                "Total Shares Outstanding"
+            ],
+            "metrics_ignored": [
+                "Institutional Investor Interest",
+                "High Market Capitalization"
+            ],
+            "logic_rule": "IF a stock has low trading volume and a relatively small number of shares outstanding THEN it is likely overlooked by institutional investors and presents an opportunity for individual investors to identify undervalued companies.",
+            "embedding_summary": "This rule highlights a preference for stocks that are less followed by large institutions. The investor believes that these companies, often with limited liquidity, can be discovered and invested in before they attract broader attention, potentially leading to higher returns. This strategy caters to individual investors who are willing to do their own research and take a longer-term perspective."
+        },
+        {
+            "asset_class": "Dividend Growth Stocks",
+            "metrics_used": [
+                "Historical Dividend Growth",
+                "Dividend Yield (calculated based on purchase price over time)",
+                "Business Stability"
+            ],
+            "metrics_ignored": [
+                "Current Dividend Yield (as a standalone metric)"
+            ],
+            "logic_rule": "IF a company consistently pays and increases its dividend over time, even if the current dividend yield is moderate, THEN it is a strong candidate for long-term investment, as the yield on cost will increase significantly with continued growth.",
+            "embedding_summary": "This rule emphasizes the importance of dividend growth over immediate yield. The investor understands that a consistently growing dividend, combined with a stable business, will generate substantial returns over time, even if the initial yield appears modest.  The focus is on the compounding effect of reinvested dividends and the long-term benefits of owning a growing business."
+        },
+        {
+            "asset_class": "Defensive Stocks",
+            "metrics_used": [
+                "Cash Flow",
+                "Business Model Resilience (e.g., wholesale and distribution)"
+            ],
+            "metrics_ignored": [
+                "R&D Expenses",
+                "Capital Expenditures"
+            ],
+            "logic_rule": "IF a company has a robust and predictable cash flow, particularly from a resilient business model like wholesale and distribution, and requires minimal R&D or capital expenditures THEN it is well-positioned to weather economic downturns and continue delivering returns.",
+            "embedding_summary": "This rule prioritizes companies with strong, self-funding business models. The investor favors businesses that generate consistent cash flow without needing significant ongoing investment in research and development or large capital projects. This approach aims to identify companies that can maintain profitability and dividend payments even during challenging economic conditions."
+        }
+    ]
+}

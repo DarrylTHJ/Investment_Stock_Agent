@@ -1,0 +1,65 @@
+{
+    "meta": {
+        "source": "retail_jZpe2potL1k.txt",
+        "model": "gemini-2.5-flash",
+        "time": 1772507228.4129856
+    },
+    "data": [
+        {
+            "asset_class": "Super Growth Stocks (Emerging Market Context)",
+            "metrics_used": [
+                "Listing board changes (LEAP Market to ACE Market, ACE Market to Main Market)",
+                "Market capitalization progression (small-cap to mid-cap to large-cap)",
+                "Attainment of blue-chip status",
+                "Entry into Composite Index Top 30 component stocks",
+                "Profit growth (from millions to tens of millions to hundreds of millions)"
+            ],
+            "metrics_ignored": [
+                "Direct IPO listing as a blue-chip company (bypassing the growth journey)",
+                "Short-term stock price fluctuations"
+            ],
+            "logic_rule": "IF a company starts as a lesser-noticed ACE Market (or LEAP Market, then ACE Market) stock, THEN it has the potential to achieve super growth (e.g., 100x returns) IF it successfully transfers to the Main Market, progressively increases its market capitalization from small to mid, then large, achieves blue-chip status, and enters the top component stocks of the main index.",
+            "embedding_summary": "This rule outlines the typical growth trajectory of a 'super growth stock' in an emerging market like Malaysia. It suggests that companies beginning as smaller, less prominent entities on secondary markets (like ACE or LEAP) hold significant long-term growth potential if they successfully transition to the main board, steadily expand their market capitalization through various stages (small to mid to large), and ultimately achieve blue-chip status by entering the top component stocks of the national index."
+        },
+        {
+            "asset_class": "Growth Stocks, Diversified Businesses",
+            "metrics_used": [
+                "Strategic business diversification (e.g., 'four pillars' or core business segments)",
+                "Ability to maintain stable profits through economic cycles/downturns",
+                "Management's strategic planning and execution capabilities (evidenced in annual reports)",
+                "Value creation strategies (e.g., spinning off sufficiently large sub-businesses for separate IPOs)"
+            ],
+            "metrics_ignored": [
+                "Unplanned or ad-hoc business expansion without clear strategy"
+            ],
+            "logic_rule": "IF a company demonstrates a clear strategic plan for growth, possesses a management team capable of executing that strategy, maintains a diversified business model (e.g., 'four pillars') that ensures stable profitability across economic cycles, AND actively seeks to unlock shareholder value through strategic actions like spinning off mature sub-businesses, THEN it is a strong candidate for sustained long-term growth and wealth creation.",
+            "embedding_summary": "This rule emphasizes the importance of a company's strategic foundation and management quality for long-term growth. It highlights that businesses with a well-defined growth strategy, a resilient and diversified operational structure (like multiple supporting business pillars), and a management team that proactively implements value-unlocking strategies (such as spin-offs) are prime candidates for generating substantial investor wealth."
+        },
+        {
+            "asset_class": "All (General Investment Philosophy)",
+            "metrics_used": [
+                "Long-term investment horizon (being 'friends with time')",
+                "Participation in capital-raising events (e.g., rights issues, convertible preference shares)",
+                "Identifying 'buy low' opportunities during temporary downturns"
+            ],
+            "metrics_ignored": [
+                "Short-term market volatility or temporary negative news (e.g., pandemic impact on specific sectors if temporary)"
+            ],
+            "logic_rule": "IF an investor adopts a long-term perspective, aligns with the company's growth trajectory, and consistently participates in capital-raising activities like rights issues, AND identifies opportunities to buy during temporary dips caused by transient negative events, THEN they can significantly amplify their wealth creation through value investing.",
+            "embedding_summary": "This rule underscores the investor's active role in maximizing returns. It advocates for a long-term investment approach, stressing the importance of patience ('being friends with time') and proactive participation in corporate capital-raising events like rights issues. Furthermore, it suggests leveraging temporary market downturns as opportunities for 'buying the dip' in fundamentally strong companies."
+        },
+        {
+            "asset_class": "All (Risk Management)",
+            "metrics_used": [
+                "Founder/family share selling (regular profit-taking)",
+                "Major institutional investor (e.g., EPF) share selling (especially if reducing significant stake)",
+                "Absence of new major positive catalysts after significant corporate events (e.g., post-spin-off IPO)"
+            ],
+            "metrics_ignored": [
+                "Small, isolated share sales by insiders that do not indicate a trend"
+            ],
+            "logic_rule": "IF founder families or major institutional shareholders (like EPF) consistently engage in profit-taking by selling shares after substantial price appreciation, AND there is an absence of new significant positive catalysts following a major corporate action (e.g., a spin-off IPO), THEN investors should consider the possibility of a stock price adjustment or a slowdown in future growth.",
+            "embedding_summary": "This rule highlights important caution signals for investors. It advises close monitoring of consistent share selling by founder families or large institutional investors, particularly after significant stock price increases. This, combined with a lack of new substantial positive catalysts after major corporate events like spin-offs, may indicate an impending stock price adjustment or a moderation in the company's growth trajectory."
+        }
+    ]
+}
