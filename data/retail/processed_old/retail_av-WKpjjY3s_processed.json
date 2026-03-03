@@ -1,0 +1,189 @@
+{
+    "meta": {
+        "source": "retail_av-WKpjjY3s.txt",
+        "model": "gemini-2.5-flash",
+        "time": 1767500284.659764
+    },
+    "data": [
+        {
+            "text": "3\u670831\u53f72023\u5e74\uff0c\u6211\u4eec\u53ef\u4ee5\u4eab\u53d7\u4e70\u8f66\u51cf\u514dSST\u7684\u8fd9\u4e2a\u653f\u7b56\u4f18\u60e0\u7684\u6700\u540e\u7684deadline\u3002",
+            "type": "FACT",
+            "reasoning": "This statement provides a specific date for the end of the SST exemption policy, which is a factual event."
+        },
+        {
+            "text": "\u5982\u679c\u4f60\u597d\u597d\u5229\u7528\u8fd9\u4e2a\u653f\u7b56\u5e26\u6765\u7684\u5bf9\u67d0\u4e9b\u4e0a\u5e02\u516c\u53f8\u9020\u6210\u7684\u76c8\u5229\u7684\u63a8\u52a8\uff0c\u7136\u540e\u4ee5\u90a3\u4e2a\u4e0a\u5e02\u516c\u53f8\u4f5c\u4e3a\u4f60\u7684\u6295\u8d44\u7684\u6807\u7684\u7684\u8bdd\uff0c\u4f60\u771f\u7684\u53ef\u80fd\u53ef\u4ee5\u554a\u635e\u4e00\u7b14\u7684\u54e6\u3002",
+            "type": "OPINION",
+            "reasoning": "This is the speaker's assessment of the potential for high returns by strategically using the policy's impact, phrased as a possibility rather than a certainty."
+        },
+        {
+            "text": "\u80a1\u7968\u5e76\u4e0d\u662f\u4e00\u4e2a\u4f4e\u98ce\u9669\u7684\u6295\u8d44\uff0c\u6211\u5fc5\u987b\u8981\u627f\u8ba4\u8fd9\u4e00\u70b9\uff0c\u5982\u679c\u4f60\u4e71\u4e71\u6765\u7684\u8bdd\uff0c\u4e00\u5b9a\u4e5f\u5f88\u5bb9\u6613\u70e7\u5230\u624b\u3002",
+            "type": "PRINCIPLE",
+            "reasoning": "This is a general investment principle about the inherent risk of stock market investments and the danger of uninformed trading."
+        },
+        {
+            "text": "\u8fd9\u4e2a\u653f\u7b56\u5c31\u662f\u6539\u5584\u4e0a\u5e02\u516c\u53f8\uff0c\u5c31\u662f\u5728\u6c7d\u8f66\u9500\u552e\u8fd9\u4e2a\u9886\u57df\u91cc\u9762\u7684\u4e0a\u5e02\u516c\u53f8\uff0c\u4ed6\u7684\u5546\u4e1a\u524d\u666f\u7684\u3002",
+            "type": "FACT",
+            "reasoning": "This describes the direct impact of the SST exemption policy on the business outlook of automotive sales companies, which is a verifiable consequence."
+        },
+        {
+            "text": "The SST exemption was first announced in june 6\u67085\u53f7 2020\u5e74\u3002",
+            "type": "FACT",
+            "reasoning": "This provides a specific date for the initial announcement of the SST exemption, a historical fact."
+        },
+        {
+            "text": "\u5f53\u65f6\u7684\u7ecf\u6d4e\u523a\u6fc0\u914d\u5957\u91cc\u9762\u5462\uff0c\u5c31\u7b2c\u4e00\u6b21introduce\u4e86\u8fd9\u4e2a\u4e70\u8f66\u7684SST\u51cf\u514d\u3002",
+            "type": "FACT",
+            "reasoning": "This states that the SST exemption was introduced as part of an economic stimulus package, a historical fact about government policy."
+        },
+        {
+            "text": "\u539f\u5b9a2020\u5e7412\u670831\u53f7\u5c31\u8981\u7ed3\u675f\u7684\u8fd9\u516d\u4e2a\u6708\u7684\u514d\u7a0e\u671f\u5462\uff0c\u52302020\u5e74\u768412\u6708\u5c31\u6700\u540e\u4e00\u4e2a\u6708\u7684\u65f6\u5019\u5462\uff0c\u5c31\u5ba3\u5e03\u6709extention\u4e86\u3002",
+            "type": "FACT",
+            "reasoning": "This describes the initial duration and subsequent extension of the SST exemption, a sequence of factual events."
+        },
+        {
+            "text": "\u8fd9\u4e2a\u653f\u7b56\u4e00\u5171\u5b9e\u884c\u4e86\u4e24\u5e74\u591a\u7684\u65f6\u95f4\uff0c\u76f4\u5230\u6211\u4eec\u770b\u52306\u670820\u53f7\u7684\u65f6\u5019\u6211\u4eec\u5f53\u521d\u7684\u8d22\u653f\u90e8\u957f\u5ba3\u5e03no more extension\u3002",
+            "type": "FACT",
+            "reasoning": "This provides the total duration of the policy and the date of the announcement for its discontinuation, both verifiable facts."
+        },
+        {
+            "text": "\u4ecd\u7136\u53ef\u4ee5\u5141\u8bb86\u670830\u53f72022\u5e74\u4e4b\u524d\u8ba2\u4e86\u8f66\u7684\u4eba\uff0c\u53ea\u8981\u4f60\u57282023\u5e743\u670831\u53f7\u4e4b\u524d\u62ff\u5230\u8f66\uff0c\u4f60\u8fd8\u53ef\u4ee5enjoy\u8fd9\u4e2aSST\u7684\u51cf\u514d\u3002",
+            "type": "FACT",
+            "reasoning": "This specifies a key condition and deadline for still benefiting from the SST exemption, a factual detail of the policy."
+        },
+        {
+            "text": "CKD\u7684\u7248\u672c... CBU\u5168\u8fdb\u53e3\u7684model\u5462\uff0c\u53ea\u80fd\u591fenjoy50%\u7684SST\u51cf\u514d\u7f62\u4e86\u3002",
+            "type": "FACT",
+            "reasoning": "This provides specific, verifiable details about the different exemption rates for CKD (locally assembled) and CBU (fully imported) vehicles."
+        },
+        {
+            "text": "\u5f53\u65f6\u5019\u5f88\u591a\u8f66\u90fd\u5356\u5230\u65ad\u8d27\u4e86\uff0c\u56e0\u4e3a\u5176\u5b9e\u4ed6\u4e00\u76f4extend\u7684\u65f6\u5019\u554a\uff0c\u5927\u5bb6\u90fd\u8d81\u7740\u54c7deadline\u4e4b\u524d\u8981\u4e70\uff0c\u7ed3\u679c\u4e70\u4e86\u4e24\u6b21deadline\u54e6\u539f\u6765\u8fd8\u6709\u7684extend\uff0c\u90a3\u57fa\u672c\u4e0a\u8f66\u5df2\u7ecf\u6765\u4e0d\u53ca\u751f\u4ea7\u4e86\uff0c\u56e0\u4e3a\u90a3\u4e2a\u65f6\u5019\u8fd8\u53d1\u751f\u4ec0\u4e48\u4e1c\u897f\u554a\u82af\u7247\u77ed\u7f3a\u561b\u3002",
+            "type": "FACT",
+            "reasoning": "This describes the market situation of cars selling out due to policy extensions and chip shortages, which were widely reported events."
+        },
+        {
+            "text": "Perodua\u7b2c\u4e8c\u56fd\u4ea7\u8f66\u624b\u4e0a\u7d2f\u8ba1\u4e86\u4e8c\u5341\u591a\u4e07\u8f86\u7684\u8ba2\u5355\u5462\uff0c\u5c31\u662f\u56e0\u4e3a\u8fd9\u4e2aSST\u51cf\u514d\u7684\u653f\u7b56\u800c\u5e26\u6765\u7684\u3002",
+            "type": "FACT",
+            "reasoning": "This states a specific number of accumulated orders for Perodua directly linked to the SST exemption policy, a verifiable data point."
+        },
+        {
+            "text": "Bermaz Auto\u66fe\u7ecf\u53eb\u505a\u6210\u529f\u6c7d\u8f66Berjaya Auto\uff0c\u8fd9\u4e2a\u516c\u53f8\u7684\u80a1\u7968\u4ee3\u78015248\u3002",
+            "type": "FACT",
+            "reasoning": "This identifies a specific company, its former name, and its stock code, which are all factual pieces of information."
+        },
+        {
+            "text": "BAUTO\u5b83\u7684\u80a1\u4ef7\u4e4b\u524d\u8dcc\u5230\u4e00\u5757\u94b1\u7684\u6c34\u5e73\uff0c\u5c31\u7b972021\u5e74\u80a1\u4ef7\u4e5f\u57281\u57571 1\u57572\u5de6\u53f3\uff0c\u5230\u73b0\u5728\u5df2\u7ecf\u5347\u5230\u63a5\u8fd12\u57574\u4e86\u3002\u6240\u4ee5\u4f60\u770b\u554a2021\u5e74\u52302023\u5e74\u4e24\u5e74\u65f6\u95f4\u771f\u7684\u80a1\u4ef7\u53ef\u4ee5\u5b9e\u73b0\u7ffb\u500d\u54e6\u3002",
+            "type": "FACT",
+            "reasoning": "This describes the historical stock price movement of BAUTO and calculates its appreciation over a specific period, which can be verified from market data."
+        },
+        {
+            "text": "\u5176\u5b9e\u6709\u4e9b\u65f6\u5019\u80a1\u5e02\u554a\u771f\u7684\u4f1a\u51fa\u73b0\u4e00\u4e9b'\u514d\u8d39\u7684\u5348\u9910'\uff0c\u5c31\u662f\u4f60\u4e0d\u7528\u7279\u522b\u7684\u52aa\u529b\u90fd\u53ef\u80fd\u53ef\u4ee5\u53d1\u73b0\u5230\u7684\u673a\u4f1a\u3002",
+            "type": "OPINION",
+            "reasoning": "This is a subjective claim about the ease of finding investment opportunities, often referred to as 'free lunches' which are generally considered rare or non-existent in efficient markets."
+        },
+        {
+            "text": "\u5b9d\u817e\u5df2\u7ecfpark\u7684\u591a\u5143\u91cd\u5de5DRB Hicom\uff0c\u90a3\u4ed6\u53d8\u6210\u4e86DRB Hicom\u5176\u4e2d\u4e00\u4e2a\u4e1a\u52a1\uff0c\u6240\u4ee5\u6ca1\u6709\u90a3\u4e48\u7684pure automotive\u3002",
+            "type": "FACT",
+            "reasoning": "This describes the ownership structure of Proton and its impact on DRB Hicom's classification as a 'pure automotive' company, a factual business relationship."
+        },
+        {
+            "text": "\u7b2c\u4e8c\u56fd\u4ea7\u8f66\u7684\u90e8\u5206\u80a1\u6743\u5728\u5408\u987aUMW\u8fd9\u4e2a\u516c\u53f8\u8eab\u4e0a\uff0c\u800cUMW\u5462\u4e5f\u7275\u6d89\u5230\u9a6c\u6765\u897f\u4e9a\u7684Toyota\u4e30\u7530\u6c7d\u8f66\u7684\u8fd9\u4e2a\u751f\u4ea7\u8ddf\u9500\u552e\u7684\uff0c\u4f46\u662fUMW\u8fd8\u6709\u5176\u4ed6\u7684\u4e1a\u52a1\u53c2\u5728\u91cc\u9762\uff0c\u4ed6\u662f\u4e00\u4e2a\u7efc\u5408\u578b\u7684\u8d22\u56e2\uff0c\u6240\u4ee5\u4ed6\u4e5f\u4e0d\u591fpure\u3002",
+            "type": "FACT",
+            "reasoning": "This explains the ownership structure of Perodua and UMW's diversified business nature, impacting its 'pure automotive' classification, factual business information."
+        },
+        {
+            "text": "Bermaz Auto\u4e5f\u62ff\u4e0b\u4e86\u5c31\u6765\u81ea\u97e9\u56fd\u7684Kia\u6c7d\u8f66\u5728\u9a6c\u6765\u897f\u4e9a\u7684\u4ee3\u7406\u6743\uff0c\u8fd8\u6709\u6765\u81ea\u6cd5\u56fd\u7684Peugeot\u8fd9\u4e2a\u8f66\u5728\u9a6c\u6765\u897f\u4e9a\u7684\u4ee3\u7406\u6743\u3002",
+            "type": "FACT",
+            "reasoning": "This states Bermaz Auto's acquisition of distribution rights for Kia and Peugeot, which is a factual business development."
+        },
+        {
+            "text": "\u9a6c\u6765\u897f\u4e9a\u7684Nissan\u65e5\u4ea7\u6c7d\u8f66\u5c31\u662f\u7531\u4ed6\u6765\u4ee3\u7406\u7684\uff0c\u4f46\u662f\u9648\u660c\u7684\u80a1\u7968\u5462\u5176\u5b9e\u8dcc\u4e86\u5f88\u591a\u5e74\uff0c\u4e3a\u4ec0\u4e48\u5462\uff1f\u56e0\u4e3aNissan\u6c7d\u8f66\u5728\u9a6c\u6765\u897f\u4e9a\u7684\u5e02\u573a\u5360\u6709\u7387\u5462\u5728\u8fc7\u53bb\u8fd9\u4e9b\u5e74\u5462\u662f\u4e00\u76f4\u5728\u4e0b\u8dcc\u7684\u3002",
+            "type": "FACT",
+            "reasoning": "This describes Tan Chong's representation of Nissan and links its declining stock performance to Nissan's falling market share, a verifiable market trend."
+        },
+        {
+            "text": "\u65e5\u672c\u4e09\u5251\u5ba2Toyota Honda\u8ddfNissan\uff0c\u5176\u4e2dNissan\u4e00\u76f4\u8dcc\uff0c\u8c01pick up\u4e0a\u6765\u4e86\uff1f\u6ca1\u9519\u5c31\u662fMazda\u7684\u8fd9\u4e2a\u5e02\u573a\u4efd\u989d\u5462\u88ab\u4ed6\u6253\u4e0a\u6765\u4e86\u3002",
+            "type": "FACT",
+            "reasoning": "This highlights a factual shift in market share among Japanese car brands, with Mazda gaining ground as Nissan declined."
+        },
+        {
+            "text": "\u6240\u4ee5MBM\u8d44\u6e90\u554a\u8ddfBAUTO\u5c31\u662f\u8d22\u52a1\u6570\u636e\u4e0a\u9762\u6700\u6709\u53c2\u8003\u4ef7\u503c\u7684\u3002",
+            "type": "OPINION",
+            "reasoning": "This is the speaker's subjective assessment of which companies offer the most valuable financial data for analysis."
+        },
+        {
+            "text": "\u7528\u8fd9\u79cd\u65b9\u5f0f\uff0c\u53ef\u4ee5\u8ba9\u6211\u4eec\u57282020\u5e74\u6216\u80052021\u5e74\u7684\u65f6\u5019\u5462\uff0c\u8f7b\u677e\u53d1\u73b0\u7684\u4e00\u4e2a\u5bf9\u8c61\u3002",
+            "type": "OPINION",
+            "reasoning": "This describes the ease of finding BAUTO as an investment opportunity using the described analysis method, which is a subjective judgment."
+        },
+        {
+            "text": "\u4f60\u770b\u6211\u4eec\u4ece\u57fa\u672c\u9762\u5165\u624b\uff0c\u4ece\u4e1a\u7ee9\u6210\u957f\u7684\u628a\u63e1\u91cc\u9762\u53bb\u5165\u624b\uff0c\u5927\u5bb6\u89c9\u5f97\u54e6\u539f\u6765\u8fd9\u79cd\u4ef7\u503c\u6295\u8d44\u7684\u505a\u6cd5\u5bf9\u4f60\u81ea\u5df1\u505a\u80a1\u7968\u6295\u8d44\u662f\u53ef\u4ee5\u5f88\u8f7b\u677e\u964d\u4f4e\u4f60\u7684\u98ce\u9669\u63d0\u5347\u4f60\u7684\u547d\u4e2d\u7387\u5bf9\u5417\uff1f",
+            "type": "PRINCIPLE",
+            "reasoning": "This articulates a core principle of value investing: analyzing fundamentals and earnings growth to reduce risk and improve success rate."
+        },
+        {
+            "text": "\u627e\u4f60\u8fc7\u53bb\u7684track record BAUTO\u8fc7\u53bb\u6bcf\u5e74\u7684ROE\u90fd\u662f20%\u591a\u4fdd\u6301\u7684\u975e\u5e38\u597d\uff0c\u800c\u4e14\u6bcf\u5e74\u90fd\u6d3edividend\uff0c\u751a\u81f3\u6bcf\u4e2a\u5b63\u5ea6\u90fd\u6d3e\u606f\u7684\u3002",
+            "type": "FACT",
+            "reasoning": "This provides verifiable historical financial data about BAUTO's Return on Equity (ROE) and dividend payout frequency."
+        },
+        {
+            "text": "\u4ef7\u503c\u56de\u5f52Financial Turnaround & Re-rating\u7684\u8fde\u7eed\u4e09\u8bb2\uff0c\u540c\u5b66\u4eec\u53ef\u4ee5\u5728\u6211\u7684youtube\u627e\u56de\u3002",
+            "type": "PRINCIPLE",
+            "reasoning": "This refers to a conceptual investment strategy ('value regression' or 'financial turnaround & re-rating') which is a recognized principle in finance."
+        },
+        {
+            "text": "\u9488\u5bf9\u4f60\u7684\u516c\u53f8\u66fe\u7ecf\u5f88\u53d7\u5e02\u573a\u7684\u8ba4\u540c\u751f\u7684\u5f88\u6f02\u4eae\uff0c\u7136\u540e\u80a1\u4ef7\u8dcc\u4e86\u4e0b\u6765\uff0c\u56e0\u4e3a\u67d0\u4e9b\u4e8b\u60c5\u4e4b\u540e\uff0c\u4f60\u518d\u91cd\u65b0\u56de\u5230\u524d\u671f\u9ad8\u70b9\uff0c\u751a\u81f3\u5728\u7834\u65b0\u9ad8\u7684\u8fd9\u4e2a\u8fc7\u7a0b\u91cc\u9762\u5462\uff0c\u6211\u4eec\u5c31\u6709\u8fd9\u4e2a\u4ef7\u503c\u56de\u5f52\u80fd\u591f\u4ea7\u751f\u7684\u975e\u5e38\u4e30\u539a\u7684\u6295\u8d44\u56de\u916c\u4e86\u3002",
+            "type": "PRINCIPLE",
+            "reasoning": "This explains the concept of 'value regression' as an investment strategy: investing in a company that has fallen from previous highs but has the potential to recover and surpass them."
+        },
+        {
+            "text": "Bermaz Auto\u5c31\u5b8c\u5b8c\u5168\u5168\u7684\u590d\u5236\u4e86\u6211\u4eec\u66fe\u7ecf\u8bb2\u8fc7\u7684\u8fd9\u4e2a\u505a\u6cd5\u3002",
+            "type": "OPINION",
+            "reasoning": "This is the speaker's assessment that BAUTO's performance perfectly mirrored a previously described investment strategy."
+        },
+        {
+            "text": "\u51c0\u5229\u6da6\u6765\u8bb2\u6700\u65b0\u7684\u52302023\u5e741\u670831\u53f7\u7684profit\u662f\u7834\u4e86\u4e09\u5e74\u5355\u5b63\u5ea6\u65b0\u9ad8\u7684\u3002",
+            "type": "FACT",
+            "reasoning": "This provides a specific, verifiable financial performance metric: BAUTO's quarterly profit reached a three-year high on a particular date."
+        },
+        {
+            "text": "\u5f53\u65f6\u5019\u7684\u8fd9\u79cd\u4f9b\u4e0d\u5e94\u6c42\u7684\u72b6\u6001\u5bf9\u4e8e\u8fd9\u4e2a\u516c\u53f8\u7684\u4e1a\u7ee9\u6210\u957f\u7684\u628a\u63e1\u6295\u8d44\u8005\u611f\u89c9\u5f97\u5230\u5417\uff1f\u8fd9\u79cd\u628a\u63e1\u662f\u76f8\u5f53\u76f8\u5f53\u9ad8\u7684\u3002",
+            "type": "OPINION",
+            "reasoning": "This expresses the speaker's strong belief in the predictability of BAUTO's earnings growth due to the market conditions."
+        },
+        {
+            "text": "\u73b0\u5728\u516c\u53f8\u56db\u4e2a\u5b63\u5ea6\u52a0\u8d77\u6765\u7684\u5229\u6da6\u662f281\u4e2amillion\uff0c\u8fc7\u53bb\u5341\u5e74\u8fd9\u516c\u53f8\u6700\u5389\u5bb3\u7684net profit\u5355\u72ec\u4e00\u5e74\u7684\u662f264\u4e2amillion\uff0c\u5c31right before Covid-19\u7684\u65f6\u5019\u3002",
+            "type": "FACT",
+            "reasoning": "This presents specific, verifiable financial data comparing BAUTO's latest annual profit with its historical peak profit before Covid-19."
+        },
+        {
+            "text": "\u4f60\u770b\u554a\u76c8\u5229\u5f7b\u5e95\u7684\u590d\u82cf\uff0c\u800c\u4e14\u8fd8\u8d85\u8d8a\u4e86\u5f53\u5e74\u75ab\u60c5\u53d1\u751f\u4e4b\u524d\uff0c\u90a3\u8fd9\u4e2a\u5c31\u662f\u5b8c\u5b8c\u5168\u5168\u7684\u4ef7\u503c\u56de\u5f52\u4e86\u3002",
+            "type": "PRINCIPLE",
+            "reasoning": "This applies the principle of 'value regression' to BAUTO's performance, stating that its profit recovery and surpassing of pre-pandemic levels is an example of this principle."
+        },
+        {
+            "text": "\u516c\u53f8\u7684\u6d3e\u606f\u4e5f\u975e\u5e38\u5927\u65b9\uff0c\u8fc7\u53bb\u4e09\u5e74\u6bcf\u4e2a\u5b63\u5ea6\u6d3e\u606f\uff0c\u800c\u4e14dividend\u73b0\u5728\u56db\u4e2a\u5b63\u5ea6\u52a0\u8d77\u6765\u5df2\u7ecf\u9ad8\u8fbe\u4e86\u5341\u4e94\u5206\u534a\u4e86\u3002",
+            "type": "FACT",
+            "reasoning": "This provides verifiable information about BAUTO's dividend policy and the total dividend paid over the last four quarters."
+        },
+        {
+            "text": "\u5982\u679c\u4f60\u5145\u5206\u7406\u89e3\u6211\u521a\u521a\u8bb2\u7684\u6574\u4e2a\u653f\u7b56\u7684\u5927\u80cc\u666f\u8ddf\u5f53\u65f6\u6211\u4eec\u53bbshowroom\u770b\u5230\u7684\u6ca1\u8f66\u53ef\u5356\u7684\u60c5\u51b5\uff0c\u4e00\u8ba2\u8f66\u53ef\u80fd\u4f60\u90fd\u8981\u7b49\u51e0\u4e2a\u6708\uff0c\u6709\u4e9b\u4eba\u7b49\u51e0\u4e2a\u6708\u90fd\u613f\u610f\u8ba2\u7684\uff0c\u5c31\u662f\u4e3a\u4e86\u8981\u57283\u670831\u53f72023\u5e74\u4e4b\u524d\u62ff\u5230\u8f66\uff0c\u6240\u4ee5\u6211\u4eec\u8bb2\u8fd9\u4e2a\u516c\u53f8\u7684\u4ef7\u503c\u56de\u5f52\uff0c\u56e0\u4e3a\u75ab\u60c5\u9020\u6210\u4ed6\u7684\u80a1\u4ef7\u5927\u8dcc\uff0c\u600e\u4e48\u6837\u56de\u5347\u4e0a\u53bb\uff0c\u5c31\u662f\u9760\u4e1a\u7ee9\u63a8\u4ed6\u4e0a\u53bb\u3002",
+            "type": "PRINCIPLE",
+            "reasoning": "This explains how a deep understanding of market conditions and government policies can provide the conviction (holding power) to wait for a company's financial recovery to materialize, leading to 'value regression'."
+        },
+        {
+            "text": "\u4e0b\u4e00\u6b21\u96be\u4fdd\u6211\u4eec\u53c8\u53ef\u80fd\u4f1a\u9047\u5230\u54ce\u67d0\u4e9b\u653f\u5e9c\u653f\u7b56\u6216\u8005\u53d1\u751f\u7684\u67d0\u4e9b\u4e8b\u4ef6\u9020\u6210\u67d0\u4e9b\u884c\u4e1a\u67d0\u4e9b\u516c\u53f8\u7684\u4ea7\u54c1\u4ed6\u7684\u9700\u6c42\u5927\u589e\uff0c\u4f60\u5c31\u5230\u65f6\u5019\u81ea\u7136\u4f1a\u4ea7\u751f\u6761\u4ef6\u53cd\u5c04\uff0c\u90a3\u8bf7\u95ee\u8fd9\u4e2a\u4e1c\u897f\u5bf9\u6295\u8d44\u8005\u4eec\u4f60\u4eec\u6765\u8bb2\u662f\u4e0d\u662f\u4e00\u79cd\u7528\u94b1\u90fd\u4e70\u4e0d\u5230\u7684\u7ecf\u9a8c\u5462\uff1f",
+            "type": "PRINCIPLE",
+            "reasoning": "This suggests that learning from past case studies can build intuition and 'conditional reflexes' for identifying future investment opportunities driven by similar external factors, which is a key aspect of investor experience."
+        },
+        {
+            "text": "2023\u5e743\u670831\u53f7\u4e4b\u540e\u4e70\u4e86\u8f66\u8ba2\u4e86\u8f66\u7684\u4eba\u90fd\u4e0d\u80fd\u591f\u4eab\u53d7\u5230SST\u7684\u51cf\u514d\u4e86\u3002\u800c\u524d\u9762\u7ecf\u8fc7\u4e86\u8fd9\u4e24\u5e74\u7684\u8fd9\u4e2aSST\u4e70\u8f66\u7a0e\u6536\u4f18\u60e0\u7684\u653f\u7b56\uff0c\u5176\u5b9e\u5927\u90e8\u5206\u9a6c\u6765\u897f\u4e9a\u4eba\u8981\u6362\u8f66\u8981\u4e70\u8f66\uff0c\u4ed6\u53ef\u80fd\u63d0\u524d\u4e70\u4e86\uff0c\u63a5\u4e0b\u6765\u7b49\u5f85\u7740\u6211\u4eec\u7684\u5c31\u662f\u5f53\u4ed6\u4eec\u7684\u8fd9\u4e2a\u8ba2\u5355\u6d88\u8017\u4e86\u4e4b\u540e\u662f\u4e0d\u662f\u4f1a\u770b\u5230\u9a6c\u6765\u897f\u4e9a\u7684\u6c7d\u8f66\u9500\u552e\u4f1a\u56de\u5f52\u6b63\u5e38\uff0c\u6709\u4e00\u4e2anormalizing\u7684\u8fc7\u7a0b\u5462\uff1f",
+            "type": "OPINION",
+            "reasoning": "This is a forward-looking analysis and prediction about the future state of the Malaysian car market after the end of the SST exemption, expecting a 'normalizing' process rather than continued high demand."
+        },
+        {
+            "text": "\u6709\u6ca1\u6709\u53ef\u80fd\u523a\u6fc0\u6211\u4eec\u9a6c\u6765\u897f\u4e9a\u8d2d\u8f66\u4e00\u65cf\u8fdb\u5165\u4e0b\u4e00\u4e2a\u9636\u6bb5\u7684\u66f4\u65b0\u6dd8\u6c70\u7684\u5468\u671f\u5c31\u662f\u7535\u52a8\u6c7d\u8f66\u7684\u8fd9\u4e2a\u5927\u8d8b\u52bf\uff0c\u6211\u4eec\u9a6c\u6765\u897f\u4e9a\u6d88\u8d39\u8005\u4f1a\u6709\u591abuy\u5462\uff1f",
+            "type": "OPINION",
+            "reasoning": "This is a speculative question about future market drivers (EVs) and consumer adoption in Malaysia, indicating uncertainty and a potential new trend."
+        }
+    ]
+}

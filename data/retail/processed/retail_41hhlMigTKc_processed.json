@@ -1,59 +1,66 @@
 {
     "meta": {
         "source": "retail_41hhlMigTKc.txt",
-        "model": "gemini-3-flash-preview",
-        "time": 1767500218.2688844
+        "model": "gemini-2.5-flash-lite",
+        "time": 1772506054.5719936
     },
     "data": [
         {
-            "text": "Pharmaniaga\u76ee\u524d\u5c31\u662f\u4e00\u4e2aPN17\u72b6\u6001\u7684\u4e0a\u5e02\u516c\u53f8\uff0c\u8d44\u4e0d\u62b5\u503a\u3002",
-            "type": "FACT",
-            "reasoning": "This refers to the official regulatory status assigned by Bursa Malaysia to financially distressed companies."
+            "asset_class": "Pharmaceuticals/Healthcare",
+            "metrics_used": [
+                "PN17 Status",
+                "Government Contracts (Duration and Exclusivity)",
+                "Cash Flow/Financial Health",
+                "Auditor's Report (Inventory Impairment)"
+            ],
+            "metrics_ignored": [
+                "Daily stock price fluctuations"
+            ],
+            "logic_rule": "IF a company is in PN17 status (insolvent) but has secured a long-term exclusive government contract, THEN consider it 'too big to fall' and a potential turnaround/stable investment.",
+            "embedding_summary": "An investor using this rule focuses on companies, particularly in the healthcare sector, that have faced insolvency (PN17 status). However, if such a company secures a long-term, exclusive contract with the government, the investor views this as a safety net, making the company 'too big to fall' and a potentially stable investment despite its past financial difficulties."
         },
         {
-            "text": "\uff08Pharmaniaga\uff09\u83b7\u5f97\u4e86\u653f\u5e9c\u518d\u7ed9\u4ed6\u53e6\u5916\u7eed10\u5e74\u7684\u5408\u7ea6\uff0c\u72ec\u5bb6\u4f9b\u5e94\u7ed9\u9a6c\u6765\u897f\u4e9a\u7684\u536b\u751f\u90e8\u8fd9\u4e9b\u836f\u7269\u7684\u4f9b\u5e94\u3002",
-            "type": "FACT",
-            "reasoning": "This is a verifiable corporate and governmental procurement event regarding a long-term concession."
+            "asset_class": "General Equities",
+            "metrics_used": [
+                "Government Expenditure Allocations",
+                "Sectoral Budget (e.g., Health Ministry Budget)",
+                "Company's Share of Sectoral Budget",
+                "Contract Duration"
+            ],
+            "metrics_ignored": [
+                "Short-term market sentiment"
+            ],
+            "logic_rule": "IF a government allocates a significant portion of its budget to a specific ministry (like Health) and a particular company handles a substantial percentage of that ministry's procurement (especially for long-term contracts), THEN that company is likely to have a secure revenue stream and future prospects.",
+            "embedding_summary": "This rule assesses investment opportunities based on government spending patterns. The investor identifies sectors receiving large budget allocations and then looks for companies that are integral to that ministry's operations, particularly those with long-term procurement contracts. The presence of a substantial share of the ministry's budget being managed by the company indicates a stable and predictable revenue source."
         },
         {
-            "text": "\u8fd9\u4e2a\u662f\u4e0d\u662f\u4e00\u79cd\u5927\u5230\u4e0d\u80fd\u5012\u7684\u60c5\u51b5\u5462\uff1f",
-            "type": "OPINION",
-            "reasoning": "The author is characterizing the government's intervention as a 'Too Big To Fail' scenario, which is a subjective interpretation of policy intent."
+            "asset_class": "General Equities",
+            "metrics_used": [
+                "Company's Financial Health (Balance Sheet)",
+                "Accounts Receivable",
+                "Contract Assets",
+                "Pending Litigation/Disputes",
+                "Communication of Risks in Quarterly Reports"
+            ],
+            "metrics_ignored": [
+                "Company's historical peak performance"
+            ],
+            "logic_rule": "IF a company's balance sheet shows a significant increase in accounts receivable, especially if linked to a large project with a disputing developer, and the company's quarterly reports warn of contingent risks or require specific payment settlements for full project resumption, THEN avoid investing or consider exiting the position to mitigate risk ('a gentleman does not stand under a dangerous wall').",
+            "embedding_summary": "This heuristic focuses on risk mitigation. The investor scrutinizes a company's balance sheet for rising accounts receivable, particularly when tied to projects with developer disputes. If the company's financial reports explicitly mention contingent risks or conditional recommencement of work based on outstanding payments, the investor applies the principle of 'a gentleman does not stand under a dangerous wall' and avoids or exits the investment to sidestep potential financial troubles."
         },
         {
-            "text": "2023\u5e74\u7684government expenditure\u9ad8\u8fbe3,861\u4ebf... \u536b\u751f\u90e8\u5f97\u5230\u653f\u5e9c... 36.3 billion Ringgit Malaysia allocation... \u5355\u7eaf\u7684\u91c7\u8d2d\u836f\u7269\u91cc\u9762\u768435%\u7684budget\u5c31\u662f\u7531Pharmaniaga\u5e2e\u653f\u5e9c\u6253\u70b9\u3002",
-            "type": "FACT",
-            "reasoning": "These are specific figures derived from the Malaysian National Budget and historical procurement data."
-        },
-        {
-            "text": "\u5982\u679c\u4f60\u624b\u4e0a\u63e1\u6709\u653f\u5e9c\u7ed9\u768410\u5e74\u7684\u7279\u8bb8\u7ecf\u8425\u5408\u7ea6\uff0c\u94f6\u884c\u5c31\u4f1a\u77e5\u9053\u4f60\u6709\u8fd9\u4e2a\u751f\u610f\u5728\u8eab\u4e0a... \u4f60\u7684\u8d22\u52a1\u72b6\u51b5\u9700\u8981\u627e\u4eba\u633d\u6551\u4f60\u7684\u65f6\u5019\u5462\uff0c\u5c31\u53d8\u5f97\u4e86\u5145\u6ee1\u5e0c\u671b\u4e86\u3002",
-            "type": "PRINCIPLE",
-            "reasoning": "This describes the economic principle of how a long-term government contract serves as a credit enhancement or 'collateral' to secure financing for a distressed firm."
-        },
-        {
-            "text": "Galen Centre\u8ba4\u4e3athis is poor business practice, deprives the Malaysian public healthcare system... maintains the existence of tender agents as middlemen, which unnecessarily increase the cost of medicines\u3002",
-            "type": "OPINION",
-            "reasoning": "This reflects the qualitative assessment and professional critique by a think-tank regarding market competition and healthcare policy."
-        },
-        {
-            "text": "\u53d1\u5c55\u5546KSK\u4e3b\u52a8terminate GDB as main contractor\u7684\u8fd9\u4e2a\u5408\u7ea6\u3002",
-            "type": "FACT",
-            "reasoning": "This is a reported legal and corporate action involving a contract termination between two identifiable entities."
-        },
-        {
-            "text": "\u5e94\u6536\u6b3e\u9879\u5df2\u7ecf\u5360\u4e86\u63a5\u8fd1\u4e00\u534a\uff0c\u5927\u698240%... \u5982\u679c\u4f60\u8fd9\u4e9b\u5e94\u6536\u6b3e\u9879\u91cc\u9762\u6709\u4efb\u4f55\u6536\u4e0d\u5230\u6b3e\u9879... \u4f1a\u9020\u6210\u4f60\u7684\u516c\u53f8\u7684\u6bcf\u80a1\u8d44\u4ea7\u5462\u4f1a\u6709\u7f29\u6c34\u7684\u53ef\u80fd\u6027\u7684\u3002",
-            "type": "PRINCIPLE",
-            "reasoning": "This is a fundamental financial analysis principle regarding the risk of asset impairment when trade receivables are highly concentrated."
-        },
-        {
-            "text": "\u5728\u6295\u8d44\u7684\u9886\u57df\u91cc\u9762\uff0c\u4e0d\u786e\u5b9a\u6027\u5c31\u4ee3\u8868\u98ce\u9669\u3002",
-            "type": "PRINCIPLE",
-            "reasoning": "This is a core axiom of financial theory defining the relationship between unknown outcomes and investment risk."
-        },
-        {
-            "text": "\u541b\u5b50\u4e0d\u7acb\u5371\u5899\u4e4b\u4e0b\uff1a\u5f53\u6211\u4eec\u770b\u5230\u6709\u4e9b\u516c\u53f8\u7684\u57fa\u672c\u9762\u51fa\u73b0\u4e86\u4e00\u4e9b\u53d8\u5316\uff0c\u6216\u8005\u53d1\u751f\u4e86\u4e00\u4e9b\u89c9\u5f97\u4e0d\u786e\u5b9a\u6027\u5f88\u9ad8\u7684\u4e8b\u60c5... \u6211\u4eec\u5c31\u53ef\u80fd\u53ef\u4ee5\u8003\u8651\u907f\u5f00\u3002",
-            "type": "PRINCIPLE",
-            "reasoning": "This is a defensive investment principle advising risk mitigation through the avoidance of assets with visible structural or legal vulnerabilities."
+            "asset_class": "General Equities",
+            "metrics_used": [
+                "Company's Financial Reports (Quarterly)",
+                "Progress of Projects",
+                "Payment Deadlines",
+                "Developer's Contract Termination"
+            ],
+            "metrics_ignored": [
+                "Initial project resumption announcements"
+            ],
+            "logic_rule": "IF a company's quarterly report indicates that full project resumption is contingent on receiving full payment by a specific deadline, and the developer subsequently terminates the contract, THEN this signifies a failure to meet critical conditions and a significant risk, warranting a re-evaluation or exit from the investment.",
+            "embedding_summary": "This investment rule emphasizes the importance of closely monitoring the progress and conditions of major projects. The investor pays close attention to the financial disclosures made by companies, especially regarding payment dependencies for project resumption. If conditions outlined in the reports are not met, such as a developer terminating a contract after a payment deadline has passed or is implied to have passed without settlement, the investor identifies this as a critical risk signal."
         }
     ]
 }

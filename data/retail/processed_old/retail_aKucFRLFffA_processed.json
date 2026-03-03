@@ -1,0 +1,144 @@
+{
+    "meta": {
+        "source": "retail_aKucFRLFffA.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1767377788.320771
+    },
+    "data": [
+        {
+            "text": "The Body Shop International\u662f\u53ef\u80fd\u4f1aterminate\u8ddf\u8fd9\u4e2aInNature\u516c\u53f8\u7684franchise agreement\u54e6",
+            "type": "FACT",
+            "reasoning": "States a potential business outcome - termination of a franchise agreement. It's presented as a possibility, making it a factual statement about a potential event."
+        },
+        {
+            "text": "\u6240\u4ee5\u52302023\u5e74The Body Shop\u518d\u88ab\u5356\u6389 and\u73b0\u57282024\u5e74\u82f1\u56fd\u7684Body Shop\u53c8\u518d\u88ab\u5356",
+            "type": "FACT",
+            "reasoning": "Reports historical and current events of company sales. These are verifiable occurrences."
+        },
+        {
+            "text": "\u8fd9\u4e2a\u79c1\u52df\u57fa\u91d1\u662f\u4e0d\u662f\u60f3\u5206\u62c6\u6765\u5356\u6389\u4ed6\u7684\u4e1a\u52a1\u5462",
+            "type": "OPINION",
+            "reasoning": "Poses a question speculating on the motives of a private equity firm. It's an interpretation of events, not a verifiable fact."
+        },
+        {
+            "text": "\u82f1\u56fd\u7684Body Shop\u5c5e\u4e8e\u5929\u7136\u7684\u8fd9\u4e2a\u5316\u5986\u54c1\u6216\u8005\u662f\u62a4\u80a4\u54c1\u7684\u8fd9\u4e2a\u54c1\u724c\u4ed6\u5728\u82f1\u56fd\u5ba3\u5e03bankruptcy\u8981\u5012\u95ed\u54e6",
+            "type": "FACT",
+            "reasoning": "States the bankruptcy of The Body Shop in the UK. This is a verifiable event."
+        },
+        {
+            "text": "\u9a6c\u6765\u897f\u4e9a\u6211\u4eec\u8fd9\u8fb9\u5462\u5c31\u6709\u4e00\u4e2a\u4e0a\u5e02\u516c\u53f8\u5462\u662f\u62e5\u6709\u9a6c\u6765\u897f\u4e9a\u8fd8\u6709Vietnam\u8d8a\u5357\u4ee5\u53caCambodia\u67ec\u57d4\u5be8\u7684\u7f8e\u4f53\u5c0f\u5e97The Body Shop\u7684\u7279\u8bb8\u7ecf\u8425\u6743\u4e86",
+            "type": "FACT",
+            "reasoning": "Describes the ownership structure of The Body Shop franchises in Southeast Asia. This is a verifiable business arrangement."
+        },
+        {
+            "text": "\u5f88\u591a\u6295\u8d44\u8005\u5c24\u5176\u662f\u4ece\u4ef7\u503c\u6295\u8d44\u7684\u89d2\u5ea6\u53bb\u601d\u8003\u7684\u670b\u53cb\u4eec\u5462\u5c31\u4f1a\u6765\u60f3\u8001\u5e08\u8fd9\u6837\u5b50\u7684\u8bdd\u662f\u4e0d\u662f\u4ed6\u4f1a\u8dcc\u5230\u8fc7\u4e86\u9f99\u4ee5\u53ca\u8dcc\u51fa\u4e86\u4ef7\u503c",
+            "type": "OPINION",
+            "reasoning": "Describes the thought process of value investors, which is a subjective interpretation of market conditions and stock valuation."
+        },
+        {
+            "text": "InNature assures its business as usual even as The Body Shop UK teeters towards bankruptcy",
+            "type": "FACT",
+            "reasoning": "Reports a statement made by InNature, a verifiable communication."
+        },
+        {
+            "text": "InNature\u7684\u80a1\u4ef72\u670814\u53f7\u80a1\u4ef7\u5f53\u65e5\u4e0b\u8dcc13.6%\u5f53\u65f6\u5019\u80a1\u4ef7\u7a81\u7136\u95f4\u8fd9\u6837\u5b50\u6389\u4e0b\u6765\u800c\u4e14\u662f\u653e\u91cf\u6210\u4ea4\u91cf\u8ddf\u7740\u653e\u5927\u6765\u4e0b\u8dcc\u4ee4\u5230\u5e02\u573a\u5462\u76f8\u5f53\u6050\u614c\u4e00\u4e0b\u5b50",
+            "type": "FACT",
+            "reasoning": "Reports specific stock market data and the resulting market reaction. These are quantifiable events."
+        },
+        {
+            "text": "\u80a1\u4ef7\u7a0d\u5fae\u7565\u6709\u56de\u5347\u7f62\u4e86\u5e76\u6ca1\u6709\u7279\u522b\u6301\u4e45\u5230\u6211\u4eec\u4eca\u5929\u5f55\u5236\u8fd9\u4e2a\u89c6\u9891\u76842\u670828\u53f7\u80a1\u4ef7\u53c8\u8dcc\u56de\u53bb2\u670814\u53f7\u7684\u6536\u5e02\u4ef7",
+            "type": "FACT",
+            "reasoning": "Reports stock price movements over time, verifiable data."
+        },
+        {
+            "text": "\u8f9f\u8c23\u5e26\u6765\u7684\u80a1\u4ef7\u7565\u4e3a\u56de\u5347\u7684\u6548\u679c\u5462\u5df2\u7ecf\u597d\u50cf\u6ca1\u6709\u4f5c\u7528\u4e86",
+            "type": "OPINION",
+            "reasoning": "Interprets the effectiveness of a public statement (the denial) on stock price. It's an assessment, not a hard fact."
+        },
+        {
+            "text": "MCO\u7684\u65f6\u5019\u5927\u5bb6\u90fd\u4e0d\u80fd\u591f\u53bb\u901b\u8857\u90fdlockdown\u5728\u5bb6\u4e86\u6240\u4ee5Shopping mall\u7684\u4eba\u6f6e\u5927\u5e45\u5ea6\u51cf\u5c11\u8fd9\u4e2a\u516c\u53f8\u7684\u751f\u610f\u4e00\u5b9a\u662f\u5927\u5e45\u5ea6\u53d7\u5230\u5f71\u54cd\u6240\u4ee5\u4ed6\u6beb\u65e0\u7591\u95ee\u7684\u4e00\u4e0a\u5e02\u5c31\u8dcc\u7834\u4e86IPO\u4ef7\u683c",
+            "type": "FACT",
+            "reasoning": "Describes the impact of lockdown measures on retail businesses, a verifiable cause-and-effect relationship."
+        },
+        {
+            "text": "The new owner\u8fd9\u4e2a\u662f\u53eb\u505aAurelius\u8fd9\u4e2a\u662f\u4e00\u4e2a\u79c1\u52df\u57fa\u91d1\u6765\u7684put 'for sales' sign over The Body Shop UK",
+            "type": "FACT",
+            "reasoning": "Reports a business decision by the new owner, Aurelius, to sell The Body Shop UK."
+        },
+        {
+            "text": "Body Shop\u7684\u8fd9\u4e2a\u521b\u529e\u4eba\u7684\u6545\u4e8b\u5176\u5b9e\u5f88\u591a\u670b\u53cb\u5728\u4e00\u4e9b\u5546\u4e1a\u7684\u6545\u4e8b\u91cc\u9762\u5546\u4e1a\u6742\u5fd7\u91cc\u9762\u53ef\u80fd\u4f1a\u542c\u8fc7\u6709\u6240\u542c\u95fb",
+            "type": "OPINION",
+            "reasoning": "A general statement about public knowledge, not a verifiable fact."
+        },
+        {
+            "text": "L'Or\u00e9al\u8d5a\u4e86\u94b1\u7136\u540e\u5168\u8eab\u800c\u9000",
+            "type": "OPINION",
+            "reasoning": "An interpretation of L'Or\u00e9al's actions and financial outcome, not a directly verifiable fact."
+        },
+        {
+            "text": "Body Shop\u6700\u8f89\u714c\u7684\u8fd9\u4e2a\u751f\u610f\u6269\u5f20\u7684\u5e74\u4ee3\u5df2\u7ecf\u8fc7\u53bb\u4e86",
+            "type": "OPINION",
+            "reasoning": "A judgment about the past performance of the business, subjective assessment."
+        },
+        {
+            "text": "\u82f1\u56fd\u7684\u7834\u4ea7\u867d\u7136\u8ddf\u9a6c\u6765\u897f\u4e9a\u6ca1\u6709\u76f4\u63a5\u5173\u7cfb",
+            "type": "FACT",
+            "reasoning": "States a lack of direct connection between events, a verifiable claim."
+        },
+        {
+            "text": "\u9a6c\u6765\u897f\u4e9a\u7684Body Shop\u7684\u751f\u610f\u4e5f\u4e0d\u89c1\u5f97\u5f88\u597d",
+            "type": "OPINION",
+            "reasoning": "An assessment of the Malaysian business performance, subjective."
+        },
+        {
+            "text": "InNature\u7684\u5b63\u5ea6\u4e1a\u7ee9\u6709\u6ca1\u6709\u6539\u5584\u6709\u6ca1\u6709\u597d\u8f6c",
+            "type": "OPINION",
+            "reasoning": "A question about future performance, seeking an assessment."
+        },
+        {
+            "text": "\u5982\u679c\u4f60\u7684\u76c8\u5229\u4e0d\u597d\u561b\u8fd9\u4e2a\u662f\u6211\u4eec\u8981\u53e6\u5916\u8003\u8651\u7684",
+            "type": "PRINCIPLE",
+            "reasoning": "States a general principle of financial analysis - profitability is important."
+        },
+        {
+            "text": "\u8d8a\u89c4\u8303\u7684\u80a1\u7968\u5e02\u573a\u5c31\u8d8a\u4f1a\u8981\u6c42\u91cc\u9762\u8fd9\u4e2a\u4ea4\u6613\u6240\u91cc\u9762\u7684\u4e0a\u5e02\u516c\u53f8\u5462\u5728\u8baf\u606f\u62ab\u9732\u4e0a\u9762\u4e86",
+            "type": "PRINCIPLE",
+            "reasoning": "States a general principle about stock market regulation and transparency."
+        },
+        {
+            "text": "\u6295\u8d44\u98ce\u9669",
+            "type": "PRINCIPLE",
+            "reasoning": "Highlights a fundamental concept in investing."
+        },
+        {
+            "text": "The Body Shop International\u662f\u53ef\u80fd\u4f1aterminate\u8ddf\u8fd9\u4e2aInNature\u516c\u53f8\u7684franchise agreement\u54e6",
+            "type": "FACT",
+            "reasoning": "States a potential business outcome - termination of a franchise agreement. It's presented as a possibility, making it a factual statement about a potential event."
+        },
+        {
+            "text": "We may not be able to renew or comply with the terms of our franchise agreements with The Body Shop International",
+            "type": "FACT",
+            "reasoning": "Direct quote from the prospectus, a documented risk factor."
+        },
+        {
+            "text": "The continuity of our franchise agreement is dependent on the continued involvement of our promoters Datin Mina and Dato Simon",
+            "type": "FACT",
+            "reasoning": "Direct quote from the prospectus, a documented risk factor."
+        },
+        {
+            "text": "The Body Shop\u7684\u54c1\u724c\u73b0\u5728\u5f97\u5230\u7684\u5e02\u573a\u7684\u4ef7\u503c\u4e0d\u50cf\u4ee5\u524d\u90a3\u4e48\u7684\u9ad8",
+            "type": "OPINION",
+            "reasoning": "An assessment of brand value, subjective."
+        },
+        {
+            "text": "\u80a1\u4ef7\u5f53\u65f6\u5019\u7684\u4e0b\u8dcc\u5462\u662f\u4e00\u70b9\u4e00\u573a\u865a\u60ca\u7684\u60c5\u51b5\u7684",
+            "type": "OPINION",
+            "reasoning": "An interpretation of the stock price drop, subjective."
+        },
+        {
+            "text": "\u5982\u679c\u4f60\u7684\u76c8\u5229\u4e0d\u597d\u561b\u8fd9\u4e2a\u662f\u6211\u4eec\u8981\u53e6\u5916\u8003\u8651\u7684",
+            "type": "PRINCIPLE",
+            "reasoning": "States a general principle of financial analysis - profitability is important."
+        }
+    ]
+}

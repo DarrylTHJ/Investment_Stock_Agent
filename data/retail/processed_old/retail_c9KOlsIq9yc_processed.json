@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "source": "retail_c9KOlsIq9yc.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1767499937.1607912
+    },
+    "data": [
+        {
+            "text": "\u623f\u5730\u4ea7\u677f\u57572023\u5e74\u51ed\u4ec0\u4e48\u8d85\u8d8a\u5927\u5e02",
+            "type": "OPINION",
+            "reasoning": "This is a question posing a speculative outlook on the real estate sector's performance, indicating an opinion or prediction."
+        },
+        {
+            "text": "\u5927\u9a6c\u623f\u5730\u4ea7\u5e02\u573a\u5df2\u7ecf\u4f4e\u8ff7\u4e86\u5f88\u591a\u5e74",
+            "type": "FACT",
+            "reasoning": "This is a statement of a historical economic condition, verifiable through market data."
+        },
+        {
+            "text": "\u52a0\u606f\u662f\u4f1a\u5f71\u54cd\u623f\u5730\u4ea7\u7684\u8d2d\u6027\u7684\u5417",
+            "type": "PRINCIPLE",
+            "reasoning": "This is a general economic principle relating interest rates to property demand."
+        },
+        {
+            "text": "\u8fc7\u53bb\u8fd9\u4e00\u5e74\u591a\u90fd\u662f\u5728\u52a0\u606f",
+            "type": "FACT",
+            "reasoning": "This is a statement about recent economic policy, verifiable through central bank announcements."
+        },
+        {
+            "text": "\u623f\u5730\u4ea7\u677f\u5757\u7684\u80a1\u7968\u5b9e\u5728under value\u592a\u4e45\u4e86",
+            "type": "OPINION",
+            "reasoning": "This is an assessment of stock valuation, a subjective judgment based on financial analysis."
+        },
+        {
+            "text": "\u9700\u6c42\u6709\u56de\u843d\u4e86\u90a3\u4e5f\u4e0d\u89c1\u5f97\u4e70\u6c14\u5f88\u65fa\u561b",
+            "type": "OPINION",
+            "reasoning": "This is an interpretation of market data, linking demand and sales activity."
+        },
+        {
+            "text": "\u79df\u623f\u7684\u9700\u6c42\u66b4\u589e",
+            "type": "FACT",
+            "reasoning": "This is a statement about a market trend, potentially supported by rental data."
+        },
+        {
+            "text": "\u6574\u4e2a\u623f\u5730\u4ea7\u5e02\u573a\u56e0\u4e3a\u4ed6\u7684\u5f00\u53d1\u5468\u671f\u975e\u5e38\u7684\u957f\uff0c\u53ef\u4ee5\u957f\u8fbe6\u52308\u5e74",
+            "type": "FACT",
+            "reasoning": "This is a statement about the typical timeframe for real estate development, based on industry knowledge."
+        },
+        {
+            "text": "Dato Eu\u5efa\u8bae\uff0c\u5982\u679c\u4f60\u8981\u5173\u6ce8\u623f\u5730\u4ea7\u7684\u5e02\u573a\u7684\u8bdd\uff0c\u4f60\u5728\u9a6c\u6765\u897f\u4e9a\u4ee510\u5e74\u4e00\u4e2adecade\u4f5c\u4e3a\u5355\u4f4d\u53bb\u89c2\u5bdf",
+            "type": "PRINCIPLE",
+            "reasoning": "This is a recommendation for a long-term perspective in real estate market analysis, based on the cyclical nature of the industry."
+        },
+        {
+            "text": "2010\u5e74\u52302015\u5e74\uff0c\u9a6c\u6765\u897f\u4e9a\u653f\u5e9c\u96c6\u4e2d\u51fa\u53f0\u4e86\u5f88\u591a\u6253\u538b\u623f\u5730\u4ea7\u7684\u63aa\u65bd",
+            "type": "FACT",
+            "reasoning": "This is a statement about government policy, verifiable through official records."
+        },
+        {
+            "text": "\u9a6c\u6765\u897f\u4e9a\u7684\u623f\u5730\u4ea7\u4e0a\u5e02\u4f01\u4e1a\u4ed6\u4eec\u7684\u8425\u4e1a\u989d\u89c1\u9876\u7684\u65f6\u95f4\u662f2017\u5e74\u8d22\u653f\u5e74\u5ea6",
+            "type": "FACT",
+            "reasoning": "This is a data-driven observation about the peak revenue of listed property companies."
+        },
+        {
+            "text": "2020\u52302021\u5e74\u53c8\u51fa\u73b0\u4e86\u8fd9\u4e2a\u7a7a\u7a97\u671f\u6ca1\u6709\u65b0\u589e\u7684\u8fd9\u4e2aproject",
+            "type": "FACT",
+            "reasoning": "This is a statement about a period of reduced development activity, potentially supported by project launch data."
+        }
+    ]
+}

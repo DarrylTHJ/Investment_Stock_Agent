@@ -1,0 +1,119 @@
+{
+    "meta": {
+        "source": "retail_aLTbqa-hnXA.txt",
+        "model": "gemma-3-12b-it",
+        "time": 1767502203.4437015
+    },
+    "data": [
+        {
+            "text": "\u4ed6\u6ca1\u6709\u7528special dividend \u90a3\u8fd9\u4e2a\u5c31\u8ba9\u6211\u4eec\u8fd9\u79cd\u6295\u8d44\u8005 \u5c31\u6709\u70b9\u60f3\u5165\u975e\u975e\u7684\u4e86",
+            "type": "OPINION",
+            "reasoning": "Expresses a personal feeling of disappointment regarding the lack of a special dividend."
+        },
+        {
+            "text": "\u4ee5\u6bcf\u4e00\u5e74\u7684\u6d3e\u606f\u90fd\u53d8\u6210\u4e24\u6b21",
+            "type": "FACT",
+            "reasoning": "States a potential future change in dividend frequency."
+        },
+        {
+            "text": "\u5982\u679c\u4ed6\u63a5\u4e0b\u67652025\u5e74 \u771f\u7684\u52302026\u5e74\u4e86 \u771f\u7684\u7ee7\u7eed\u4e24\u6b21\u6d3e\u606f \u800c\u4e4b\u540e\u7684\u90a3\u4e2ainterim dividend\u4e0d\u662f5\u5206\u94b1 \u800c\u662f6 \u751a\u81f37\u5206\u66f4\u9ad8\u7684\u8bdd",
+            "type": "PRINCIPLE",
+            "reasoning": "Outlines a scenario where increased interim dividends could occur, impacting investor perception."
+        },
+        {
+            "text": "KSL\u8fd1\u671f\u7684\u8fd9\u4e2a\u80a1\u4ef7\u7684\u5927\u9006\u8f6c",
+            "type": "FACT",
+            "reasoning": "Describes a recent significant change in KSL's stock price."
+        },
+        {
+            "text": "KSL\u7684\u5e02\u503c\u51e0\u4e4e\u662fPlenitude\u7684\u5e02\u503c\u76845\u500d",
+            "type": "FACT",
+            "reasoning": "Provides a direct comparison of the market capitalization of KSL and Plenitude."
+        },
+        {
+            "text": "Plenitude\u9e4f\u5c3c\u53d1\u5c55\u597d\u4e0d\u597d \u90a3\u6211\u4eec\u770b\u770b KSL\u7684\u80a1\u4ef7\u8fd1\u671f\u72c2\u98d9\u7684\u540c\u65f6\u5462 Plenitude 5075\u7684\u80a1\u4ef7\u5176\u5b9e\u4e5f\u8ddf\u4f4f\u6709\u53cd\u5e94\u7684",
+            "type": "FACT",
+            "reasoning": "Poses a question and then observes a correlation between KSL's stock performance and Plenitude's."
+        },
+        {
+            "text": "Plenitude\u5b83\u7684\u8fd9\u4e2a\u4e2d\u6587\u540d\u5b57\u53eb\u505a\u9e4f\u5c3c\u53d1\u5c55 \u5f88\u591a\u4eba\u5462 \u5c31\u4ee5\u4e3a \u5b83\u53ea\u662f\u4e00\u4e2a\u5355\u7eaf\u7684\u623f\u5730\u4ea7\u53d1\u5c55\u5546 \u4f46\u5176\u5b9e\u5b83\u7684\u623f\u5730\u4ea7\u4e1a\u52a1\u5462 \u4e5f\u6709\u5728\u5317\u9a6c\u5730\u533a\u7684 \u800c\u66f4\u52a0\u91cd\u8981\u7684\u5c31\u662f \u5176\u5b9e\u5b83\u5728\u8fc7\u53bb\u5341\u5e74\u5462 \u6709\u5f88\u523b\u610f\u7684\u53bb\u8c03\u6574\u6574\u4e2a\u516c\u53f8\u7684\u6218\u7565 \u591a\u5143\u5316\u5230\u9152\u5e97\u4e1a\u52a1",
+            "type": "FACT",
+            "reasoning": "Describes Plenitude's business model, highlighting its shift towards the hotel sector over the past decade."
+        },
+        {
+            "text": "\u9152\u5e97\u80a1\u800c\u4e0d\u662f\u623f\u5730\u4ea7\u80a1\u7968",
+            "type": "OPINION",
+            "reasoning": "Suggests a potential reclassification of Plenitude's stock."
+        },
+        {
+            "text": "\u5176\u4e2d\u4e00\u4e2a\u5c31\u662f\u4ece\u522b\u4eba\u770b\u4e0d\u5230\u4f60 \u53d8\u6210\u4eba\u5bb6\u770b\u5230\u4f60\u6216\u8005\u90fd\u770b\u5230\u4f60 \u5168\u573a\u90fd\u770b\u4f4f\u4f60\u4e86",
+            "type": "PRINCIPLE",
+            "reasoning": "Describes a factor contributing to a stock becoming popular: increased visibility."
+        },
+        {
+            "text": "\u4f60\u6709\u6ca1\u6709\u4ec0\u4e48\u6837\u7684\u57fa\u672c\u9762 \u80fd\u591f\u5438\u5f15\u5230\u5e02\u573a\u4e0a\u9762\u7684\u6295\u8d44\u8005 \u4ece\u770b\u4e0d\u5230\u4f60\u5230\u91cd\u65b0\u770b\u5230\u4f60 \u5176\u4e2d\u5173\u952e\u5c31\u662f\u6709\u6ca1\u6709\u6d3edividend \u6216\u8005\u589e\u52a0\u6d3e\u606f\u7684\u8fd9\u4e2a\u52a8\u4f5c",
+            "type": "PRINCIPLE",
+            "reasoning": "Highlights the importance of fundamentals, particularly dividends, in attracting investors."
+        },
+        {
+            "text": "KSL\u4ed6\u662f\u4ece\u4e4b\u524d\u7684\u975e\u5e38\u541d\u556c \u51e0\u4e4e\u4e0d\u6d3e\u80a1\u606f\u4e86 10\u5e74\u6ca1\u6709\u6d3e\u80a1\u606f \u52302025\u5e74 \u54ce \u7a81\u7136\u95f4\u4e00\u5ba3\u5e03\u5c31\u7ed9\u4e868\u5206\u94b1\u7684\u80a1\u606f",
+            "type": "FACT",
+            "reasoning": "Details KSL's change in dividend policy from a long period of no dividends to a recent announcement of an 8-cent dividend."
+        },
+        {
+            "text": "Plenitude\u4e5f\u5ba3\u5e03\u4e86\u6d3e\u80a1\u606f final dividend 2.5cent",
+            "type": "FACT",
+            "reasoning": "Reports Plenitude's announcement of a 2.5-cent final dividend."
+        },
+        {
+            "text": "\u6709\u4e9b\u516c\u53f8\u5462 \u662f\u4e00\u5e74\u6d3e\u4e24\u6b21 \u5728\u6240\u4ee5\u5e74\u4e2d\u7684\u65f6\u5019 \u5c31\u6765\u4e00\u4e2ainterim dividend \u4e2d\u671f\u80a1\u606f \u4e2d\u95f4\u7684\u4e2d\u518d\u8bb2\u4e00\u6b21 \u90a3\u4e48\u5e74\u5c3e\u7684\u65f6\u5019\u518d\u6765final dividend",
+            "type": "FACT",
+            "reasoning": "Explains the common practice of companies paying dividends twice a year \u2013 interim and final."
+        },
+        {
+            "text": "\u6709\u4e9b\u516c\u53f8\u751a\u81f3\u4e00\u5e74\u53ef\u4ee5\u7ed9\u4e94\u6b21\u80a1\u606f\u7684 \u54c7\u8fd8\u8fd8\u6709\u4ec0\u4e48 \u5c31\u662f\u4f60\u7ed9\u5230\u7b2c\u56db\u5b63\u5ea6\u7684final dividend \u518d\u8ffd\u52a0\u4e00\u4e2aspecial dividend\u7ed9\u4f60 \u54c7\u723d\u6b7b\u80a1\u4e1c\u4eec\u4e86",
+            "type": "FACT",
+            "reasoning": "Describes a less common practice of companies paying dividends five times a year, including a special dividend."
+        },
+        {
+            "text": "\u9a6c\u6765\u897f\u4e9a\u4e0a\u5e02\u516c\u53f8\u5728\u6d3e\u606f\u7684\u65b9\u9762\u5462 \u771f\u7684\u6bd4\u533a\u57df\u5e02\u573a \u90fd\u6765\u7684\u5927\u65b9",
+            "type": "OPINION",
+            "reasoning": "Expresses a positive view of Malaysian companies' dividend policies compared to regional markets."
+        },
+        {
+            "text": "Plenitude\u8ddf\u5176\u4ed6\u7684\u8fd9\u4e9b\u516c\u53f8\u6709\u6bd4\u8f83 \u4e0d\u4e00\u6837\u7684\u662f \u4ed6\u6ca1\u6709\u7528special dividend \u90a3\u8fd9\u4e2a\u5c31\u8ba9\u6211\u4eec\u8fd9\u79cd\u6295\u8d44\u8005 \u5c31\u6709\u70b9\u60f3\u5165\u975e\u975e\u7684\u4e86",
+            "type": "OPINION",
+            "reasoning": "Highlights Plenitude's unique approach of not using special dividends and expresses investor sentiment."
+        },
+        {
+            "text": "Plenitude\u4e5f\u505a\u4e86\u8fd9\u4e2a\u8ffd\u52a0\u6d3e\u606f\u7684\u52a8\u4f5c 3.5\u4ed9\u8ddf\u8fd9\u4e2a5\u4ed9\u4e00\u5171\u662f8.5\u4ed9 \u4f46\u662f\u4ed6\u7b2c\u4e8c\u4e2a5\u4ed9\u5462 \u4ed6\u662f\u76f4\u63a5\u544a\u8bc9\u4f60\u8fd9\u4e2a\u662finterim dividend \u4ed6\u6ca1\u6709\u7528special dividend",
+            "type": "FACT",
+            "reasoning": "Details Plenitude's additional dividend payout and clarifies that it was an interim dividend, not a special dividend."
+        },
+        {
+            "text": "\u516c\u53f8\u7684\u73b0\u91d1\u6bd4\u4e00\u5e74\u524d\u7684\u90a3\u4e2a\u6574 \u6574\u4f53\u7684\u73b0\u91d1\u50a8\u5907 \u6bd4\u4e00\u5e74\u524d\u591a\u4e868,000\u591a9,000\u4e07",
+            "type": "FACT",
+            "reasoning": "States a significant increase in Plenitude's cash reserves compared to the previous year."
+        },
+        {
+            "text": "\u516c\u53f8\u7684\u9152\u5e97\u4e1a\u52a1 \u7ec8\u4e8e\u626d\u4e8f\u4e3a\u76c8 \u8d5a\u4e86400\u4e07",
+            "type": "FACT",
+            "reasoning": "Reports that Plenitude's hotel business has turned profitable."
+        },
+        {
+            "text": "\u9152\u5e97\u4e1a\u52a1\u8ddf\u623f\u5730\u4ea7\u7684\u4e1a\u52a1\u7684\u8d21\u732e\u5462 \u56de\u5230\u4e86 38% \u5bf9 60%",
+            "type": "FACT",
+            "reasoning": "Indicates a shift in the contribution of hotel and property businesses to Plenitude's overall revenue."
+        },
+        {
+            "text": "\u9152\u5e97\u4e1a\u52a1\u662f40% \u9152\u5e97\u4e1a\u52a1\u662f\u53d8\u6210\u516c\u53f8\u7684\u73b0\u91d1\u5976\u725b",
+            "type": "OPINION",
+            "reasoning": "Describes the hotel business as a 'cash cow' for the company."
+        },
+        {
+            "text": "\u4ed6\u4f1a\u4e0d\u4f1a\u8fdf\u70b9\u88ab\u6295\u8d44\u8005 \u5728\u88ab\u9a6c\u80a1\u7684\u6295\u8d44\u8005\u8ba4\u4e3a \u5b83\u66f4\u52a0\u50cf\u4e00\u4e2a\u9152\u5e97\u6982\u5ff5\u80a1 \u9152\u5e97\u80a1\u800c\u4e0d\u662f\u623f\u5730\u4ea7\u80a1\u7968",
+            "type": "OPINION",
+            "reasoning": "Speculates on a potential future reclassification of Plenitude as a hotel stock."
+        }
+    ]
+}

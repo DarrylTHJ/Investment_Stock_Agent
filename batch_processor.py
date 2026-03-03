@@ -53,10 +53,28 @@ def process_file(filepath, category, model_name, output_dir):
 
     print(f"🔹 Processing [{category}] with 🤖 {model_name}...")
 
+    # prompt = f"""
+    # You are a Financial Analyst. Extract logical units from this {category} text.
+    # Output JSON list only.
+    # Schema: {{ "text": "quote", "type": "FACT/PRINCIPLE/OPINION", "reasoning": "string" }}
+    # TEXT: {raw_text[:30000]}
+    # """
+
     prompt = f"""
-    You are a Financial Analyst. Extract logical units from this {category} text.
-    Output JSON list only.
-    Schema: {{ "text": "quote", "type": "FACT/PRINCIPLE/OPINION", "reasoning": "string" }}
+    You are a Financial Logic Extractor. Read the following {category} text.
+    Do NOT extract specific stock prices, historical events, or temporary news. 
+    Instead, deduce the underlying investment rules, heuristics, and conditional logic (If/Then) the investor is using to make their decisions.
+
+    Output STRICTLY a JSON list of objects matching this schema:
+    [
+        {{
+            "asset_class": "What sector or type of stock does this rule apply to? (e.g., Banking, Tech, Dividend)",
+            "metrics_used": ["List of specific financial data points they care about, e.g., PE Ratio, Dividend Yield"],
+            "metrics_ignored": ["List of data points they explicitly ignore, e.g., daily charts"],
+            "logic_rule": "A clear IF [condition] THEN [action] statement summarizing their decision-making process.",
+            "embedding_summary": "A natural language paragraph summarizing this rule. (This will be embedded into the Vector DB)."
+        }}
+    ]
     TEXT: {raw_text[:30000]}
     """
 

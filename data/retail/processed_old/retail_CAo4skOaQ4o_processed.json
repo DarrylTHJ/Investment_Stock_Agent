@@ -1,0 +1,84 @@
+{
+    "meta": {
+        "source": "retail_CAo4skOaQ4o.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1767502161.3302457
+    },
+    "data": [
+        {
+            "text": "\u653f\u5e9c\u8fde\u7eed\u4e24\u5e74\u90fd\u6ca1\u6709\u4ec0\u4e48\u6837\u4e3b\u52a8\u82b1\u94b1\u7684\u52a8\u4f5c\uff0c\u5927\u5bb6\u5bc4\u4e88\u539a\u671b\u662f\u5728\u7b2c\u5341\u4e09\u5927\u9a6c\u8ba1\u5212\u5b9e\u65bd\u540e\uff0c2026\u5e74\u7b2c\u4e00\u4e2a\u8d22\u653f\u9884\u7b97\u6848\u3002",
+            "type": "FACT",
+            "reasoning": "This statement describes past government spending behavior and future expectations tied to a specific plan and budget cycle. It's a factual observation about fiscal policy."
+        },
+        {
+            "text": "2026\u5e74\u8d22\u653f\u9884\u7b97\u6848\uff0c\u8865\u8d34\u5f00\u9500\u9884\u8ba1\u964d\u4f4e\uff0cRON 95\u6c7d\u6cb9\u7684\u9488\u5bf9\u6027\u8865\u8d34\u6539\u9769\u5c06\u521d\u6b65\u5b8c\u6210\uff0c\u653f\u5e9c\u8d64\u5b57\u72b6\u51b5\u5c06\u6539\u5584\u3002",
+            "type": "FACT",
+            "reasoning": "This outlines specific anticipated outcomes of the 2026 budget, including reduced spending, completion of a subsidy reform, and improvement in the budget deficit. These are presented as expected results."
+        },
+        {
+            "text": "\u5916\u8d44\u8bc4\u7ea7\u673a\u6784\uff08\u60e0\u8a89Fitch\u3001\u6807\u51c6\u666e\u5c14Standard & Poor's\uff09\u4f1a\u4e50\u610f\u770b\u5230\u653f\u5e9c\u8d64\u5b57\u6539\u5584\u3002",
+            "type": "FACT",
+            "reasoning": "This is a statement about the likely reaction of specific external entities (rating agencies) to a particular economic outcome (deficit reduction). It's based on the known priorities of these agencies."
+        },
+        {
+            "text": "2024\u5e74\u9a6c\u6765\u897f\u4e9a\u653f\u5e9c\u7684deficit\u6c34\u5e73\u662f4.1%\uff0c2025\u5e74\u9884\u8ba1\u662f3.8%\u3002",
+            "type": "FACT",
+            "reasoning": "This presents specific numerical data regarding the Malaysian government's deficit levels for two years. It's a verifiable statistic."
+        },
+        {
+            "text": "2020\u5e74\u662fCovid-19\u7206\u53d1\u7684\u5e74\u4efd\uff0c\u5bfc\u81f4\u5404\u56fd\u653f\u5e9c\u589e\u52a0\u533b\u7597\u5f00\u9500\u548c\u6551\u5e02\u63aa\u65bd\uff0c\u6076\u5316\u4e86\u8d22\u653f\u8d64\u5b57\u3002",
+            "type": "FACT",
+            "reasoning": "This is a historical statement about the impact of the Covid-19 pandemic on government finances, a widely documented event."
+        },
+        {
+            "text": "\u8fc7\u53bb\u4e24\u5e74\uff0c\u9a6c\u6765\u897f\u4e9a\u7684\u8d64\u5b57\u6c34\u5e73\u660e\u663e\u964d\u4f4e\uff0c\u53cd\u6620\u653f\u5e9c\u91c7\u53d6\u4e86\u4f11\u517b\u751f\u606f\u7684financial discipline\u3002",
+            "type": "OPINION",
+            "reasoning": "While the reduction in deficit is a fact, the interpretation of this as a result of 'financial discipline' and '\u4f11\u517b\u751f\u606f' is an opinion or analysis of the government's approach."
+        },
+        {
+            "text": "\u7b2c\u5341\u4e09\u5927\u9a6c\u8ba1\u5212\u5c06\u63a8\u52a8\u57fa\u5efa\u5de5\u7a0b\uff0c2026\u5e74\u9884\u7b97\u6848\u5c06\u5f00\u59cb\u5206\u914d\u9884\u7b97\u3002",
+            "type": "FACT",
+            "reasoning": "This describes a planned allocation of resources based on a published plan. It's a statement about future government action."
+        },
+        {
+            "text": "\u5982\u679c\u53d1\u5c55\u5f00\u9500\u6bd4\u4f8b\u63d0\u9ad8\uff0c\u5efa\u7b51\u9886\u57df\u548c\u5efa\u7b51\u6750\u6599\u9886\u57df\u5c06\u76f4\u63a5\u53d7\u76ca\u3002",
+            "type": "OPINION",
+            "reasoning": "This is a prediction about the impact of increased development expenditure. It's a logical expectation, but not a guaranteed outcome."
+        },
+        {
+            "text": "\u5148\u5efa\u540e\u552e\u7684\u623f\u5730\u4ea7\u6539\u9769\u63aa\u65bd\u53ef\u80fd\u5bfc\u81f4\u8d44\u91d1\u96c4\u539a\u7684\u53d1\u5c55\u5546\u53d7\u76ca\uff0c\u6dd8\u6c70\u5b9e\u529b\u8f83\u5f31\u7684\u53d1\u5c55\u5546\u3002",
+            "type": "OPINION",
+            "reasoning": "This is an analysis of the potential consequences of a proposed policy change. It's a reasoned argument, but not a certainty."
+        },
+        {
+            "text": "\u7f6a\u6076\u7c7b\u516c\u53f8\uff08\u70df\u9152\u8d4c\uff09\u5728\u8d22\u653f\u9884\u7b97\u6848\u524d\u901a\u5e38\u6bd4\u8f83\u5bb3\u6015\u653f\u5e9c\u4f1a\u91c7\u53d6\u63aa\u65bd\u3002",
+            "type": "OPINION",
+            "reasoning": "This is a generalization about the behavior of certain companies based on past experience. It's a market perception, not a definitive fact."
+        },
+        {
+            "text": "\u65b0\u67d4\u5730\u94c1RTS\u9884\u8ba1\u57282026\u5e74\u5e74\u5c3e\u62162027\u5e74\u4e4b\u524d\u901a\u8f66\uff0c\u5c06\u4fc3\u8fdb\u65b0\u9a6c\u4e24\u5730\u6d88\u8d39\u8f6c\u79fb\u3002",
+            "type": "FACT",
+            "reasoning": "This states a planned completion date for a transportation project and predicts a likely economic consequence. The project timeline is a fact, the consumption shift is a reasonable expectation."
+        },
+        {
+            "text": "\u65b0\u5e01\u5f3a\u52bf\u5bfc\u81f4\u65b0\u5e01\u6301\u6709\u8005\u5728\u67d4\u4f5b\u6d88\u8d39\u66f4\u6709\u4f18\u52bf\uff0c\u53ef\u80fd\u5bfc\u81f4\u65b0\u52a0\u5761\u9910\u996e\u4e1a\u53d7\u5f71\u54cd\u3002",
+            "type": "OPINION",
+            "reasoning": "This is an analysis of the impact of currency exchange rates on consumer behavior and industry performance. It's a logical argument, but not a guaranteed outcome."
+        },
+        {
+            "text": "\u534e\u9633\u7684\u80a1\u4ef7\u4e0a\u6da8\u53cd\u6620\u4e86\u5e02\u573a\u5bf9\u516c\u53f8\u672a\u6765\u589e\u957f\u7684\u9884\u671f\uff0c\u53ef\u80fd\u5b58\u5728\u6ce1\u6cab\u5316\u98ce\u9669\u3002",
+            "type": "OPINION",
+            "reasoning": "This is an interpretation of stock price movements and a warning about potential overvaluation. It's a market analysis."
+        },
+        {
+            "text": "\u534a\u5bfc\u4f53\u884c\u4e1a\u590d\u82cf\u7684\u8ff9\u8c61\u5df2\u7ecf\u51fa\u73b0\uff0c2026\u5e74\u53ef\u80fd\u7ee7\u7eed\u590d\u82cf\uff0c\u8d22\u653f\u9884\u7b97\u6848\u53ef\u80fd\u4f1a\u63a8\u52a8\u534a\u5bfc\u4f53\u4ea7\u4e1a\u94fe\u5347\u7ea7\u3002",
+            "type": "OPINION",
+            "reasoning": "This is a prediction about the future of the semiconductor industry based on current trends and potential government support. It's a market forecast."
+        },
+        {
+            "text": "\u9a6c\u6765\u897f\u4e9a\u653f\u5e9c\u53ef\u80fd\u4f1a\u5bf9\u533b\u7597\u4fdd\u9669\u5236\u5ea6\u8fdb\u884c\u6539\u9769\uff0c\u53ef\u80fd\u5f71\u54cd\u79c1\u4eba\u533b\u9662\u7684\u5229\u6da6\u548c\u4fdd\u9669\u516c\u53f8\u7684\u4e1a\u52a1\u3002",
+            "type": "OPINION",
+            "reasoning": "This is speculation about potential government policy changes and their likely consequences. It's a reasoned hypothesis."
+        }
+    ]
+}

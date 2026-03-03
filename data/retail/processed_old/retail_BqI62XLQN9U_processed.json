@@ -1,0 +1,104 @@
+{
+    "meta": {
+        "source": "retail_BqI62XLQN9U.txt",
+        "model": "gemma-3-12b-it",
+        "time": 1767500257.1224937
+    },
+    "data": [
+        {
+            "text": "\u5f00\u658b\u8282\u5feb\u4e50\u5e0c\u671b\u5927\u5bb6enjoy\u4e86\u521a\u521a\u7684\u8fd9\u4e2a\u957f\u5468\u672b\u7684\u5047\u671f",
+            "type": "PRINCIPLE",
+            "reasoning": "A greeting and well wishes related to a cultural holiday."
+        },
+        {
+            "text": "Supermax\u8eab\u4e0a\u53d1\u751f\u4e86\u4e00\u4e2a\u516b\u5366\u65b0\u95fb\u54e6\u6700\u65b0Supermax \u53d1\u751f\u7684\u8463\u4e8b\u5c40\u7684\u7eb7\u4e89",
+            "type": "FACT",
+            "reasoning": "Reports a news event regarding a dispute within Supermax's board of directors."
+        },
+        {
+            "text": "\u9020\u6210\u6574\u95f4\u516c\u53f8\u5462\u80a1\u4ef7\u5927\u8dcc\u554a\u73b0\u5728\u751f\u610f\u90fd\u4e0d\u77e5\u9053\u53d7\u4e0d\u53d7\u5f71\u54cd\u7684\u90a3\u79cd\u60c5\u51b5",
+            "type": "FACT",
+            "reasoning": "Describes the consequences of the dispute: a stock price drop and uncertainty about the business."
+        },
+        {
+            "text": "\u5df2\u7ecf\u9020\u6210\u4e86\u516c\u53f8\u7684\u5e02\u503c\u84b8\u53d1\u4e862\u4ebf\u591a\u9a6c\u5e01\u554a",
+            "type": "FACT",
+            "reasoning": "Quantifies the financial impact of the event: a loss of over 200 million Malaysian Ringgit in market value."
+        },
+        {
+            "text": "\u7275\u6d89\u5230\u5973\u6027\u8463\u4e8b\u5c40\u6210\u5458\u5728\u91cc\u9762",
+            "type": "FACT",
+            "reasoning": "Highlights a specific detail of the dispute: the involvement of female board members."
+        },
+        {
+            "text": "\u4ed6\u7684\u5973\u513f\u5728\u4ed6\u7684\u8f9e\u804c\u4fe1\u91cc\u9762\u4ed6\u60e9\u8f9e\u4e86\u79bb\u5f00\u4e86Supermax\u7684\u8463\u4e8b\u5c40\u4f46\u662f\u5374\u653e\u4e86\u4e00\u4e9b\u7bad\u51fa\u6765\u5c04\u4ed6\u4eec\u8fd9\u4e9b\u8463\u4e8b\u5c40\u7684\u6210\u5458\u54e6",
+            "type": "FACT",
+            "reasoning": "Details the daughter's resignation and her public criticism of the board members."
+        },
+        {
+            "text": "\u9020\u6210\u4e86\u8206\u8bba\u538b\u529b\u554a\u662f\u975e\u540c\u4e00\u822c\u7684",
+            "type": "OPINION",
+            "reasoning": "Expresses an opinion about the severity of the public pressure resulting from the situation."
+        },
+        {
+            "text": "Supermax\u7684\u80a1\u4ef7\u7684\u4f24\u5bb3\u554a\u5176\u5b9e\u662f\u56e0\u4e3a\u8fd9\u4ef6\u4e8b\u60c5\u6df1\u8fdc\u7684\u5f71\u54cd\u5230Supermax \u7684 corporate governance\u4ee4\u5230\u6295\u8d44\u8005\u5bf9\u4ed6\u7684\u4f01\u4e1a\u7ba1\u5236\u5bf9\u8fd9\u4e2a\u516c\u53f8\u7684\u4fe1\u5fc3\u554a\u53ef\u80fd\u957f\u8fdc\u7684\u53d7\u5230\u5f71\u54cd",
+            "type": "FACT",
+            "reasoning": "Explains the long-term impact on the company's corporate governance and investor confidence."
+        },
+        {
+            "text": "\u6700\u8fd1\u8fd9\u51e0\u5e74\u5927\u5bb6\u90fd\u6709\u542c\u5230ESG\u8fd9\u4e2a\u5b57\u773c\u561b\u5bf9\u4e0d\u5bf9Environment, Social & Governance",
+            "type": "FACT",
+            "reasoning": "Introduces the concept of ESG (Environmental, Social, and Governance) and its increasing importance."
+        },
+        {
+            "text": "\u5f88\u591a\u516c\u53f8\u4e3a\u4e86\u62c9\u9ad8\u81ea\u5df1\u7684\u8fd9\u4e2aESG\u7684\u5206\u6570\u554a\u90fd\u5f00\u59cb\u6d41\u884c\u5728\u8463\u4e8b\u5c40\u91cc\u9762\u4e00\u5b9a\u8981\u6709\u5973\u6027\u7684\u8463\u4e8b\u5c40\u6210\u5458\u751a\u81f3\u53ef\u80fd\u8fd8\u4e0d\u6b62\u4e00\u4e2a",
+            "type": "FACT",
+            "reasoning": "Describes the trend of companies including female board members to improve their ESG scores."
+        },
+        {
+            "text": "\u4f1a\u7ed9\u6295\u8d44\u8005\u7ed9\u5e02\u573a\u7684\u4eba\u611f\u89c9Supermax\u7684\u516c\u53f8\u7684\u8463\u4e8b\u5c40\u91cc\u9762\u6709\u6b3a\u8d1f\u5973\u6027\u7684\u5acc\u7591",
+            "type": "OPINION",
+            "reasoning": "Expresses an opinion about the potential perception of the company as having a bias against women."
+        },
+        {
+            "text": "Stanley Thai\u7684\u5973\u513fCecile Thai\u57282018\u5e741\u67082\u53f7 \u53d7\u4efb\u6210\u4e3a\u6267\u884c\u8463\u4e8b\u4e5f\u5c31\u662f\u8bf4\u4ed6\u66fe\u7ecf\u62c5\u4efb\u8fc7Supermax\u7684Executive Director\u662f\u7275\u6d89\u5230\u516c\u53f8\u7684\u8425\u8fd0\u7684\u5594\u6709\u91cd\u8981\u7684\u51b3\u5b9a\u6743\u7684\u90a3\u4e2a\u65f6\u5019",
+            "type": "FACT",
+            "reasoning": "Provides background information on Cecile Thai's previous role and responsibilities within the company."
+        },
+        {
+            "text": "2018\u5e74\u5462\u5c31\u662f\u521b\u529e\u4ebaStanley Thai\u88ab\u5224\u5185\u7ebf\u4ea4\u6613\u7f6a\u540d\u6210\u7acb\u5165\u72f1\u4e86\u7136\u540e\u5c31\u9700\u8981\u4ed6\u7684\u5973\u513f\u4ece\u7f8e\u56fd\u56de\u6765\u5bf9\u5417\u6267\u638c\u516c\u53f8\u7684\u63a7\u5236\u6743",
+            "type": "FACT",
+            "reasoning": "Describes a significant event in the company's history: Stanley Thai's imprisonment for insider trading and his daughter's subsequent assumption of control."
+        },
+        {
+            "text": "\u5f53\u5e742018\u5e74\u6211\u4eec\u9a6c\u6765\u897f\u4e9a\u7b2c\u4e00\u6b21\u6539\u671d\u6362\u4ee3\u4e4b\u540e\u90a3Supermax\u7684\u8001\u677f\u5c31\u88ab\u5ba3\u5224\u65e0\u7f6a",
+            "type": "FACT",
+            "reasoning": "Points out a coincidental timing between a political event and Stanley Thai's acquittal."
+        },
+        {
+            "text": "Cecile Thai\u5c31\u8bb2\u4ed6\u7684\u7238\u7238\u5e0c\u671b\u4ed6\u79bb\u5f00\u8463\u4e8b\u5c40Supermax\u8463\u4e8b\u5c40\u554a\u56e0\u4e3a\u4ed6\u53cd\u5bf9Dato Seri Stanley Thai\u5462\u53bb\u8d2d\u4e70\u4e00\u67b6\u79c1\u4eba\u98de\u673a",
+            "type": "FACT",
+            "reasoning": "Reports Cecile Thai's reason for leaving the board: disagreement with her father's plan to purchase a private jet."
+        },
+        {
+            "text": "\u8fd9\u67b6\u79c1\u4eba\u98de\u673a\u7684\u9020\u4ef7\u5462\u662f\u9ad8\u8fbe RM210 million",
+            "type": "FACT",
+            "reasoning": "States the cost of the private jet in question."
+        },
+        {
+            "text": "\u516c\u53f8\u6237\u5934\u53ea\u80fd\u591f\u7531Stanley Thai\u4e00\u4e2a\u4eba\u800c\u4e14\u53ea\u6709\u4e00\u4e2a\u4eba\u6765\u51b3\u5b9a\u8fd9cheque\u8fc7\u4e0d\u8fc7\u554a\u4e4b\u7c7b\u8fd9\u6837\u5b50\u7684\u94b1\u80fd\u4e0d\u80fd\u591f\u51fa\u53bb\u554a",
+            "type": "FACT",
+            "reasoning": "Describes a concern about the concentration of financial control in Stanley Thai's hands."
+        },
+        {
+            "text": "Supermax\u4ece2020\u5e74\u7684\u6700\u9ad8\u5cf0\u554a\u8fd9\u4e2a\u662fafter\u5b83\u7684bonus issue\u7684adjustment 10\u5757\u94b1\u6211\u8bb0\u5f97\u5982\u679cbefore\u5b83\u7684bonusbefore\u5b83\u7684share split\u7684\u8bdd\u662f30\u5757\u9a6c\u5e01\u7684\u6574",
+            "type": "FACT",
+            "reasoning": "Provides historical stock price information and adjustments."
+        },
+        {
+            "text": "\u56db\u5927\u5929\u738b\u91cc\u9762\u4e4b\u524dSupermax\u662f\u4ece\u6700\u540e\u4e00\u540d\u5347\u4e0a\u6765\u66fe\u7ecf\u8d85\u8d8a\u8fc7Kossan\u4f46\u662f\u8fd9\u4ef6\u4e8b\u60c5\u53d1\u751f\u4e86\u8fc7\u540e\u4f1a\u4e0d\u4f1aSupermax\u91cd\u65b0\u88abKossan\u8d85\u8d8a\u5462",
+            "type": "OPINION",
+            "reasoning": "Speculates about the potential future ranking of Supermax compared to Kossan."
+        }
+    ]
+}

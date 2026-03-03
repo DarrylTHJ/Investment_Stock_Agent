@@ -31,46 +31,57 @@ def ingest_single_file(file_path, source_type):
     metadatas = []
     ids = []
     
-    items = json_content.get("data", [])
-    if not isinstance(items, list):
-        print(f"⚠️ Warning: 'data' is not a list in {file_path}")
+    # In the new schema, the JSON is a direct list of rule objects
+    items = json_content if isinstance(json_content, list) else []
+    
+    if not items:
+        print(f"⚠️ Warning: No rule objects found in {file_path}")
         return
 
     filename = os.path.basename(file_path)
 
     for item in items:
-        text_content = item.get("text", "")
-        category_type = item.get("type", "UNKNOWN")
-
-        if not text_content or len(text_content) < 5:
+        # We embed the natural language summary
+        text_content = item.get("embedding_summary", "")
+        
+        if not text_content:
             continue
+
+        # We store the strict logic elements as metadata
+        # Chroma requires metadata values to be strings, ints, or floats (no lists)
+        metrics_used_str = ", ".join(item.get("metrics_used", []))
+        metrics_ignored_str = ", ".join(item.get("metrics_ignored", []))
 
         documents.append(text_content)
         metadatas.append({
             "source_type": source_type,
             "filename": filename,
-            "category": category_type,
-            "origin_source": filename.replace(".json", "")
+            "asset_class": item.get("asset_class", "UNKNOWN"),
+            "logic_rule": item.get("logic_rule", "UNKNOWN"),
+            "metrics_used": metrics_used_str,
+            "metrics_ignored": metrics_ignored_str
         })
         ids.append(f"{filename}-{uuid.uuid4()}")
 
     if documents:
         collection.upsert(documents=documents, metadatas=metadatas, ids=ids)
-        print(f"✅ Successfully added {len(documents)} records from {filename}")
+        print(f"✅ Successfully added {len(documents)} logic rules from {filename}")
     else:
-        print(f"⚠️ No valid data found in {filename}")
+        print(f"⚠️ No valid logic rules found in {filename}")
 
-# Keeping the original batch logic for manual runs
 def process_all_folders():
+    # UPDATED PATHS to match your actual directory structure
     DATA_DIRS = {
-        "retail": "./data_processed/retail",
-        "institutional": "./data_processed/institutional"
+        "retail": "./data/retail/processed",
+        "institutional": "./data/institutional/processed"
     }
     for source, directory in DATA_DIRS.items():
         if os.path.exists(directory):
             for f in os.listdir(directory):
                 if f.endswith(".json"):
                     ingest_single_file(os.path.join(directory, f), source)
+        else:
+            print(f"⚠️ Directory not found: {directory}")
 
 if __name__ == "__main__":
     process_all_folders()

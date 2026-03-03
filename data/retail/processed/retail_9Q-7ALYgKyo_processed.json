@@ -1,59 +1,67 @@
 {
     "meta": {
         "source": "retail_9Q-7ALYgKyo.txt",
-        "model": "gemini-3-flash-preview",
-        "time": 1767502125.9478405
+        "model": "gemma-3-27b-it",
+        "time": 1772506129.3979304
     },
     "data": [
         {
-            "text": "Plenitude\u7684market cap\u5462 \u73b0\u5728\u662f847\u4e2amillion",
-            "type": "FACT",
-            "reasoning": "Provides a specific, verifiable market capitalization figure for the company mentioned."
+            "asset_class": "Value/Distressed",
+            "metrics_used": [
+                "Revenue",
+                "Operating Cash Flow",
+                "Debt Levels (Gearing Ratio)",
+                "Cash in Bank",
+                "Receivables",
+                "Capex"
+            ],
+            "metrics_ignored": [
+                "Daily Charts",
+                "Short-term Market Sentiment"
+            ],
+            "logic_rule": "IF a company shows increasing revenue, improving operating cash flow, decreasing debt, and a willingness to reinvest in the business (or return capital to shareholders) THEN it is a potentially attractive investment, even if short-term profits are volatile.",
+            "embedding_summary": "This rule focuses on identifying companies with strong underlying cash flow generation. The investor prioritizes revenue and operating cash flow over net profit, believing these are more reliable indicators of future performance. A key signal is a reduction in capital expenditure (Capex) after a period of investment, suggesting future cash flow will be freed up. Decreasing debt levels and increasing cash reserves are also positive indicators. The investor is willing to look past short-term profit fluctuations if the fundamental cash flow picture is improving."
         },
         {
-            "text": "Plenitude\u6700\u65b0\u56db\u4e2a\u5b63\u5ea6...\u56db\u4e2a\u5b63\u5ea6\u52a0\u8d77\u6765\u7684\u5229\u6da6\u662f115\u4e2amillion",
-            "type": "FACT",
-            "reasoning": "Reports specific net profit figures derived from the company's financial statements."
+            "asset_class": "Turnaround/Restructuring",
+            "metrics_used": [
+                "Capex Reduction",
+                "Revenue Stability",
+                "Occupancy Rate (for hospitality)",
+                "Debt Reduction",
+                "Cash Flow from Operations"
+            ],
+            "metrics_ignored": [
+                "Immediate Dividend Increases"
+            ],
+            "logic_rule": "IF a company has completed a period of heavy investment (e.g., hotel acquisitions, renovations) and is now reducing Capex, while maintaining or increasing revenue and improving cash flow, THEN it is likely to experience a significant increase in free cash flow, potentially leading to future dividends or a spin-off/IPO.",
+            "embedding_summary": "This rule targets companies undergoing a turnaround. The investor looks for signs that a period of intense investment is nearing completion, leading to reduced capital expenditure. Maintaining revenue during this transition is crucial. The expectation is that this will unlock significant free cash flow, which could be distributed to shareholders or used to fund a more valuable corporate action like a spin-off or IPO. The investor is willing to wait several years for this value to be realized."
         },
         {
-            "text": "\u5728Plenitude\u8fd9\u4e2a\u6848\u4f8b\u91cc\u9762\u5462 \u516c\u53f8\u672a\u6765\u4e24\u5e74\u53ef\u80fd\u4f1a\u5927\u5e45\u964d\u4f4eCapex \u9020\u6210operating activities\u4ea7\u751f\u7684\u73b0\u91d1\u6d41 \u4f1a\u5927\u5e45\u5ea6\u63d0\u5347\u516c\u53f8\u7684\u73b0\u91d1\u50a8\u5907",
-            "type": "OPINION",
-            "reasoning": "This is a forward-looking projection based on the analyst's interpretation of company strategy and historical cycles."
+            "asset_class": "General Equity Analysis",
+            "metrics_used": [
+                "Cash Flow from Operating Activities",
+                "Revenue",
+                "Debt Levels"
+            ],
+            "metrics_ignored": [
+                "Short-term Market Fluctuations"
+            ],
+            "logic_rule": "IF a company demonstrates strong cash flow from operating activities, coupled with decreasing debt, THEN it indicates a healthy and improving financial situation, making it a potentially good long-term investment.",
+            "embedding_summary": "This rule emphasizes the importance of strong operating cash flow as a key indicator of a company's financial health. Decreasing debt levels further reinforce this positive signal. The investor believes that a company generating substantial cash flow from its core business is well-positioned for future growth and value creation, and is less susceptible to external economic shocks."
         },
         {
-            "text": "\u5f53\u6211\u4eectalk about merger acquisition\u6536\u8d2d\u8ddf\u5408\u5e76\u7684\u65f6\u5019\u5462 \u7528\u73b0\u91d1\u6765\u76f4\u63a5\u6536\u8d2d\u7684 \u5f80\u5f80\u662f\u597d\u6599\u597d\u8d27",
-            "type": "PRINCIPLE",
-            "reasoning": "Expresses a general investment heuristic or rule of thumb used to evaluate the quality of corporate acquisitions."
-        },
-        {
-            "text": "\u4e70\u80a1\u7968\u5c31\u662f\u4e70\u516c\u53f8\u7684\u672a\u6765\u73b0\u91d1\u6d41",
-            "type": "PRINCIPLE",
-            "reasoning": "A fundamental investment axiom attributed to Duan Yongping that guides the overall analysis approach."
-        },
-        {
-            "text": "\u516c\u53f8\u7684\u73b0\u91d1\u8d8a\u6765\u8d8a\u591a\u7684 \u4e4b\u524d\u5927\u6982\u516c\u53f8\u7684\u73b0\u91d1\u505c\u5728 1,000\u4e07\u5de6\u53f3... 2025\u5e746,000\u591a\u4e07",
-            "type": "FACT",
-            "reasoning": "Describes verifiable changes in the company's cash position over a specific timeframe based on audited figures."
-        },
-        {
-            "text": "\u516c\u53f8\u7684gearing\u6570\u5b57\u4e0a\u9762\u5462 \u770b\u5230\u4e4b\u524d2021\u5e742.07... 2025\u5e741.68 \u4ed6\u8fd8\u662f\u660e\u663e\u7684\u770b\u5230 \u516c\u53f8\u7684\u6574\u4f53\u8d1f\u503a\u6c34\u5e73\u5728\u4e0b\u964d",
-            "type": "FACT",
-            "reasoning": "Provides quantitative leverage ratios that demonstrate a documented downward trend in debt."
-        },
-        {
-            "text": "\u9a6c\u6765\u897f\u4e9a\u653f\u5e9c\u662f\u6709\u5bf9\u4e8e\u9e21\u86cb \u9e21\u8089\u8fdb\u884c\u8fd9\u4e2a\u8865\u8d34\u7684... \u9e21\u86cb\u7684\u8865\u8d34\u5462 \u5df2\u7ecf\u5728\u4eca\u5e742025\u5e74\u76845\u6708\u8ddf8\u6708\u5462 \u5206\u522b\u53d6\u6d88\u4e86",
-            "type": "FACT",
-            "reasoning": "References specific external government policy changes that directly affect the industry's operating environment."
-        },
-        {
-            "text": "\u5982\u679c\u4f60\u80fd\u591f\u5c06\u8fd9\u4e2a\u5c31\u4f60\u4e0b\u6e38\u7684 \u6bd4\u5982food processing \u6574\u4e2a\u4ea7\u4e1a\u94fe\u5efa\u7acb\u8d77\u6765\u7684\u8bdd\u5462 \u4f60\u5728\u8d44\u672c\u7684\u773c\u4e2d\u7684\u4ef7\u503c\u5c31\u4f1a\u63d0\u5347",
-            "type": "OPINION",
-            "reasoning": "An analytical judgment regarding how market valuation (multiples) responds to vertical integration strategies."
-        },
-        {
-            "text": "\u4ed6\u4eec\u5b8c\u5168\u4e70\u4e0b\u4e86\u81ea\u5df1\u7684\u98df\u54c1\u52a0\u5de5\u5de5\u5382 \u4e4b\u524d\u4ed6\u8ddf\u65e5\u672c\u7684NH Food \u662f\u6709\u4e00\u4e2ajoint venture",
-            "type": "FACT",
-            "reasoning": "Refers to a completed corporate structural change involving the buyout of a joint venture partner."
+            "asset_class": "Value Investing",
+            "metrics_used": [
+                "Operating Cash Flow",
+                "Revenue",
+                "Debt to Equity Ratio"
+            ],
+            "metrics_ignored": [
+                "Net Profit (in some cases)"
+            ],
+            "logic_rule": "IF a company's operating cash flow is strong and growing, and its debt-to-equity ratio is decreasing, THEN it is a potentially undervalued investment, even if current net profit is lower.",
+            "embedding_summary": "This rule highlights a preference for focusing on cash flow over net profit, particularly when assessing undervalued companies. A strong and improving cash flow, combined with a decreasing debt burden, suggests a solid underlying business that may be overlooked by the market. The investor is willing to look past temporary profit setbacks if the cash flow fundamentals are sound."
         }
     ]
 }

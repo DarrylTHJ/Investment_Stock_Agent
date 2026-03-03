@@ -1,0 +1,364 @@
+{
+    "meta": {
+        "source": "retail_36eCLdTG7kw.txt",
+        "model": "gemini-2.5-flash",
+        "time": 1767501497.1148324
+    },
+    "data": [
+        {
+            "text": "\u6211\u4eec\u5728\u7f51\u4e0a\u9762\u4e70\u4e1c\u897f \u9664\u4e86\u6211\u4eec\u53ef\u4ee5\u7528\u6211\u4eec\u7684e Wallet credit card\u4ee5\u5916 \u53ef\u4e0d\u53ef\u4ee5\u7528 Ringgit Stablecoin\u6765\u8fdb\u884c\u652f\u4ed8\u5462 \u751a\u81f3\u8de8\u56fd\u652f\u4ed8\u5462",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit describes current payment methods (e-wallet, credit card) and then poses a question about the potential future application of Ringgit Stablecoin for both domestic and cross-border payments, exploring a new functional principle."
+        },
+        {
+            "text": "\u8fd9\u4e2aRinggit Stablecoin \u672a\u6765\u672a\u6765 \u5728\u67d4\u4f5b\u91d1\u878d\u7279\u533a\u7684\u8fd9\u4e00\u4e2a\u67b6\u6784\u5e95\u4e0b \u4f1a\u53d1\u6325\u4ec0\u4e48\u6837\u7684\u4f5c\u7528 \u8fd9\u4e00\u4e2a\u662f\u975e\u5e38\u975e\u5e38\u6709\u610f\u601d\u7684",
+            "type": "OPINION",
+            "reasoning": "The speaker speculates on the future role of Ringgit Stablecoin within the Johor financial special zone and expresses a strong subjective assessment ('\u975e\u5e38\u975e\u5e38\u6709\u610f\u601d\u7684' - very interesting) regarding this potential."
+        },
+        {
+            "text": "\u8fd8\u6709\u672a\u6765\u6295\u7968\u662f\u4e0d\u662f\u8981\u7528\u8fd9\u79cd\u65b9\u5f0f \u90a3\u6211\u5c31\u4e0d\u77e5\u9053\u4e86",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses personal uncertainty ('\u6211\u5c31\u4e0d\u77e5\u9053\u4e86') about a future possibility (using this method for voting), making it a subjective view."
+        },
+        {
+            "text": "\u8fd9\u4e2a\u9a6c\u5e01Ringgit Stablecoin\u6a2a\u7a7a\u51fa\u4e16\u7684\u4e8b\u60c5\u5462 \u975e\u5e38\u91cd\u8981",
+            "type": "OPINION",
+            "reasoning": "The speaker states a subjective assessment ('\u975e\u5e38\u91cd\u8981' - very important) about the significance of Ringgit Stablecoin's emergence."
+        },
+        {
+            "text": "\u5b83\u8ddf\u80cc\u540e\u7684\u76f8\u5173\u8054\u7684\u516c\u53f8 Zetrix \u4e5f\u5c31\u662fMYEG\u7684\u5173\u7cfb\u5230\u5e95\u662f\u600e\u4e48\u6837\u7684",
+            "type": "FACT",
+            "reasoning": "This unit establishes the factual premise of a relationship between the stablecoin and Zetrix/MYEG, while posing a question about its specific nature. The existence of the relationship is a fact."
+        },
+        {
+            "text": "\u6211\u4e5f\u6ca1\u6709\u60f3\u5230 \u8d8a\u8bb2\u8d8a\u591a \u6240\u4ee5\u6211\u4eec\u9700\u8981\u6709\u4e24\u90e8\u5206\u7684\u8bb2\u89e3",
+            "type": "FACT",
+            "reasoning": "This is a factual statement about the structure and length of the presentation, based on the speaker's experience."
+        },
+        {
+            "text": "\u57fa\u672c\u9762\u4e1a\u7ee9\u589e\u957f\u4e863\u500d \u5bf9\u4e8e\u80a1\u4ef7\u5374\u5b8c\u5168\u6ca1\u6709\u523a\u6fc0\u4f5c\u7528 \u8fd9\u79cd\u6700\u6ca1\u6709\u53cd\u5e94 \u6700\u660e\u663e\u7684\u5176\u4e2d\u4e00\u4e2a \u80cc\u79bb",
+            "type": "FACT",
+            "reasoning": "This unit states a factual observation: MYEG's fundamental earnings grew threefold, but its stock price remained unaffected, which is described as a clear divergence."
+        },
+        {
+            "text": "\u5230\u5e95\u4f1a\u4e0d\u4f1a\u91cd\u65b0\u53d8\u56deConverge \u53d8\u56de\u540c\u6b65\u90a3",
+            "type": "OPINION",
+            "reasoning": "This is a speculative question about whether the observed divergence between earnings and stock price will converge, reflecting an uncertain future outlook."
+        },
+        {
+            "text": "\u73b0\u5728\u9a6c\u5e01\u7a33\u5b9a\u5e01\u5982\u679c\u7ee7\u7eed\u4f1a\u63a8\u52a8 \u800c\u4e14\u5e94\u7528\u8d8a\u6765\u8d8a\u5e7f\u7684\u8bdd MYEG\u6216\u8005\u8bf4Zetrix AI\u8fd9\u4e2a\u516c\u53f8 \u5b83\u8d5a\u4ec0\u4e48\u94b1\u5148",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit sets up a conditional scenario (stablecoin promotion and wider adoption) and then asks a question about the underlying business principle of how MYEG/Zetrix AI would generate revenue under these conditions."
+        },
+        {
+            "text": "\u6211\u4eec\u7684\u9a6c\u5e01\u7a33\u5b9a\u5e01\u5462 \u662f\u5efa\u7acb\u5728Zetrix\u7684\u533a\u5757\u94fe\u4e4b\u4e0a\u7684",
+            "type": "FACT",
+            "reasoning": "This is a direct factual statement about the technological foundation of the Malaysian Ringgit Stablecoin."
+        },
+        {
+            "text": "\u800cZetrix\u7684\u533a\u5757\u94fe\u5462 \u662f\u652f\u6301\u9a6c\u6765\u897f\u4e9a\u56fd\u5bb6\u533a\u5757\u94fe\u57fa\u7840\u8bbe\u65bd \u5c31\u662fshort form MBI",
+            "type": "FACT",
+            "reasoning": "This unit states a factual relationship: Zetrix's blockchain supports the Malaysian National Blockchain Infrastructure (MBI)."
+        },
+        {
+            "text": "so\u9a6c\u5e01\u7a33\u5b9a\u5e01 \u662f\u7528\u8fd9\u4e2aMBI\u7684\u6838\u5fc3 layer one\u7684\u533a\u5757\u94fe\u6280\u672f\u521b\u9020\u51fa\u6765\u7684",
+            "type": "FACT",
+            "reasoning": "This is a factual description of the technology used to create the Ringgit Stablecoin, specifying MBI's core layer one blockchain."
+        },
+        {
+            "text": "MBI\u8fd9\u4e2a \u9a6c\u6765\u897f\u4e9a\u56fd\u5bb6\u533a\u5757\u94fe\u57fa\u7840\u8bbe\u65bd\u5462 \u5b83\u662fZetrix\u8ddf\u9a6c\u6765\u897f\u4e9a\u7684\u79d1\u827a\u90e8 MIMOS\u4e00\u8d77\u5f00\u53d1\u7684\u54e6",
+            "type": "FACT",
+            "reasoning": "This is a factual statement identifying the joint developers of the Malaysian National Blockchain Infrastructure (MBI)."
+        },
+        {
+            "text": "\u6240\u4ee5 \u4ed6\u4e5f\u540c\u6837\u6709\u5927\u9a6c\u7684\u653f\u5e9c\u80cc\u666f\u5728\u91cc\u9762\u7684",
+            "type": "FACT",
+            "reasoning": "This is a logical inference based on the previous fact of MIMOS (a government agency) being a co-developer, indicating government backing."
+        },
+        {
+            "text": "\u653f\u5e9c\u7684\u80cc\u4e66\u5728\u8fd9\u4ef6\u4e8b\u60c5\u4e0a\u9762",
+            "type": "FACT",
+            "reasoning": "This is a direct statement confirming government endorsement for the matter discussed."
+        },
+        {
+            "text": "\u5982\u679c\u6bcf\u4e00\u4e2a\u9a6c\u5e01\u7a33\u5b9a\u5e01 Ringgit Stablecoin\u7684\u751f\u6210\u8ddf\u6ce8\u9500 \u90fd\u9700\u8981\u7528\u5230Zetrix\u7684\u533a\u5757\u94fe\u6280\u672f \u90a3\u80af\u5b9a Zetrix\u662f\u53ef\u4ee5\u4ece\u4e2d\u6536\u5230\u8fd9\u4e2a\u624b\u7eed\u8d39\u7528\u7684",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit explains a conditional business principle: if Zetrix's blockchain is essential for stablecoin operations, then Zetrix will generate revenue through transaction fees."
+        },
+        {
+            "text": "OK\u8fd9\u4e00\u70b9\u5462 \u76ee\u524d\u5f88\u96be\u505a\u5230",
+            "type": "FACT",
+            "reasoning": "This is a factual statement about the current difficulty in performing a specific action (estimation)."
+        },
+        {
+            "text": "\u662f\u56e0\u4e3a\u7b2c\u4e00\u90e8\u5206 part one\u6211\u4eec\u4e5f\u4ecb\u7ecd\u5230\u4e86 \u6211\u4eec\u7684\u76d1\u7ba1\u673a\u6784 \u73b0\u5728\u7ed9\u4e86\u4e00\u4e2aRegulatory Sandbox\u7684\u4e00\u4e2a\u6846\u67b6 \u53bb\u89c2\u5bdf\u7740\u8fd9\u4ef6\u4e8b\u60c5\u7684\u53d1\u751f \u4ee5\u53ca\u5b83\u7684\u53d8\u5316",
+            "type": "FACT",
+            "reasoning": "This unit provides factual reasoning for the difficulty, explaining that a regulatory sandbox framework is in place for observation and monitoring."
+        },
+        {
+            "text": "\u6240\u4ee5 \u5230\u5e95\u4f1aissue\u591a\u5c11\u7684\u8fd9\u4e2aRinggit Stablecoin \u4ee5\u53ca\u5b83\u7684transaction\u4f1a\u53bb\u5230\u591a\u5927\u7684\u91cf \u6211\u4eec\u73b0\u5728\u6ca1\u6709\u529e\u6cd5\u77e5\u9053 \u6240\u4ee5\u6ca1\u6709\u529e\u6cd5\u4f30\u7b97 MYEG\u7684\u8fd9\u4e2aZetrix\u5e73\u53f0 \u5728\u751f\u6210\u6216\u8005\u6ce8\u9500 \u4ea7\u751f\u7684\u8fd9\u4e2a\u76f4\u63a5\u7684\u624b\u7eed\u8d39\u7528 \u4f1a\u6709\u51e0\u591a",
+            "type": "FACT",
+            "reasoning": "This unit states the factual inability to estimate future transaction volumes and associated fees due to a lack of current data."
+        },
+        {
+            "text": "\u4f46\u662f\u8fd9\u4e2a\u8d39\u7528\u6536\u5165\u662f\u80af\u5b9a\u4f1a\u6709\u7684",
+            "type": "FACT",
+            "reasoning": "Despite the inability to estimate the exact amount, this statement asserts the factual certainty of revenue generation from fees."
+        },
+        {
+            "text": "\u800c\u7b2c\u4e8c\u65b9\u9762 \u6211\u89c9\u5f97\u8fd9\u4e2a\u4e1c\u897f \u624d\u53ef\u80fd\u662f\u5e02\u573a\u6700\u5173\u6ce8\u7684 \u5c31\u662f\u5b83\u53ef\u4ee5\u5728\u5176\u4ed6\u7684\u9886\u57df \u5f62\u6210\u670d\u52a1\u8ddf\u5e94\u7528 \u4ece\u800c\u5e26\u6765\u7684\u6536\u5165",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses a subjective belief ('\u6211\u89c9\u5f97') about what the market might focus on, namely Zetrix's potential revenue from services and applications in other areas."
+        },
+        {
+            "text": "MYEG\u5f53\u521d\u8fd8\u6ca1\u6709\u6539\u540d \u4ed6\u4eec\u7528\u8fd9\u4e2a\u533a\u5757\u94fe\u7684\u6280\u672f \u600e\u4e48\u6837\u53bb\u8fdb\u884c\u5546\u4e1a\u5316\u7684\u52a8\u4f5c\u5462 Commercialize\u8fd9\u4e2aBlockchain\u7684technology\u5462",
+            "type": "FACT",
+            "reasoning": "This unit sets the context by stating MYEG's past efforts to commercialize blockchain technology, posing a question about the method."
+        },
+        {
+            "text": "\u6bd4\u5982\u9a6c\u6765\u897f\u4e9a \u6211\u4eec\u8fd9\u8fb9\u8ddf\u4e2d\u56fd\u4e4b\u95f4\u7684\u8d38\u6613 \u56fd\u9645\u8d38\u6613 \u90a3\u9a6c\u6765\u897f\u4e9a\u7684\u69b4\u83b2 \u8981export\u5230\u8fd9\u4e2a\u4e2d\u56fd\u7684\u8bdd\u5462 \u5728\u4f60\u8fdb\u5165\u4e2d\u56fd\u6d77\u5173\u8981\u6e05\u5173\u7684\u65f6\u5019 \u5bf9\u65b9\u80af\u5b9a\u4f1a\u8981\u4f60\u51fa\u793a \u539f\u4ea7\u5730\u8bc1\u660e\u4e66\u7684\u561b Certificate of Origin",
+            "type": "FACT",
+            "reasoning": "This unit describes a factual scenario in international trade, specifically the requirement for a Certificate of Origin for Malaysian durian exports to China."
+        },
+        {
+            "text": "\u90a3\u539f\u4ea7\u5730\u8bc1\u660e\u4e66 \u662f\u7531\u9a6c\u6765\u897f\u4e9a\u7684\u8d38\u5de5\u90e8\u8fd9\u8fb9 issue\u51fa\u6765\u7684",
+            "type": "FACT",
+            "reasoning": "This is a factual statement identifying the issuing authority for the Certificate of Origin."
+        },
+        {
+            "text": "\u800cMYEG\u4e5f\u5c31\u662fZetrix\u5462 \u53ef\u4ee5\u5e2e\u52a9\u8fd9\u4e2a \u62e5\u6709\u8fd9\u5f20\u8bc1\u4e66\u7684\u51fa\u53e3\u5546\u5462 \u52a0\u5bc6\u5e76\u4e14\u5c06\u5b83\u8fdb\u884c\u8ba4\u8bc1 \u7136\u540e\u53d1\u8fc7\u53bb\u7ed9\u4e2d\u56fd\u7684\u6d77\u5173 \u4e2d\u56fd\u7684\u6d77\u5173\u5462 \u5c31\u4f1a\u8ba4\u53ef \u8fd9\u4e2a\u662f\u9a6c\u6765\u897f\u4e9a\u7684\u69b4\u83b2 \u597d\u7ed9\u4ed6\u6e05\u5173 \u7ed9\u4ed6\u8fdb\u5165\u4e2d\u56fd\u5927\u9646",
+            "type": "FACT",
+            "reasoning": "This unit describes the factual role of MYEG/Zetrix in digitally processing, encrypting, and certifying Certificates of Origin for customs clearance."
+        },
+        {
+            "text": "\u7528\u8fd9\u79cd\u65b9\u5f0f\u5462 \u6765\u52a0\u5feb\u6e05\u5173\u7684\u901f\u5ea6 \u4e0d\u8981\u90a3\u4e48\u591a\u7684paperwork",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit describes the functional principle and benefit of using digital certification: it accelerates customs clearance and reduces paperwork."
+        },
+        {
+            "text": "\u5f53\u7136\u4f60\u8981\u7528\u5168\u90e8\u8fd9\u79cd\u6570\u7801\u5316 \u7535\u5b50\u5316\u7684\u6e05\u5173\u65b9\u5f0f \u4f60\u662f\u9700\u8981\u4ed8\u8d39 \u53bb\u751f\u6210\u8fd9\u4e9bdigital certificate\u7684",
+            "type": "FACT",
+            "reasoning": "This is a factual statement about the cost associated with using digitized and electronic customs clearance methods."
+        },
+        {
+            "text": "\u800cdigital certificate\u4e5f\u8981\u52a0\u5bc6 \u786e\u4fdd\u6ca1\u6709\u88ab\u7be1\u6539\u8fc7 \u5b83\u624d\u662foriginal\u7684\u4e00\u4e2acertificate\u561b",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit explains the security principle behind digital certificates, which must be encrypted to prevent tampering and ensure authenticity."
+        },
+        {
+            "text": "\u90a3MYEG\u4e5f\u5c31\u662fZetrix AI \u5c31\u662f\u900f\u8fc7\u8fd9\u6837\u5b50\u7684 \u670d\u52a1\u6765\u521b\u9020\u6536\u5165\u7684",
+            "type": "FACT",
+            "reasoning": "This is a factual statement identifying MYEG (Zetrix AI)'s revenue generation method through providing digital certification services."
+        },
+        {
+            "text": "\u5982\u679c\u9a6c\u5e01\u539f\u672c\u6ca1\u6709\u56fd\u9645\u5316 \u73b0\u5728\u6709\u4e86Ringgit Stablecoin \u4f60\u53ef\u4ee5\u5b9e\u884c\u5728\u7f51\u4e0a\u9762\u7684 \u5f88\u4fbf\u6377\u7684\u652f\u4ed8\u65b9\u5f0f \u591a\u4e86\u4e00\u79cd\u652f\u4ed8\u65b9\u5f0f instead of\u4f60\u8981\u7528\u9a6c\u5e01\u6765\u6e05\u7b97 \u6216\u8005\u7528\u7f8e\u91d1 \u6216\u8005\u7528\u4eba\u6c11\u5e01\u6765\u6e05\u7b97\u7684\u8bdd \u5728\u56fd\u9645\u8d38\u6613\u4e0a\u9762 \u662f\u4e0d\u662f\u53ef\u4ee5\u591a\u4e86\u4e00\u79cd \u7528Ringgit Stablecoin\u6765\u505a\u7ed3\u7b97 \u6216\u8005\u652f\u4ed8\u65b9\u5f0f\u7684\u4e00\u79cd\u9009\u62e9\u5462",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit posits a hypothetical scenario where Ringgit Stablecoin, if adopted, could introduce a convenient online payment option and serve as an alternative settlement or payment method in international trade, illustrating a principle of functional expansion."
+        },
+        {
+            "text": "\u90a3\u5982\u679c\u8fd9\u6837\u5b50\u7684\u8bdd Ringgit Stablecoin\u5728\u672a\u6765\u7684\u4f7f\u7528\u573a\u666f\u5462 \u5c31\u4f1a\u8d8a\u6765\u8d8a\u591a",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit presents a logical consequence or prediction based on the premise of stablecoin adoption: its future use cases will increase."
+        },
+        {
+            "text": "\u800cRinggit Stablecoin\u7528\u7684\u4eba\u591a\u4e86\u4e4b\u540e \u90a3\u5b83\u53ef\u4ee5\u5ef6\u4f38\u5230\u5176\u4ed6\u7684 Web 3.0\u7684\u670d\u52a1\u4e0a\u9762 \u751a\u81f3\u8de8\u56fd\u652f\u4ed8\u5462",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit describes a principle of expansion: increased usage of Ringgit Stablecoin could lead to its integration into other Web 3.0 services and cross-border payments."
+        },
+        {
+            "text": "\u8fd9\u4e00\u70b9\u662f\u975e\u5e38\u975e\u5e38\u91cd\u8981 \u6216\u8005\u8bf4\u5177\u5907\u98a0\u8986\u6027\u7684",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses a strong subjective assessment ('\u975e\u5e38\u975e\u5e38\u91cd\u8981', '\u5177\u5907\u98a0\u8986\u6027\u7684' - very important, disruptive) about the significance of this development."
+        },
+        {
+            "text": "\u56e0\u4e3a\u6211\u4eec\u4f20\u7edf\u4e0a \u5c24\u5176\u662f\u4f60\u5bf9\u6d77\u5916\u6c47\u6b3e\u5462 \u6216\u8005\u4ece\u6d77\u5916\u6536\u6b3e\u5462 \u4f60\u662f\u9700\u8981\u7ecf\u8fc7\u76f8\u5f53\u957f\u65f6\u95f4 \u94f6\u884c\u7684\u5ba1\u6279\u7684",
+            "type": "FACT",
+            "reasoning": "This unit describes the factual, traditional cumbersome process of international remittances, highlighting the lengthy bank approval times."
+        },
+        {
+            "text": "\u90a3\u540c\u5b66\u4eec\u60f3\u8c61\u4e00\u4e0b \u5982\u679c\u6211\u4eec\u4ee5\u540e\u6c47\u6b3e\u53bb\u56fd\u5916 \u7ed9\u4f60\u7684\u5b69\u5b50\u8bfb\u4e66\u7684\u65f6\u5019 \u4f60\u53ef\u4ee5\u76f4\u63a5\u6c47Ringgit Stablecoin\u8fc7\u53bb \u5bf9\u65b9\u80fd\u591f\u63a5\u53d7\u5230\u8fd9\u4e2a\u865a\u62df\u8d27\u5e01\u7684\u8bdd \u6b38\u90a3\u4e48\u4f1a\u4e0d\u4f1a\u624b\u7eed\u8d39\u66f4\u4f4e \u4ee5\u53ca\u66f4\u52a0\u5feb\u6377\u5462",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit presents a hypothetical future scenario involving Ringgit Stablecoin for international remittances and explores the potential benefits (lower fees, faster transactions), outlining a principle of improved efficiency."
+        },
+        {
+            "text": "\u5f53\u7136\u6ca1\u6709\u8fd9\u4e48\u5feb\u4f1a\u53bb\u5230\u8fd9\u4e00\u6b65 \u56e0\u4e3a\u73b0\u5728\u8fd8under\u8fd9\u4e2aRegulatory Sandbox\u8fd8\u5728 Sandbox\u8fd8\u5728 \u5c5e\u4e8e\u6478\u7740\u77f3\u5934\u8fc7\u6cb3\u7684\u9636\u6bb5\u561b",
+            "type": "FACT",
+            "reasoning": "This unit states the factual current status: full implementation is not immediate because it's still under a 'regulatory sandbox' phase, implying a cautious and exploratory approach."
+        },
+        {
+            "text": "\u4f46\u662f\u4f46\u662f \u8fd9\u91cc\u9762\u6709\u4e00\u4e2a\u5f88\u91cd\u8981\u7684\u4e1c\u897f \u6bd4\u8f83\u654f\u611f \u6211\u4eec\u662f\u4e0d\u662f\u6709\u67d4\u4f5b\u91d1\u878d\u7279\u533a \u8fd9\u4e2aRinggit Stablecoin \u672a\u6765\u672a\u6765 \u5728\u67d4\u4f5b\u91d1\u878d\u7279\u533a\u7684\u8fd9\u4e00\u4e2a\u67b6\u6784\u5e95\u4e0b \u4f1a\u53d1\u6325\u4ec0\u4e48\u6837\u7684\u4f5c\u7528 \u8fd9\u4e00\u4e2a\u662f\u975e\u5e38\u975e\u5e38\u6709\u610f\u601d\u7684",
+            "type": "OPINION",
+            "reasoning": "The speaker highlights the sensitive and interesting nature ('\u975e\u5e38\u975e\u5e38\u6709\u610f\u601d\u7684') of Ringgit Stablecoin's potential future role within the Johor financial special zone, indicating a subjective assessment of its significance."
+        },
+        {
+            "text": "\u5f53\u7136 \u76ee\u524d\u6211\u4e0d\u65b9\u4fbf\u804a\u592a\u591a \u6211\u4e5f\u4f1a\u7ee7\u7eed\u89c2\u5bdf \u540c\u5b66\u4eecfollow\u9648\u5251\u8001\u5e08\u7684\u9891\u9053 \u6709\u8fd9\u65b9\u9762\u7684\u66f4\u65b0\u7684\u8bdd \u4e00\u5b9a\u4f1a\u7ed9\u5927\u5bb6\u518d\u7ee7\u7eed\u8ba8\u8bba",
+            "type": "FACT",
+            "reasoning": "This unit describes the speaker's current factual limitations, commitment to continued observation, and intention to provide future updates to the audience."
+        },
+        {
+            "text": "\u90a3\u4e48\u518d\u8bb2\u56de\u5176\u4ed6\u7684Web 3.0 \u53ef\u80fd\u4f1a\u9700\u8981\u7528\u5230\u865a\u62df\u8d27\u5e01\u505a\u652f\u4ed8\u7684",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit states a general principle or characteristic of Web 3.0: the potential use of virtual currencies for payments."
+        },
+        {
+            "text": "\u90a3\u5305\u62ec\u6211\u4eec\u9a6c\u6765\u897f\u4e9a\u7684\u670b\u53cb\u4eec\u5462 \u5df2\u7ecf\u8d8a\u6765\u8d8a\u591a\u4eba\u62e5\u6709\u4e86MyDigital ID",
+            "type": "FACT",
+            "reasoning": "This is a factual statement about the increasing adoption of MyDigital ID among Malaysians."
+        },
+        {
+            "text": "\u90a3MyDigital ID\u4e5f\u662fMIMOS\u8ddfZetrix \u8fd8\u6709\u521a\u521a\u8bb2\u5230\u7684\u90a3\u4e2aMBI \u9a6c\u6765\u897f\u4e9a\u56fd\u5bb6\u7684\u865a\u62df\u8d27\u5e01\u57fa\u5efa\u5e73\u53f0 \u4e00\u8d77\u53bb\u5f00\u53d1\u51fa\u6765\u7684",
+            "type": "FACT",
+            "reasoning": "This unit provides factual information about the developers of MyDigital ID, linking it to MIMOS, Zetrix, and MBI."
+        },
+        {
+            "text": "\u90a3\u4e48 \u6211\u4eec\u5728\u8d8a\u6765\u8d8a\u591a\u7684\u653f\u5e9c\u670d\u52a1\u7684\u573a\u666f \u6216\u8005\u8bf4\u662flog in\u53bb\u4e00\u4e9b\u653f\u5e9c\u7684\u7f51\u7ad9 \u751a\u81f3\u672a\u6765 log in\u53bb\u4f60\u7684\u53ef\u80fd log in\u53bb\u4f60\u7684\u53ef\u80fd \u4f60\u7684\u624b\u673a\u53f7\u7801\u7684account \u4f60\u7684\u624b\u673a\u53f7\u7801\u7684account \u4f60\u7684\u624b\u673a\u53f7\u7801\u7684account \u6216\u8005\u662f\u4f60\u7684Tenaga\u7535\u8d39\u7684account\u91cc\u9762 \u53ef\u80fd\u90fd\u4f1a\u6709\u673a\u4f1a\u7528 \u5230\u8fd9\u4e2aMyDigital ID",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit outlines a principle of expanding utility, predicting broader future use cases for MyDigital ID across various government services and personal accounts."
+        },
+        {
+            "text": "\u90a3\u4e4b\u524dJPJ\u9646\u8def\u4ea4\u901a\u5c40login \u6211\u4eec\u7684\u90a3\u4e2aMyJPJ\u7684APP \u5230\u5e95\u8981\u4e0d\u8981\u7528Digital ID \u5230\u5e95\u8981\u4e0d\u8981\u7528Digital ID \u6765\u9a8c\u8bc1\u4f60\u7684\u8eab\u4efd \u662f\u4e0d\u662f \u5df2\u7ecf\u7ed5\u8fc7\u4e00\u8f6e\u7684\u5927\u5bb6\u7684\u4e89\u8bae\u4e86 \u5df2\u7ecf\u7ed5\u8fc7\u4e00\u8f6e\u7684\u5927\u5bb6\u7684\u4e89\u8bae\u4e86 \u8fd8\u6709\u5370\u8c61\u5417",
+            "type": "FACT",
+            "reasoning": "This unit references a past factual public debate or controversy surrounding the mandatory use of Digital ID for identity verification in the MyJPJ app."
+        },
+        {
+            "text": "\u4f46\u662f\u8fd9\u4e2a\u4f3c\u4e4e\u662f\u672a\u6765\u7684\u8d8b\u52bf\u54e6 \u8d8a\u6765\u8d8a\u591a\u7684\u653f\u5e9c\u90e8\u95e8 \u8d8a\u6765\u8d8a\u591a\u7684\u653f\u5e9c\u90e8\u95e8 \u8981\u5411\u6c11\u4f17\u63d0\u4f9b\u670d\u52a1\u7684\u65f6\u5019 \u4ed6\u8981\u9a8c\u8bc1\u4f60\u7684\u5927\u9a6c \u56fd\u6c11\u7684\u8eab\u4efd\u7684\u65f6\u5019\u5462 MyDigital ID\u662f\u6700\u65b9\u4fbf\u6700\u4fbf\u6377 \u4e5f\u662f\u6700\u5b89\u5168\u7684\u54e6",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses a subjective belief ('\u4f3c\u4e4e\u662f\u672a\u6765\u7684\u8d8b\u52bf') and an opinion about the advantages of MyDigital ID ('\u6700\u65b9\u4fbf\u6700\u4fbf\u6377 \u4e5f\u662f\u6700\u5b89\u5168\u7684' - most convenient, efficient, and secure) for government services."
+        },
+        {
+            "text": "\u8fd8\u6709\u672a\u6765\u6295\u7968\u662f\u4e0d\u662f\u8981\u7528\u8fd9\u79cd\u65b9\u5f0f \u90a3\u6211\u5c31\u4e0d\u77e5\u9053\u4e86",
+            "type": "OPINION",
+            "reasoning": "Similar to a previous statement, the speaker expresses personal uncertainty ('\u6211\u5c31\u4e0d\u77e5\u9053\u4e86') about the future use of this method for voting, making it a subjective view."
+        },
+        {
+            "text": "\u90a3\u5982\u679cMyDigital ID\u7684\u5e94\u7528\u573a\u666f \u8d8a\u6765\u8d8a\u591a\u7684\u8bdd \u90a3\u5230\u4e86\u67d0\u4e9b\u653f\u5e9c\u90e8\u95e8 \u6211\u4eec\u9700\u8981\u652f\u4ed8\u7684\u65f6\u5019 \u90a3\u6211\u9664\u4e86\u53ef\u4ee5\u7528\u6211\u7684\u4ee4\u5409 \u90a3\u6211\u9664\u4e86\u53ef\u4ee5\u7528\u6211\u7684\u4ee4\u5409 \u6216\u8005\u662f\u7528\u6211\u7684\u8fd9\u4e2a\u4e5fe Wallet \u6211\u53ef\u4e0d\u53ef\u4ee5\u4e5f\u7528Ringgit Stablecoin \u53bb\u505a\u8fd9\u6837\u5b50\u7684\u652f\u4ed8\u65b9\u5f0f\u5462",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit posits a conditional scenario (increased MyDigital ID use) and then explores the principle of whether Ringgit Stablecoin could become an additional payment option for government services, alongside traditional methods."
+        },
+        {
+            "text": "\u90a3\u8fd9\u4e00\u4e2aStablecoin\u5728\u672a\u6765\u7684\u670d\u52a1\u8ddf\u5e94\u7528 \u80fd\u591f\u4e3aZetrix\u521b\u9020\u591a\u5c11\u7684\u6536\u5165\u5462 \u5b83\u662f\u5f88\u6709\u60f3\u8c61\u7a7a\u95f4\u7684",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses a subjective assessment ('\u5f88\u6709\u60f3\u8c61\u7a7a\u95f4\u7684' - much room for imagination) about the revenue potential for Zetrix from future stablecoin services and applications."
+        },
+        {
+            "text": "\u4f46\u5f53\u7136\u6211\u4eec\u4e0d\u80fd\u591f\u8fc7\u5ea6\u4e50\u89c2 \u6211\u4eec\u4e5f\u8981\u770b \u5b83\u5230\u5e95\u63a8\u52a8\u5230\u4ec0\u4e48\u6837\u7684\u9636\u6bb5 \u4ed6\u662f\u5168\u9762\u94fa\u5f00 \u8fd8\u662f\u4e00\u6b65\u4e00\u6b65\u6765",
+            "type": "OPINION",
+            "reasoning": "The speaker offers a cautionary opinion ('\u4e0d\u80fd\u591f\u8fc7\u5ea6\u4e50\u89c2' - cannot be overly optimistic) and highlights the principle that the outcome depends on the actual implementation pace (full rollout vs. phased approach)."
+        },
+        {
+            "text": "\u6211\u89c9\u5f97 \u91d1\u878d\u5e02\u573a\u4e5f\u5bf9\u8fd9\u4e2a\u4e8b\u60c5\u8d8a\u6765\u8d8a\u5173\u6ce8\u4e86",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses a subjective belief ('\u6211\u89c9\u5f97') that the financial market is paying increasing attention to this matter."
+        },
+        {
+            "text": "\u90a3\u4e48\u5982\u679c\u8bb2\u5230\u91d1\u878d\u5e02\u573a \u4e5f\u5c31\u662f\u80a1\u5e02 \u8fd8\u6709\u5176\u4ed6\u7684Investment Bank\u7684\u5206\u6790\u5e08 \u5bf9\u8fd9\u4ef6\u4e8b\u60c5\u8d8a\u6765\u8d8a\u5173\u6ce8\u7684\u8bdd \u4ed6\u4eec\u5c31\u4f1a\u5f00\u59cb\u8ba8\u8bba \u56de\u6211\u4eecpart one\u7684\u65f6\u5019 \u6216\u8005\u662f\u6211\u4eec\u8fd9\u4e2apart two\u4e00\u5f00\u59cb\u7684\u65f6\u5019 \u8bb2\u5230\u8fd9\u4e2a\u95ee\u9898 \u5c31\u662fMYEG\u7684\u4e1a\u7ee9 \u5bf9\u5b83\u7684\u80a1\u4ef7 \u662f\u57fa\u672c\u4e0a\u6ca1\u6709\u4efb\u4f55\u7684\u63a8\u52a8\u4f5c\u7528\u7684",
+            "type": "FACT",
+            "reasoning": "This unit connects increased financial market attention (including analysts) to a factual observation: MYEG's earnings have had no positive impact on its stock price."
+        },
+        {
+            "text": "\u5728\u8fc7\u53bb\u4e09\u5e74 MYEG\u7684\u76c8\u5229\u6301\u7eed\u5411\u4e0a\u5347 \u4ece7\u5343\u4e07\u53bb\u52302\u4ebf2\u5343\u4e07 \u6da8\u4e863\u500d \u53ef\u662f\u80a1\u4ef7\u4ecd\u7136\u539f\u5730\u8e0f\u6b65",
+            "type": "FACT",
+            "reasoning": "This unit provides specific factual financial data: MYEG's profit increased threefold (from 70 million to 220 million) over the past three years, yet its stock price remained stagnant."
+        },
+        {
+            "text": "\u8fd9\u4e00\u70b9 \u662f\u4e0d\u662f\u4f1a\u5f15\u8d77\u66f4\u591a\u7684\u6295\u8d44\u8005\u7684\u8ba8\u8bba",
+            "type": "OPINION",
+            "reasoning": "This is a rhetorical question speculating on whether the discrepancy between earnings and stock price will stimulate more investor discussion, reflecting an opinion about market reaction."
+        },
+        {
+            "text": "\u5176\u4e2dMYEG \u4e5f\u5c31\u662fZetrix AI \u5b83\u7684\u5229\u6da6\u6765\u6e90\u5462 \u662f\u6765\u81ea\u4e8e\u4ed6issue\u7684\u8fd9\u4e2aZetrix Coin",
+            "type": "FACT",
+            "reasoning": "This is a factual statement identifying one of MYEG (Zetrix AI)'s specific profit sources: the issuance of Zetrix Coin."
+        },
+        {
+            "text": "\u90a3\u8fd9\u4e2aZetrix Coin\u5462 \u662f\u6709\u5728 \u662f\u5728 \u56fd\u9645\u8fd9\u4e2a\u865a\u62df\u8d27\u5e01\u5e02\u573a\u4e0a\u9762 \u6709\u62a5\u4ef7\u7684\u54c8",
+            "type": "FACT",
+            "reasoning": "This is a factual statement confirming that Zetrix Coin is listed and traded on the international virtual currency market."
+        },
+        {
+            "text": "\u4e4b\u524d\u6700\u9ad8\u5462 \u53bb\u523020\u591a\u7f8e\u91d1\u54e6 \u73b0\u5728\u5462\u662f12.84\u7f8e\u91d1 \u4e00\u4e2aCoin",
+            "type": "FACT",
+            "reasoning": "This unit provides factual historical and current price data for Zetrix Coin."
+        },
+        {
+            "text": "\u8fd9\u6b21Ringgit Stablecoin\u7684\u53d1\u884c\u65b9 \u4e5f\u5c31\u662f\u6211\u4eec\u67d4\u4f5b\u6444\u653f\u738b\u7684\u516c\u53f8 Bullish Aim Sdn Bhd\u5462 \u4ed6\u4e5f\u51b3\u5b9a\u5c06Zetrix Coin \u653e\u8fdb\u53bb\u4ed6\u4eec\u8bbe\u7acb\u7684\u90a3\u4e2a\u5c0f\u91d1\u5e93 \u4e5f\u5c31\u662f\u90a3\u4e2a\u4fdd\u9669\u5e93\u91cc\u9762 \u4f5c\u4e3a\u62b5\u62bc\u54c1\u4e4b\u4e00",
+            "type": "FACT",
+            "reasoning": "This is a factual statement about a key decision: Bullish Aim Sdn Bhd, the issuer of Ringgit Stablecoin, will use Zetrix Coin as collateral in its vault."
+        },
+        {
+            "text": "so\u8fd9\u4e00\u70b9\u5462 \u4f1a\u4ee4\u5230\u5e02\u573a\u89c9\u5f97\u5582 \u5982\u679cMYEG\u4e4b\u524d\u662f\u9760issue Coin\u7684 \u5982\u679cMYEG\u4e4b\u524d\u662f\u9760issue Coin\u7684 \u8fd9\u4e2aCoin\u597d\u50cf\u6ca1\u6709\u4ec0\u4e48\u7528\u54e6 \u6ca1\u6709\u4ec0\u4e48\u4ef7\u503c\u7684\u54e6 \u6240\u4ee5\u5b83issue\u8fd9\u4e2aCoin \u521b\u9020\u51fa\u6765\u7684\u8fd9\u4e2a\u73b0\u91d1\u6d41\u5462 \u662f\u865a\u7684",
+            "type": "OPINION",
+            "reasoning": "This unit describes a past market perception or opinion that MYEG's revenue from issuing Zetrix Coin was 'fictitious' due to the perceived lack of underlying value or utility for the coin itself."
+        },
+        {
+            "text": "\u4f46\u662f\u73b0\u5728 \u5982\u679c \u5982\u679c \u8fd9\u4e2aDigital Ringgit\u7684\u53d1\u884c\u65b9 \u613f\u610f\u5c06\u8fd9\u4e2aZetrix Coin\u653e\u8fdb\u53bb \u4f5c\u4e3a\u62b5\u62bc\u54c1\u4e4b\u4e00 \u90a3\u4e48\u662f\u4e0d\u662f\u4e5f\u7b49\u540c \u4e8e\u7ed9\u4e86\u8fd9\u4e2aZetrix Coin \u8fd9\u4e2aMYEG\u53d1\u884c\u51fa\u6765\u7684\u8fd9\u4e2a\u6570\u7801\u8d27\u5e01 \u6709\u67d0\u79cd\u7a0b\u5ea6\u7684\u5e95\u5c42\u4ef7\u503c\u5728\u91cc\u91cc\u9762",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit posits a hypothetical principle: if Zetrix Coin is accepted as collateral by the digital Ringgit issuer, it might imbue MYEG's digital currency with a degree of underlying value."
+        },
+        {
+            "text": "\u90a3\u8fd9\u4e2a\u4e1c\u897f\u4f1a\u4e0d\u4f1a\u4ee4\u5230\u6295\u8d44\u8005\u89c9\u5f97 \u54ce MYEG\u5b83\u900f\u8fc7\u8fd9\u4e2aissue Zetrix Coin\u5f97\u5230\u7684\u5229\u6da6 \u4e0d\u662f\u4e4b\u524d\u7684\u8fd9\u4e48\u7684\u865a\u65e0\u7f25\u7f08\u5462",
+            "type": "OPINION",
+            "reasoning": "This is a speculative question about a potential shift in investor perception, asking if MYEG's profits from Zetrix Coin issuance will now be viewed as less 'fictitious'."
+        },
+        {
+            "text": "\u8fd9\u4e2a\u4e5f\u662f\u8981\u6709\u5f85\u89c2\u5bdf\u7684",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses a subjective view that the outcome or impact of this development is uncertain and requires further observation."
+        },
+        {
+            "text": "\u9648\u5251\u8001\u5e08\u4e0d\u6562\u6709\u4efb\u4f55\u7684\u4e70\u5356\u5efa\u8bae \u53ea\u662f\u6211\u5c06\u6211\u4eec\u5bf9\u8fd9\u4ef6\u4e8b\u60c5\u7684\u7406\u89e3 \u6211\u5c3d\u91cf\u7528Layman\u4e00\u70b9\u7684\u65b9\u5f0f\u544a\u8bc9\u5927\u5bb6 \u56e0\u4e3a\u6bd5\u7adf\u5f88\u591a\u4eba\u662f\u641e\u4e0d\u61c2 \u9a6c\u6765\u897f\u4e9a\u7684\u8fd9\u4e2aBlockchain \u5230\u5e95\u662f\u53d1\u5c55\u5230\u4ec0\u4e48\u9636\u6bb5 \u6216\u8005\u8bf4Zetrix\u7684\u8fd9\u4e2a\u5e73\u53f0 \u6216\u8005\u8bf4Zetrix\u7684\u8fd9\u4e2a\u5e73\u53f0 \u5230\u5e95\u662f\u8fd9\u4e9bCoin\u662f\u7528\u6765\u505a\u4ec0\u4e48\u7684 \u6211\u5c3d\u6211\u7684\u80fd\u529b\u8ddf\u5927\u5bb6\u53bb\u8bb2\u660e\u767d\u4ed6 \u8fd9\u4e2a\u662f \u6211\u4eec\u505a\u8d22\u7ecf\u8bb2\u89e3\u4eba\u7684\u4e00\u4e2a\u8d23\u4efb\u6765\u7684 \u4f46\u662f \u4f46\u662f\u5c31\u7edd\u5bf9\u4e0d\u80fd\u591f \u6709\u4efb\u4f55\u7684\u4e70\u5356\u5efa\u8bae\u6210\u5206\u5728\u91cc\u9762\u4e86 \u5426\u5219\u8bc1\u5238\u59d4\u5458\u4f1a \u6211\u4eec\u7684\u7ea2\u7ebf\u5c31\u8e29\u8fc7\u4e86",
+            "type": "FACT",
+            "reasoning": "This unit states the speaker's factual professional responsibility to explain complex topics clearly without offering investment advice, citing regulatory constraints."
+        },
+        {
+            "text": "\u5728Ringgit Stablecoin\u6a2a\u7a7a\u51fa\u4e16 \u8fd9\u4ef62025\u5e74 \u9a6c\u80a1\u91d1\u878d\u754c\u6700\u8f70\u52a8\u7684\u4e8b\u60c5\u91cc\u9762 \u6211\u4eec\u770b\u5230MYEG \u4e5f\u5c31\u662fZetrix AI\u8fd9\u4e2a\u516c\u53f8 \u5b83\u662f\u4f5c\u4e3a \u5728\u5e03\u5c40\u4e0a\u9762\u6700\u65e9\u5f62\u6210\u4e86\u5e03\u5c40 \u4e5f\u662f\u5728\u8fd9\u4e00\u8f6e\u7684\u8fd9\u4e2a \u4e5f\u662f\u5728\u8fd9\u4e00\u8f6e\u7684\u8fd9\u4e2a Stablecoin\u53d1\u884c\u91cc\u9762 \u4f5c\u4e3a\u4e00\u4e2a\u6218\u7565\u4f19\u4f34 \u8ddf\u76f4\u63a5\u53d7\u76ca\u8005\u7684\u65b9\u5f0f\u51fa\u73b0\u7684",
+            "type": "FACT",
+            "reasoning": "This unit states factual observations about MYEG (Zetrix AI)'s role in the Ringgit Stablecoin launch: it was an early mover in strategic planning, and acts as a strategic partner and direct beneficiary."
+        },
+        {
+            "text": "\u90a3\u4e48\u5982\u679c\u4f60\u8bf4 \u4f1a\u4e0d\u4f1a\u8ba9Zetrix\u5728\u672a\u6765 \u6709\u65b0\u7684\u76c8\u5229\u589e\u957f\u70b9 \u5c31\u662f\u9664\u4e86\u4ee5\u524d\u5b83 \u5c31\u662f\u9664\u4e86\u4ee5\u524d\u5b83 \u5b83\u7684\u5229\u6da6\u4e3b\u8981\u662f\u6765\u81ea\u4e8e\u653f\u5e9c\u670d\u52a1\u561b \u7535\u5b50\u653f\u5e9c\u670d\u52a1\u561b",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit sets up a question about a principle of future revenue growth for Zetrix, contrasting it with its past reliance on e-government services as its primary profit source."
+        },
+        {
+            "text": "\u73b0\u5728 \u5b83\u662f\u60f3\u5c06\u7535\u5b50\u653f\u5e9c\u670d\u52a1\u90fd\u9010\u6e10\u6dd8\u6c70\u6389 \u5b83\u662f\u60f3\u5c06\u7535\u5b50\u653f\u5e9c\u670d\u52a1\u90fd\u9010\u6e10\u6dd8\u6c70\u6389 \u6ce8\u91cd\u5728\u8fd9\u4e2a\u65b0\u7684\u533a\u5757\u94fe \u6ce8\u91cd\u5728\u8fd9\u4e2a\u65b0\u7684\u533a\u5757\u94fe \u8fd8\u6709\u865a\u62df\u8d27\u5e01\u7684\u8fd9\u4e2a\u5e73\u53f0\u6280\u672f\u4e0a\u9762\u7684",
+            "type": "FACT",
+            "reasoning": "This is a factual statement about MYEG's strategic shift: it plans to gradually phase out e-government services to focus on new blockchain and virtual currency platform technologies."
+        },
+        {
+            "text": "\u90a3\u6211\u4eec\u8d77\u7801\u53ef\u4ee5\u770b\u5230\u6709\u4e09\u4e2a\u65b9\u9762 \u5b83\u6709\u53ef\u80fd\u5728\u672a\u6765\u4ea7\u751f\u76c8\u5229",
+            "type": "FACT",
+            "reasoning": "This unit is a factual summary statement, introducing the three potential future revenue streams for MYEG/Zetrix."
+        },
+        {
+            "text": "\u7b2c\u4e00\u4e2a \u6211\u4eec\u521a\u521a\u8bb2\u5230\u7684\u8fd9\u4e2a\u624b\u7eed\u8d39\u7528 \u6bcf\u4e00\u6b21\u94f8\u9020 \u4e5f\u5c31\u662f\u751f\u6210\u8fd9\u4e2a \u8fd9\u4e2aRinggit Stablecoin \u8fd9\u4e2aRinggit Stablecoin \u90fd\u53ef\u80fd\u4f1a\u4ea7\u751f\u5230\u7684\u624b\u7eed\u8d39\u7528",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit re-states a previously discussed business principle: transaction fees from the creation and cancellation of Ringgit Stablecoin will be a source of revenue."
+        },
+        {
+            "text": "\u7b2c\u4e8c\u4ed6\u6709\u4e86\u8fd9\u4e2aRinggit Stablecoin\u4e4b\u540e \u7b2c\u4e8c\u4ed6\u6709\u4e86\u8fd9\u4e2aRinggit Stablecoin\u4e4b\u540e \u4f1a\u6709\u66f4\u591a\u7684\u670d\u52a1\u4f9b\u5e94\u5546 \u7528\u5230\u8fd9\u4e2aStablecoin\u6765\u4ea4\u6613\u7684\u65f6\u5019\u5462 \u4ed6\u4e5f\u4f1a\u6709\u66f4\u591a\u7684\u8fd9\u4e2a\u670d\u52a1\u65b9\u5f0f \u6216\u8005\u8bf4 offer\u670d\u52a1\u4e2d\u95f4\u6536\u53d6\u8d39\u7528\u7684\u8fd9\u79cd\u673a\u4f1a Web 3.0\u7684\u4e16\u754c\u91cc\u9762\u5462 \u5b83\u4e5f\u662f \u5b83\u4e5f\u662f \u73b0\u5728\u6709\u4e86\u8fdb\u4e00\u6b65\u7684\u51c6\u5907\u4e86",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit explains a principle of expanded revenue generation: increased adoption of Ringgit Stablecoin by service providers will create more opportunities for offering services and charging fees within the Web 3.0 ecosystem."
+        },
+        {
+            "text": "\u90a3\u7b2c\u4e09\u5462 \u5c31\u662f\u521a\u521a\u8bb2\u5230\u7684\u6700\u540e\u8bb2\u5230\u7684\u90a3\u4e2a \u5c31\u662f\u521a\u521a\u8bb2\u5230\u7684\u6700\u540e\u8bb2\u5230\u7684\u90a3\u4e2a Zetrix Coin\u5b83\u672c\u8eab\u7684\u4ef7\u503c \u539f\u672c\u5c31\u662f \u5927\u5bb6\u89c9\u5f97\u4f60\u662f\u4e00\u4e2a\u51ed\u7a7a\u521b\u9020\u51fa \u6765\u7684\u865a\u62df\u8d27\u5e01\u6ca1\u6709\u4ef7\u503c\u7684\u951a\u5b9a \u6765\u7684\u865a\u62df\u8d27\u5e01\u6ca1\u6709\u4ef7\u503c\u7684\u951a\u5b9a \u4f46\u662f\u73b0\u5728\u8fd9\u4e00\u6b21 Ringgit Stablecoin\u7684\u53d1\u884c\u5546 Bullish Aim Sdn Bhd \u4e5f\u5c31\u662f\u67d4\u4f5b\u6444\u653f\u738b\u7684\u516c\u53f8 \u613f\u610f\u5c06\u8fd9\u4e2aZetrix Coin\u653e\u8fdb\u53bb\u4f5c\u4e3a\u62b5\u62bc\u54c1 Stablecoin Ringgit Stablecoin\u7684\u62b5\u62bc\u54c1",
+            "type": "PRINCIPLE",
+            "reasoning": "This unit explains a principle of value transformation: Zetrix Coin, previously seen as lacking intrinsic value, gains potential underlying value by being accepted as collateral by the Ringgit Stablecoin issuer."
+        },
+        {
+            "text": "\u90a3\u8fd9\u4e2a\u662f\u4e0d\u662f\u4ea7\u751f\u4e86\u4e00\u4e9b\u53d8\u5316 \u4f1a\u4e0d\u4f1a\u4ee4\u5230\u9a6c\u80a1\u7684\u6295\u8d44\u8005 \u4f1a\u4e0d\u4f1a\u4ee4\u5230\u9a6c\u80a1\u7684\u6295\u8d44\u8005 \u5bf9\u4e8e\u8fd9\u4e2a\u516c\u53f8 \u5bf9\u4e8e\u8fd9\u4e2a\u516c\u53f8 \u4e5f\u5c31\u662fZetrix AI \u5728\u533a\u5757\u94fe \u5728\u865a\u62df\u8d27\u5e01\u7684\u8fd9\u4e2a\u65b0\u65f6\u4ee3 \u7684\u5e03\u5c40\u5e95\u4e0b\u5462 \u6210\u4e3a\u9a6c\u6765\u897f\u4e9a\u7684\u4e00\u4e2a\u771f\u6b63\u7684 \u4ed6\u4eec\u8ba4\u53ef\u7684\u9886\u5148\u7684\u4f01\u4e1a\u5462",
+            "type": "OPINION",
+            "reasoning": "This is a speculative question about whether these developments will change investor perception, leading them to recognize Zetrix AI as a leading blockchain and cryptocurrency company in Malaysia."
+        },
+        {
+            "text": "\u540c\u5b66\u4eec \u4f60\u4eec\u89c9\u5f97\u600e\u4e48\u6837 \u6b22\u8fce\u5728\u7559\u8a00\u533a\u8fdb\u884c\u66f4\u591a\u7684\u8ba8\u8bba",
+            "type": "OPINION",
+            "reasoning": "This is an invitation for subjective audience engagement and discussion."
+        },
+        {
+            "text": "\u5e0c\u671b\u6211\u7684\u5206\u4eab\u80fd\u591f\u4e3a\u5927\u5bb6\u5e26\u6765\u4ef7\u503c \u611f\u8c22\u540c\u5b66\u4eec\u7684\u70b9\u8d5e\u8ddf\u8ba2\u9605 \u6211\u4eec\u4e0b\u671f\u8282\u76ee\u7ee7\u7eed\u7ed9\u5927\u5bb6\u8c08\u80a1\u8bba\u4eca \u62dc\u62dc",
+            "type": "OPINION",
+            "reasoning": "The speaker expresses a subjective wish ('\u5e0c\u671b\u6211\u7684\u5206\u4eab\u80fd\u591f\u4e3a\u5927\u5bb6\u5e26\u6765\u4ef7\u503c' - hope my sharing brings value) and provides a conclusion to the discussion."
+        }
+    ]
+}

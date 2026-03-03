@@ -1,0 +1,169 @@
+{
+    "meta": {
+        "source": "retail_G6cYYtriCvY.txt",
+        "model": "gemma-3-12b-it",
+        "time": 1767500107.3686981
+    },
+    "data": [
+        {
+            "text": "Title: \u7528\u8fd9\u4e2a\u6848\u4f8b\u4e3a\u5927\u9a6c\u80a1\u5e02\u6295\u8d44\u8005\u8bb2\u89e3 \u4ec0\u4e48\u662f\u6295\u8d44\u7684\u539f\u5219\u8c08\u80a1\u8bba\u4eca 90\u4e2d\u5b57",
+            "type": "FACT",
+            "reasoning": "This is the title of the YouTube video, providing context for the content."
+        },
+        {
+            "text": "\u4e91\u9876\u611f\u89c9\u597d\u50cf\u8981\u6765\u4e86",
+            "type": "OPINION",
+            "reasoning": "This is a student's feeling about Genting, indicating a speculative sentiment."
+        },
+        {
+            "text": "\u5f53\u4f60\u611f\u89c9\u67d0\u4e2a\u80a1\u7968\u8981\u6765\u7684\u65f6\u5019\u5462 \u901a\u5e38\u90fd\u662f\u4f60\u611f\u89c9\u9519\u8bef\u554a\u4e0d\u8981\u592a\u8ba4\u771f",
+            "type": "PRINCIPLE",
+            "reasoning": "This is a cautionary principle against acting on gut feelings in investing."
+        },
+        {
+            "text": "\u4e91\u9876\u5927\u9a6c\u662f\u51fa\u4e86\u8fd9\u4e2a\u6d88\u606f\u7684 \u4e91\u9876\u5927\u9a6c\u554a\u662f\u4e91\u9876\u7684\u5b50\u516c\u53f8 Genting Malaysia",
+            "type": "FACT",
+            "reasoning": "This provides factual information about Genting Malaysia and its relationship to Genting."
+        },
+        {
+            "text": "Genting Malaysia \u90a3\u4ed6\u5ba3\u5e03\u5728Miami\u90a3\u8fb9\u7684\u90a3\u4e2a\u5730\u76ae \u8131\u552e\u8ba1\u5212 \u544a\u5439\u54e6 50\u591a\u4ebf",
+            "type": "FACT",
+            "reasoning": "This details a specific event - the cancellation of a land sale plan by Genting Malaysia, including the value involved."
+        },
+        {
+            "text": "\u5927\u5bb6\u90fd\u5728\u9a6c\u4e0a\u7b97 \u54c7\u5982\u679c\u4ed6\u5356\u51fa\u53bb\u51e0\u5341\u4ebf\u554a \u54c7\u4ed6\u7684\u8fd9\u4e2a\u73b0\u91d1\u4f1a\u589e\u52a0\u554a cash per share\u591a\u5c11 \u7136\u540e\u4f1a\u4e0d\u4f1a\u6709special dividend\u554a\u4e4b\u7c7b\u7684",
+            "type": "FACT",
+            "reasoning": "Describes the market reaction and calculations people were making based on the potential sale."
+        },
+        {
+            "text": "\u4e91\u9876\u7684\u80a1\u4ef7\u5462\u5c31\u8dcc\u52304\u575708 \u7136\u540e\u4e91\u9876\u5927\u9a6c\u5462\u5c31\u8dcc\u7684\u66f4\u52a0\u660e\u663e\u554a \u8dcc\u7834\u4e86\u4e24\u5757\u534a",
+            "type": "FACT",
+            "reasoning": "Reports the actual stock price decline following the news."
+        },
+        {
+            "text": "Public Bank\u7684\u80a1\u4ef7\u662f\u591a\u5c11\u94b1\u554a 3\u575791",
+            "type": "FACT",
+            "reasoning": "States the stock price of Public Bank."
+        },
+        {
+            "text": "\u4e91\u9876\u8ddfPublic Bank\u7684\u80a1\u4ef7\u76f8\u5dee \u4e0d\u52302\u89d2\u94b1\u9a6c\u5e01",
+            "type": "FACT",
+            "reasoning": "Compares the stock prices of the two companies."
+        },
+        {
+            "text": "\u4e00\u822c\u4eba\u5462\u6211\u4eec\u90fd\u8bb2\u554a \u5443\u6211\u5bf9\u80a1\u5e02\u4e0d\u662f\u5f88\u719f\u6089\u5417\u5bf9\u4e0d\u5bf9 \u90a3\u4e70\u84dd\u7b79\u80a1\u4e86 \u7136\u540e\u5728\u9a6c\u6765\u897f\u4e9a\u4eba\u5fc3\u4e2d\u554aMaybank Public Bank \u4e91\u9876\u8fd9\u7edd\u5bf9\u662ftop three",
+            "type": "OPINION",
+            "reasoning": "This is a general observation about what novice investors often do and which stocks are considered popular."
+        },
+        {
+            "text": "\u60f3\u8ddf\u5927\u5bb6\u8bb2\u4e00\u8bb2 \u6211\u4eec\u5e94\u8be5\u600e\u4e48\u6837 \u6709\u7cfb\u7edf\u6027\u7684\u53bb\u505a\u4e00\u4e2a\u51b3\u7b56",
+            "type": "PRINCIPLE",
+            "reasoning": "States the video's objective - to discuss a systematic approach to decision-making."
+        },
+        {
+            "text": "\u4e0d\u8981\u5c06\u5b83\u76f4\u63a5\u5f53\u6210\u6295\u8d44\u4e70\u5356\u5efa\u8bae \u5426\u5219\u7684\u8bdd\u5462\u554a\u9648\u5251\u8001\u5e08\u6211\u4f1a\u5f88\u9ebb\u70e6",
+            "type": "PRINCIPLE",
+            "reasoning": "A disclaimer stating the content is for educational purposes only and not investment advice."
+        },
+        {
+            "text": "Public Bank\u5728\u521a\u521a2022\u5e74\u7684\u8d22\u653f\u5e74\u5ea6\u554a \u4ed6revenue\u4e00\u5171\u662f\u591a\u5c11 19.6billion \u800c\u6211\u4eec\u518d\u770b\u770b\u4e91\u9876\u554a \u5168\u5e74\u4ed6\u7684\u8425\u4e1a\u989d\u4e5f\u56de\u5347\u523022billion",
+            "type": "FACT",
+            "reasoning": "Presents revenue figures for both companies."
+        },
+        {
+            "text": "\u4e91\u9876\u662f\u5784\u65ad\u7684\u751f\u610f\u6765\u7684\u54e6\u4ed6monopoly \u9a6c\u6765\u897f\u4e9a\u552f\u4e00\u7684\u4e00\u4e2a\u8d4c\u573a\u6267\u7167\u561b",
+            "type": "FACT",
+            "reasoning": "States Genting's monopoly status in Malaysia's casino market."
+        },
+        {
+            "text": "Public Bank\u4e0d\u662f \u9a6c\u6765\u897f\u4e9a\u6709\u5176\u4ed6\u7684\u94f6\u884c\u4f1a\u7ade\u4e89\u7684\u54e6",
+            "type": "FACT",
+            "reasoning": "Contrasts Public Bank's competitive environment with Genting's."
+        },
+        {
+            "text": "Public Bank\u4e3b\u8981\u662f\u5728\u9a6c\u6765\u897f\u4e9a\u56fd\u5185\u7ecf\u8425\u561b \u4f46\u4e91\u9876\u7684\u751f\u610f\u5462\u662f\u6709\u5728\u56fd\u5916\u7684\u54e6 \u5982\u679c\u6211\u4eec\u5c06\u4e91\u9876\u5f53\u6210\u4e00\u4e2a\u8de8\u56fd\u516c\u53f8 \u56fd\u9645\u516c\u53f8\u6765\u770b\u7684\u8bdd \u5176\u4ed6\u56fd\u5bb6\u7684\u8d4c\u573a\u6211\u4eec\u533a\u57df\u7684\u5e02\u573a \u6bd4\u5982\u4e91\u9876 \u65b0\u52a0\u5761\u662fpark under\u4e91\u9876\u96c6\u56e2\u7684\u54e6",
+            "type": "FACT",
+            "reasoning": "Highlights Public Bank's domestic focus versus Genting's international operations."
+        },
+        {
+            "text": "\u4e91\u9876\u5982\u679c\u8d62\u94b1\u7684\u8bdd\u5bf9\u5417 \u554a\u53ef\u80fd\u4f1a\u8d62\u7684\u5f88\u5feb \u4f46\u662f Public Bank\u662f\u62ff\u4eba\u5bb6\u7684\u94b1\u53bb\u505a\u751f\u610f\u54e6 \u5bf9\u5417\u6211\u4eec\u5b58\u94b1\u5728Public Bank Public Bank\u62ff\u6211\u4eec\u7684\u94b1\u518d\u53bb\u501f\u7ed9\u4eba\u5bb6 \u518d\u8d5a\u4e2d\u95f4\u7684\u90a3\u4e2a\u5229\u7387\u7684\u5dee\u4ef7 \u54c7Public Bank\u7b80\u76f4\u662f\u65e0\u672c\u751f\u5229\u54e6",
+            "type": "FACT",
+            "reasoning": "Explains Public Bank's business model of lending and earning interest."
+        },
+        {
+            "text": "\u5728\u80a1\u7968\u5e02\u573a\u91cc\u9762 \u6211\u4eec\u4f1a\u6709\u5f88\u591a\u7684\u540c\u884c\u7684\u6bd4\u8f83\u554a \u540c\u6837\u7684\u94f6\u884cMaybank Public Bank CIMB\u4f60\u9009\u54ea\u4e00\u4e2a \u6216\u8005\u662f\u6211\u4eec\u8de8\u884c\u4e1a\u7684\u5bf9\u6bd4 \u73b0\u5728\u4e91\u9876\u8ddfPublic Bank\u4f60\u53c8\u9009\u54ea\u4e00\u4e2a",
+            "type": "FACT",
+            "reasoning": "Describes a common scenario in stock investing - comparing companies."
+        },
+        {
+            "text": "\u600e\u4e48\u6837\u5316\u7e41\u4e3a\u7b80 \u5c31\u662f\u8fd4\u749e\u5f52\u771f less is more \u6211\u4e0d\u8981\u7406\u90a3\u4e48\u591a\u7684\u4e1c\u897f \u80fd\u4e0d\u80fd\u591f\u8001\u5e08\u7ed9\u6211\u6765\u4e00\u4e2astraight to the point \u53ef\u4ee5\u5e2e\u6211\u6709\u6548\u7684\u53bb filter\u5f97\u51fa\u6211\u5e94\u8be5\u6392\u9664\u54ea\u4e00\u4e2a \u7136\u540e\u6211\u5e94\u8be5\u8003\u8651\u54ea\u4e00\u4e2a",
+            "type": "PRINCIPLE",
+            "reasoning": "Advocates for simplification and a focused approach to investing."
+        },
+        {
+            "text": "\u6392\u9664\u6cd5",
+            "type": "PRINCIPLE",
+            "reasoning": "Introduces the concept of using an elimination method to focus on key factors."
+        },
+        {
+            "text": "\u6211\u4eec\u53ef\u4ee5\u4ece\u751f\u610f\u6027\u8d28\u4e0a\u9762\u53bb\u63a2\u8ba8 \u4e5f\u53ef\u4ee5\u4ece\u8d22\u52a1\u6570\u5b57\u4e0a\u9762\u53bb\u63a2\u8ba8\u554a \u6211\u4eec\u53ea\u770b\u8d22\u52a1\u6570\u5b57\u7684\u8bdd\u5462 \u4ed6\u5c31\u4f1a\u53d8\u5f97\u66f4\u52a0\u7684\u79d1\u5b66\u7406\u6027\u4e00\u70b9\u554a",
+            "type": "PRINCIPLE",
+            "reasoning": "Suggests using financial data for a more rational investment approach."
+        },
+        {
+            "text": "\u6211\u4eec\u4e00\u822c\u4e0a \u4f1a\u770b\u4ec0\u4e48\u6837\u7684\u8d22\u52a1\u6570\u5b57\u5462 \u975e\u5e38\u7b80\u5355 \u6211\u4eec\u5148\u8981\u5224\u65ad\u7684\u5c31\u662f \u4f60\u8fd9\u76d8\u751f\u610f\u8fc7\u53bb\u7a33\u4e0d\u7a33\u5b9a \u7136\u540e\u4f60\u662f\u4e0d\u662f\u80fd\u591f\u7a33\u5b9a\u7684\u8d5a\u94b1",
+            "type": "PRINCIPLE",
+            "reasoning": "Outlines the initial focus when analyzing financial data - stability and consistent profitability."
+        },
+        {
+            "text": "Return on Equity ROE",
+            "type": "FACT",
+            "reasoning": "Introduces the financial metric Return on Equity (ROE)."
+        },
+        {
+            "text": "\u80a1\u4e1c\u6743\u76ca\u56de\u62a5\u7387",
+            "type": "FACT",
+            "reasoning": "Provides the Chinese translation for Return on Equity."
+        },
+        {
+            "text": "\u5982\u679c\u4f60\u7684\u516c\u53f8\u6240\u6709\u7684\u80a1\u4e1c\u4e00\u8d77\u5408\u4f19 \u4e00\u5171\u662f100\u4e2amillion1\u4ebf\u9a6c\u5e01 \u7136\u540e\u4f60\u8fd9\u4e2a\u516c\u53f8\u5462 \u4e00\u5e74\u7684\u5229\u6da6\u662f1,000\u4e07\u9a6c\u5e01 \u90a3\u4e48\u4f60\u7684ROE\u5c31\u662f10%",
+            "type": "FACT",
+            "reasoning": "Explains the calculation of ROE."
+        },
+        {
+            "text": "\u5982\u679c\u4f60\u7684\u751f\u610f \u5e74\u5e74\u90fd\u53ef\u4ee5\u4fdd\u630110%\u7684ROE \u751a\u81f320%\u7684ROE \u90a3\u4f60\u7684\u6574\u95f4\u516c\u53f8\u7684\u8fd9\u4e2a\u8d44\u4ea7\u589e\u957f\u7684\u901f\u5ea6\u554a \u5c31\u597d\u50cf\u96ea\u7403\u8fd9\u6837\u5b50\u53bb\u6eda\u52a8",
+            "type": "PRINCIPLE",
+            "reasoning": "Explains the compounding effect of consistent ROE."
+        },
+        {
+            "text": "Public Bank\u4ed6\u8bf7\u4e86\u591a\u5c11\u4eba \u53ef\u80fd\u5168\u9a6c\u6765\u897f\u4e9a\u4ed6\u6709\u51e0\u5343\u4e2a\u5458\u5de5 \u90a3\u51e0\u5343\u4e2a\u806a\u660e\u7684\u4eba\u5728\u90a3\u8fb9\u4e00\u8d77\u505a\u5de5 \u4ed6\u6574\u4e2a\u5546\u4e1a\u673a\u5668 \u80fd\u591f\u6eda\u52a8\u51fa\u6765\u7684\u90a3\u4e2a\u6548\u7387 \u80af\u5b9a\u6bd4\u6211\u4eec\u4e2a\u4eba\u6765\u7684\u66f4\u52a0\u9ad8",
+            "type": "FACT",
+            "reasoning": "Highlights the efficiency of a large organization like Public Bank."
+        },
+        {
+            "text": "\u8fc7\u53bb\u5341\u5e74\u7684ROE\u8868\u73b0",
+            "type": "FACT",
+            "reasoning": "Refers to the analysis of past ROE performance."
+        },
+        {
+            "text": "\u4e91\u9876\u7684profitability ROE\u8fc7\u53bb\u5341\u5e74 \u4e91\u9876\u8fc7\u53bb\u5341\u5e74\u7684ROE \u597d\u7684\u65f6\u5019\u5c31\u662f\u57282-3%\u4e00\u5e74 \u7136\u540e\u6700\u8fd1\u4e09\u5e74\u56e0\u4e3a\u75ab\u60c5\u7684\u5173\u7cfb \u4ed6\u76f4\u63a5\u6389\u8fdb\u4e8f\u635f",
+            "type": "FACT",
+            "reasoning": "Presents Genting's ROE performance over the past decade."
+        },
+        {
+            "text": "Public Bank\u4ed6\u4e00\u76f4\u90fd\u662f\u4fdd\u6301\u572810%\u4ee5\u4e0a\u7684even though Covid-19 \u7206\u53d1\u7684\u65f6\u5019 \u4ed6\u4e5f\u662f\u80fd\u591f\u572810% \u7136\u540e\u73b0\u5728\u5462 \u662f\u7ef4\u6301\u5728\u5927\u698211%-12%\u7684\u8fd9\u4e2a\u6c34\u5e73",
+            "type": "FACT",
+            "reasoning": "Presents Public Bank's ROE performance over the past decade."
+        },
+        {
+            "text": "\u5df4\u83f2\u7279\u4e4b\u9053",
+            "type": "FACT",
+            "reasoning": "Refers to Warren Buffett's investment philosophy."
+        },
+        {
+            "text": "\u5df4\u83f2\u7279\u8bf4\u6211\u518d\u52a0\u4e00\u4e2a\u4ec0\u4e48\u4e1c\u897f \u5c31\u80fd\u591f\u518d\u589e\u52a0\u4f60\u7684\u8fd9\u4e2a\u672a\u6765\u7684\u628a\u63e1\u5462 \u5df4\u83f2\u7279\u5c31\u4f1a\u5e0c\u671b \u6211\u6295\u8d44\u7684\u8fd9\u4e2a\u7a33\u5b9a\u7684ROE\u7684\u516c\u53f8\u554a \u4ed6\u81ea\u5df1\u672c\u8eab\u6709\u5f88\u5f3a\u7684branding power\u54c1\u724c\u529b \u7136\u540e\u4ee4\u5230\u4ed6\u7684customer\u53ef\u4ee5\u8ddf\u8457\u4ed6 \u79bb\u4e0d\u5f00\u4ed6\u7684\u4ea7\u54c1\u7684",
+            "type": "FACT",
+            "reasoning": "Explains Buffett's emphasis on strong branding and customer loyalty."
+        }
+    ]
+}

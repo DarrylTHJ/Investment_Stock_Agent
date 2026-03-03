@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "source": "retail_Ab3AsjBE0jU.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1767500473.1162622
+    },
+    "data": [
+        {
+            "text": "TVB's peak stock price was 80 HKD in 2000, falling to 58 HKD around 2012-2013, and then to just 3 HKD in 2022.",
+            "type": "FACT",
+            "reasoning": "This is a statement of historical stock prices with specific numbers and dates, verifiable through financial records."
+        },
+        {
+            "text": "TVB's stock price decline indicates the increasing difficulties in the television industry due to new media like social media and streaming services (e.g., Netflix).",
+            "type": "OPINION",
+            "reasoning": "This is an interpretation of the stock price trend, linking it to broader industry changes. While logical, it's an analysis, not a directly verifiable fact."
+        },
+        {
+            "text": "TVB partnered with Chinese e-commerce platform Taobao for livestreaming, initially featuring popular artists Chen Hao and Chen Minzhi.",
+            "type": "FACT",
+            "reasoning": "This describes a specific business partnership and the individuals involved, which can be confirmed through news reports and company announcements."
+        },
+        {
+            "text": "TVB's stock price surged from 3+ HKD to 13+ HKD following the success of its livestreaming collaboration with Taobao.",
+            "type": "FACT",
+            "reasoning": "This is a statement of stock price movement tied to a specific event, verifiable through financial data."
+        },
+        {
+            "text": "The success of TVB's livestreaming boosted Astro's stock price, as investors speculated on a similar opportunity for Astro.",
+            "type": "OPINION",
+            "reasoning": "This is an interpretation of market reaction, linking Astro's stock movement to TVB's success. It's a plausible connection but not a direct cause-and-effect relationship."
+        },
+        {
+            "text": "Astro's stock price rose by 20% on March 8th, then declined, but still showed some upward momentum at the time of video recording.",
+            "type": "FACT",
+            "reasoning": "This is a specific stock price movement on a particular date, verifiable through financial records."
+        },
+        {
+            "text": "Astro's subscription revenue has been declining, from 3.9 billion in 2020 to 3.3 billion in 2022.",
+            "type": "FACT",
+            "reasoning": "This is data directly from Astro's annual report, verifiable through publicly available financial statements."
+        },
+        {
+            "text": "Astro's Go Shop revenue has been relatively stable, around 368-461 million, but is unlikely to replace Astro's core subscription revenue.",
+            "type": "OPINION",
+            "reasoning": "This is an analysis of Go Shop's revenue in relation to Astro's overall business, based on the presented data. It's a logical conclusion but not a definitive fact."
+        },
+        {
+            "text": "The scale of the Chinese e-commerce market is significantly larger than the Malaysian market, making it difficult to directly compare TVB's success in China to Astro's potential success in Malaysia.",
+            "type": "PRINCIPLE",
+            "reasoning": "This is a general principle about market size and its impact on business outcomes. It's a logical point relevant to the comparison being made."
+        },
+        {
+            "text": "Astro's Go Shop has accumulated 3.2 million registered customers over many years, while TVB's livestreaming with Chen Hao and Chen Minzhi reached millions of viewers in a single event.",
+            "type": "FACT",
+            "reasoning": "This compares customer numbers and viewership figures, which can be verified through company reports and event data."
+        },
+        {
+            "text": "Astro is unlikely to replicate TVB's livestreaming success due to the differences in revenue structure (subscription-based vs. advertising-based) and market size.",
+            "type": "OPINION",
+            "reasoning": "This is the central conclusion of the analysis, based on the presented data and reasoning. It's a well-supported opinion but not a guaranteed outcome."
+        },
+        {
+            "text": "TVB's brand recognition and historical influence in China are valuable assets for its livestreaming partnership with Taobao.",
+            "type": "PRINCIPLE",
+            "reasoning": "This highlights the importance of brand equity and cultural relevance in marketing and business partnerships."
+        }
+    ]
+}

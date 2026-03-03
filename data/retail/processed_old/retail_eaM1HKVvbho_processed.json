@@ -1,0 +1,89 @@
+{
+    "meta": {
+        "source": "retail_eaM1HKVvbho.txt",
+        "model": "gemma-3-12b-it",
+        "time": 1767377827.874485
+    },
+    "data": [
+        {
+            "text": "CTOS\u6ca1\u6709\u8fd9\u4e2a\u6743\u5229\u53bb\u5236\u4f5c\u8fd9\u6837\u5b50\u7684\u81ea\u5df1\u5c5e\u4e8e\u81ea\u5df1\u7684\u8fd9\u4e2aCTOS\u7684Credit Score Report\u7684\u8bdd\u90a3\u5c82\u4e0d\u662f\u4f60\u4ee5\u540e\u751f\u610f\u8fd8\u53ef\u4e0d\u53ef\u4ee5\u505a",
+            "type": "OPINION",
+            "reasoning": "Expresses concern about the potential impact of a court ruling on CTOS's business model and future viability."
+        },
+        {
+            "text": "\u56e0\u4e3aCTOS\u7684Credit Score\u62a5\u544a\u800c\u88ab\u62d2\u7edd\u8d37\u6b3e\u7684\u90a3\u4e9b\u4eba\u5462\u4f1a\u4e0d\u4f1a\u90fd\u8dd1\u6765\u8bf4\u6211\u4e2a\u4eba\u540d\u8a89\u53d7\u635f\u5168\u90e8\u6765\u8dd1\u53bb\u63a7\u544a\u8fd9\u4e2aCTOS\u7684\u8bdd\u90a3\u4e48\u5411\u4ed6\u7d22\u8d54\u90a3\u8fd9\u4e2a\u5c31\u975e\u5e38\u9ebb\u70e6\u4e86\u54e6",
+            "type": "OPINION",
+            "reasoning": "Highlights a potential legal risk for CTOS, suggesting a wave of lawsuits and claims for damages if the ruling stands."
+        },
+        {
+            "text": "Prolintas\u9a6c\u6765\u897f\u4e9a\u7b2c\u4e00\u4e2a\u5546\u4e1a\u4fe1\u6258\u5462\u5b83\u7684IPO\u7684\u8d85\u989d\u8ba4\u8d2d\u500d\u6570\u5462\u5df2\u7ecf\u51fa\u6765\u4e86\u8fd9\u4e2aProlintas Infra \u7684 Business Trust\u5b83\u7684\u8d85\u989d\u8ba4\u8d2d\u500d\u6570\u662f3.59\u500d",
+            "type": "FACT",
+            "reasoning": "Reports a specific data point: the IPO oversubscription rate for Prolintas, a business trust."
+        },
+        {
+            "text": "\u8fd9\u4e2a\u500d\u6570\u5e76\u4e0d\u662f\u7279\u522b\u7684\u9ad8\u5bf9\u4e0d\u5bf9\u800c\u6bd4\u4e0a\u4e00\u6b21\u6211\u4eec\u4e5f\u63d0\u5230\u7684Alpha IVF\u96c6\u56e2\u7684\u8fd9\u4e2aIPO\u5462\u7a0d\u5fae\u9ad8\u4e00\u70b9\u70b9",
+            "type": "OPINION",
+            "reasoning": "Provides a comparative assessment of the oversubscription rate, suggesting it's not exceptionally high compared to a previous IPO."
+        },
+        {
+            "text": "\u8fd9\u4e2a\u5176\u5b9e\u6211\u4eec\u5728\u4e0a\u4e00\u6761\u89c6\u9891\u5462\u5df2\u7ecf\u6709\u8ddf\u5927\u5bb6\u8bb2\u7b97\u662f\u610f\u6599\u4e4b\u4e2d\u8fd9\u4e2a\u662f\u4e00\u79cd\u5546\u4e1a\u4fe1\u6258\u5c31\u6709\u70b9\u50cf\u5927\u5bb6\u6bd4\u8f83\u719f\u6089\u7684\u4ea7\u4e1a\u4fe1\u6258REITs\u5b83\u662f\u9760\u80a1\u606f\u6536\u5165\u6765\u5438\u5f15\u6295\u8d44\u8005\u7684\u8fd9\u4e2a\u6ce8\u610f\u7684",
+            "type": "FACT",
+            "reasoning": "Explains the nature of Prolintas as a business trust, similar to REITs, and its reliance on dividend income to attract investors."
+        },
+        {
+            "text": "CTOS\u7684\u80a1\u4ef7\u5462\u57283\u670812\u53f7\u661f\u671f\u4e8c\u7684\u65f6\u5019\u5462\u53d1\u751f\u4e86\u5927\u8dcc\u80a1\u4ef7\u5462\u662f\u4ece\u661f\u671f\u4e00\u7684\u6536\u5e02\u4ef71\u575745\u8dcc\u5230\u661f\u671f\u4e8c\u7684\u6700\u4f4e\u4ef7\u5462\u662f1\u575706\u5dee\u4e0d\u591a\u8dcc\u4e864\u89d2\u94b1",
+            "type": "FACT",
+            "reasoning": "Reports a specific event: a significant drop in CTOS's stock price on March 12th, providing the starting and ending prices."
+        },
+        {
+            "text": "\u90a3\u8fd9\u4e2a\u5176\u5b9e\u662f30%\u7684\u5f53\u65e5\u7684\u4e0b\u8dcc\u5c31\u66fe\u7ecf\u63a5\u8fd1\u8dcc\u505c\u677f\u4e86",
+            "type": "FACT",
+            "reasoning": "Quantifies the stock price decline as a 30% drop, indicating it nearly reached the daily trading limit."
+        },
+        {
+            "text": "\u9a6c\u6765\u897f\u4e9a\u7684\u8fd9\u4e2a\u5409\u9686\u5761\u7684\u9ad8\u5ead\u5462\u5c31\u5224\u51b3\u56e0\u4e3aCTOS\u7684\u8fd9\u4e2a\u4fe1\u8d37\u8bc4\u5206\u5462\u4e0d\u51c6\u786e\u5bfc\u81f4\u5230\u8fd9\u5355\u6848\u4ef6\u7684\u539f\u544a\u4eba\u5462\u4ed6\u5728\u7533\u8bf7\u6c7d\u8f66\u8d37\u6b3e\u7684\u65f6\u5019\u5462\u5c31\u5f97\u4e0d\u5230\u6279\u51c6\u90a3\u4e2a\u4eba\u540d\u8a89\u53d7\u635f\u6240\u4ee5\u5462\u8fd9\u4e2a\u539f\u544a\u5462\u5c31\u5c06CTOS\u5462\u63a7\u4e0a\u6cd5\u5ead\u4e86\u7136\u540e\u5409\u9686\u5761\u9ad8\u5ead\u5462\u5c31\u5224\u51b3\u5462CTOS\u6ca1\u6709\u6743\u5229\u5236\u5b9a\u8fd9\u4e2a\u4fe1\u7528\u8bc4\u5206\u7136\u540e\u9700\u8981\u8d54\u507f20\u4e07\u7ed9\u8fd9\u4e2a\u53d7\u5bb3\u8005",
+            "type": "FACT",
+            "reasoning": "Details the court ruling: CTOS was found to have incorrectly assessed credit scores, leading to a denial of a loan and a subsequent lawsuit resulting in a 200,000 MYR penalty."
+        },
+        {
+            "text": "CTOS\u6ca1\u6709\u8fd9\u4e2a\u6743\u5229\u53bb\u5236\u4f5c\u8fd9\u6837\u5b50\u7684\u81ea\u5df1\u5c5e\u4e8e\u81ea\u5df1\u7684\u8fd9\u4e2aCTOS\u7684Credit Score Report\u7684\u8bdd\u90a3\u5c82\u4e0d\u662f\u4f60\u4ee5\u540e\u751f\u610f\u8fd8\u53ef\u4e0d\u53ef\u4ee5\u505a",
+            "type": "OPINION",
+            "reasoning": "Expresses concern about the potential impact of a court ruling on CTOS's business model and future viability."
+        },
+        {
+            "text": "CTOS\u516c\u53f8\u672c\u8eab\u5462\u4e5f\u7b2c\u4e00\u65f6\u95f4\u5462\u505a\u51fa\u8fd9\u4e2a\u8f9f\u8c23\u7684\u54ce\u6211\u4eec\u6ca1\u6709\u53d7\u5230\u5f71\u54cd\u6211\u4eec\u5df2\u7ecf\u7533\u8bf7\u4e86\u8fd9\u4e2a\u4e0a\u8bc9\u6765\u63a8\u7ffb\u8fd9\u4e2a\u5224\u51b3\u7ed3\u679c\u7684\u6765\u5b89\u629a\u5e02\u573a\u7684\u4fe1\u5fc3\u7684",
+            "type": "FACT",
+            "reasoning": "Reports CTOS's immediate response to the ruling: a denial of impact and an announcement of an appeal to reassure the market."
+        },
+        {
+            "text": "\u5f53\u5929\u80a1\u4ef7\u5462\u662f\u5728\u4e0b\u5348\u7684\u65f6\u5019\u5462\u6709\u6240\u56de\u5347\u5168\u5929\u7684\u8dcc\u5e45\u5462\u662f13.79%\u5c31\u5e76\u6ca1\u6709\u8dcc\u523020%-30%\u90a3\u4e48\u7684\u591a",
+            "type": "FACT",
+            "reasoning": "Provides an update on the stock price: a partial recovery in the afternoon, with a final decline of 13.79%."
+        },
+        {
+            "text": "\u5982\u679c\u516c\u53f8\u5df2\u7ecf\u7533\u8bf7\u4e86\u8fd9\u4e2a\u4e0a\u8bc9\u7684\u8bdd\u5462\u90a3\u4e48\u4e4b\u540e\u5c31\u4f1a\u5728\u4e0a\u8bc9\u5ead\u90a3\u8fb9\u5462\u518d\u8fdb\u884c\u5224\u51b3\u7684",
+            "type": "FACT",
+            "reasoning": "Describes the legal process: CTOS has appealed the ruling, and the case will be reviewed by the Appeal Court."
+        },
+        {
+            "text": "\u5982\u679c\u6700\u9ad8\u6cd5\u9662\u771f\u7684\u8ba4\u4e3aCTOS\u8fd9\u4e2a\u516c\u53f8\u4f60\u6ca1\u6709\u6743\u5229\u5236\u4f5c\u81ea\u5df1\u7684\u8fd9\u6837\u5b50\u7684Credit Profile\u7136\u540e\u5411\u5e02\u573a\u63d0\u4f9b\u8fd9\u6837\u5b50\u7684\u62a5\u544a\u4f60\u53ea\u80fd\u591f\u6536\u96c6\u5176\u4ed6\u7684\u6709\u8d44\u683c\u51fa\u8fd9\u4e2a\u62a5\u544a\u7684\u8fd9\u4e9b\u673a\u6784\u7684\u5206\u6570\u6765\u505a\u4e00\u4e2a\u53c2\u8003\u7684\u8bdd\u90a3CTOS\u7684\u8fd9\u4e2a\u62a5\u544a\u7684\u53c2\u8003\u4ef7\u503c\u5c31\u4f1a\u5927\u6253\u6298\u6263\u561b",
+            "type": "OPINION",
+            "reasoning": "Speculates on the potential consequences of a Supreme Court ruling against CTOS, suggesting a significant devaluation of its credit reports."
+        },
+        {
+            "text": "\u8fd8\u6709\u7b2c\u4e8c\u4e2a\u4e5f\u662f\u76f8\u5f53\u53ef\u6015\u7684\u90a3\u5c31\u662f\u5982\u679c\u8fd9\u4e00\u6b21\u8fd9\u4e2a\u6848\u4ef6\u7684\u539f\u544a\u4eba\u80fd\u591f\u80dc\u8bc9\u800c\u4e14\u83b7\u8d54200\u5343\u7684\u8bdd\u90a3\u5176\u4ed6\u7684\u56e0\u4e3aCTOS\u7684Credit Score\u62a5\u544a\u800c\u88ab\u62d2\u7edd\u8d37\u6b3e\u7684\u90a3\u4e9b\u4eba\u5462\u4f1a\u4e0d\u4f1a\u90fd\u8dd1\u6765\u8bf4\u6211\u4e2a\u4eba\u540d\u8a89\u53d7\u635f\u5168\u90e8\u6765\u8dd1\u53bb\u63a7\u544a\u8fd9\u4e2aCTOS\u7684\u8bdd\u90a3\u4e48\u5411\u4ed6\u7d22\u8d54\u90a3\u8fd9\u4e2a\u5c31\u975e\u5e38\u9ebb\u70e6\u4e86\u54e6",
+            "type": "OPINION",
+            "reasoning": "Raises a further concern: a potential wave of lawsuits from individuals denied loans due to CTOS's credit reports."
+        },
+        {
+            "text": "CTOS\u516c\u53f8\u8ba4\u4e3a\u4e5f\u662f\u6700\u5173\u952e\u7684\u4e00\u70b9\u5462\u5c31\u662f\u8fd9\u4f4d\u539f\u544a\u5462\u5e76\u4e0d\u662f\u9488\u5bf9\u5582\u4f60\u4eecCTOS\u516c\u53f8\u91cc\u9762\u5173\u4e8e\u6211\u7684Credit Profile\u4f60\u4eec\u641e\u9519\u4e86\u6240\u4ee5\u5c31\u641e\u5230\u6211\u62ff\u4e0d\u5230\u8d37\u6b3e\u4ed6\u4eec\u89c9\u5f97\u8fd9\u6837\u5b50\u7684\u4e00\u4e2a\u5c5e\u4e8e\u666e\u901a\u7684complaint\u7684\u8fd9\u4e2a\u6295\u8bc9\u7684\u6027\u8d28\u5462\u54ce\u6ca1\u60f3\u5230\u4f1a\u53d8\u6210\u4e00\u573a\u6cd5\u5f8b\u7684\u8bc9\u8bbc",
+            "type": "FACT",
+            "reasoning": "Reports CTOS's argument that the original lawsuit was not about the accuracy of the credit profile but a complaint about loan denial."
+        },
+        {
+            "text": "\u6295\u8d44\u8005\u5982\u679c\u60f3\u8d81\u4f4e\u4e70\u5165\u7684\u8bdd\u90a3\u6709\u6ca1\u6709\u5148\u505a\u4e00\u4e2a\u6700\u574f\u7684\u6253\u7b97\u5148\u90a3\u4e07\u4e00\u8fd9\u4ef6\u4e8b\u60c5\u771f\u7684\u7275\u8fde\u5230\u6211\u521a\u521a\u8bb2\u5230\u7684\u6574\u4e2a\u516c\u53f8\u672a\u6765\u7684\u8fd9\u4e2aCredit Report\u90fd\u4e0d\u77e5\u9053\u80fd\u4e0d\u80fd\u591f\u5356\u7684\u8bdd\u90a3\u8fd9\u4e2a\u516c\u53f8\u7684\u5546\u4e1a\u6a21\u5f0f\u521b\u9020\u6536\u5165\u7684\u65b9\u5f0f\u4f60\u7684\u57fa\u672c\u9762\u5b8c\u5168\u53d8\u5316\u7684\u8bdd\u90a3\u4f60\u7684\u80a1\u4ef7\u662f\u5f88\u53ef\u80fd\u4f1a\u7ee7\u7eed\u8dcc\u7684\u54e6",
+            "type": "OPINION",
+            "reasoning": "Provides investment advice: caution against buying CTOS stock without considering the worst-case scenario and potential impact on the company's business model."
+        }
+    ]
+}
