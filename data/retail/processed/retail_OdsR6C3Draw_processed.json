@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "source": "retail_OdsR6C3Draw.txt",
+        "model": "gemini-2.5-flash-lite",
+        "time": 1772507511.3449225
+    },
+    "data": [
+        {
+            "asset_class": "Gold Jewelry Retailers (Poh Kong, Tomei)",
+            "metrics_used": [
+                "Price to Book Value (PB Ratio)",
+                "Net Asset Value (NTA)",
+                "Return on Equity (ROE)",
+                "Net Profit",
+                "Dividend Payout"
+            ],
+            "metrics_ignored": [
+                "Daily charts"
+            ],
+            "logic_rule": "IF Gold prices continue to rise significantly AND the company's Net Asset Value (NTA) is primarily driven by rising inventory (gold), THEN the Price to Book Value (PB Ratio) will likely remain at a discount, despite a strong Return on Equity (ROE).",
+            "embedding_summary": "This investor believes that gold jewelry retailers like Poh Kong and Tomei, despite strong ROE and increasing NTA driven by rising gold prices and inventory, will continue to trade at a discount to their book value. The rationale is that the market is efficient and anticipates that the sustained rise in gold prices, which inflates inventory value and thus NTA, is not guaranteed for the long term. Therefore, the market remains cautious, leading to a persistent PB discount even with good profitability and dividend payouts."
+        },
+        {
+            "asset_class": "Gold Jewelry Retailers (Poh Kong, Tomei)",
+            "metrics_used": [
+                "Return on Equity (ROE)",
+                "Price to Book Value (PB Ratio)"
+            ],
+            "metrics_ignored": [],
+            "logic_rule": "IF a company in the Malaysian stock market consistently maintains an ROE of 10% or higher, THEN its Price to Book Value (PB Ratio) should generally be at or above 1x, with higher ROE allowing for higher PB multiples.",
+            "embedding_summary": "This heuristic suggests that for Malaysian companies, a consistent Return on Equity (ROE) of 10% or above is a strong indicator that their Price to Book Value (PB Ratio) should trade at or above 1x. The expectation is that an ROE of 20% could support a PB of 2x, and 30%+ could justify even higher multiples, reflecting the company's ability to generate value from its equity."
+        },
+        {
+            "asset_class": "Gold Jewelry Retailers (Poh Kong, Tomei)",
+            "metrics_used": [
+                "Inventory value",
+                "Net Asset Value (NTA)",
+                "Gold Prices"
+            ],
+            "metrics_ignored": [],
+            "logic_rule": "IF gold prices are rising significantly, THEN the inventory value of gold jewelry retailers will increase, leading to an expansion of their Net Asset Value (NTA).",
+            "embedding_summary": "This rule highlights the direct impact of rising gold prices on the inventory of gold jewelry retailers. As gold prices increase, the value of their existing gold inventory also rises, which in turn inflates their Net Asset Value (NTA)."
+        },
+        {
+            "asset_class": "Gold Jewelry Retailers (Poh Kong, Tomei)",
+            "metrics_used": [
+                "Net Profit",
+                "Dividend Payout",
+                "Stock Price Performance"
+            ],
+            "metrics_ignored": [
+                "Gold Price volatility"
+            ],
+            "logic_rule": "IF a gold jewelry retailer shows substantial increases in Net Profit and Dividend Payouts, THEN there is potential for stock price appreciation, but the extent of this appreciation is likely to be moderated by underlying concerns about the sustainability of gold price trends and consumer demand.",
+            "embedding_summary": "This principle acknowledges that solid increases in net profit and dividends for gold jewelry retailers do provide a basis for stock price growth. However, the investor recognizes that this growth is often restrained due to market skepticism about the longevity of high gold prices and their impact on consumer purchasing power for gold jewelry."
+        },
+        {
+            "asset_class": "Gold Jewelry Retailers (Poh Kong, Tomei)",
+            "metrics_used": [
+                "Consumer Purchasing Power",
+                "Gold Prices",
+                "Gold Jewelry Demand"
+            ],
+            "metrics_ignored": [],
+            "logic_rule": "IF gold prices continue to rise significantly, THEN consumer purchasing power for gold jewelry may be constrained, potentially leading to a decrease in demand or a shift towards smaller/thinner gold items.",
+            "embedding_summary": "This rule posits that escalating gold prices, while increasing the nominal value of inventory, can negatively impact consumer demand for gold jewelry. As gold becomes more expensive, consumers may reduce the quantity they purchase or opt for less valuable items, which could affect the sales volume and profitability of jewelry retailers."
+        }
+    ]
+}

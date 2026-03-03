@@ -1,0 +1,83 @@
+{
+    "meta": {
+        "source": "retail_ob2wq6VjmM0.txt",
+        "model": "gemma-3-12b-it",
+        "time": 1772507495.5389245
+    },
+    "data": [
+        {
+            "asset_class": "Retail (Mini Market)",
+            "metrics_used": [
+                "Revenue per outlet",
+                "Profit After Tax (PAT)",
+                "Dividend Payout Ratio",
+                "Earnings Per Share (EPS)",
+                "Price-to-Earnings (P/E) Ratio",
+                "Growth Rate (number of stores)"
+            ],
+            "metrics_ignored": [
+                "Daily charts",
+                "Short-term news"
+            ],
+            "logic_rule": "IF a retail company (like 99 Speedmart) demonstrates consistent revenue growth, high profitability, and a history of dividend payouts THEN consider it a potentially attractive investment, especially if its valuation (P/E ratio) is competitive with similar companies (like Mr DIY).",
+            "embedding_summary": "The investor prioritizes established retail businesses with consistent revenue, strong profitability, and a commitment to dividend payouts. They compare potential investments to industry peers (Mr DIY) to assess valuation and growth potential, favoring companies with a stable business model and a history of rewarding shareholders."
+        },
+        {
+            "asset_class": "IPO (Initial Public Offering)",
+            "metrics_used": [
+                "IPO Price",
+                "Market Capitalization",
+                "Share Distribution (Bumiputra, Institutional, Retail)",
+                "Prospectus (Financial Records, Operational Highlights)",
+                "Historical Profitability"
+            ],
+            "metrics_ignored": [
+                "Historical stock prices before IPO"
+            ],
+            "logic_rule": "IF a company is going public (IPO) THEN analyze the prospectus to understand its financial history, growth plans, and valuation. Compare the IPO price to the valuation of comparable companies to determine if it is undervalued or overvalued.",
+            "embedding_summary": "The investor carefully evaluates IPOs by scrutinizing the prospectus for financial performance and growth potential. They compare the IPO price to the valuations of similar companies to assess whether the offering represents a good investment opportunity."
+        },
+        {
+            "asset_class": "Dividend Stocks",
+            "metrics_used": [
+                "Dividend Yield",
+                "Payout Ratio",
+                "Profitability",
+                "Cash Flow"
+            ],
+            "metrics_ignored": [
+                "Short-term market fluctuations"
+            ],
+            "logic_rule": "IF a company consistently generates profits and has a high dividend payout ratio THEN it is likely a good candidate for dividend investing, as it indicates a commitment to returning value to shareholders.",
+            "embedding_summary": "The investor seeks companies with a proven track record of profitability and a generous dividend payout ratio, indicating a commitment to returning value to shareholders and providing a stable income stream."
+        },
+        {
+            "asset_class": "Growth Stocks",
+            "metrics_used": [
+                "Revenue Growth",
+                "Number of Stores",
+                "Market Expansion"
+            ],
+            "metrics_ignored": [
+                "Current dividend yield"
+            ],
+            "logic_rule": "IF a company demonstrates strong revenue growth and is actively expanding its market presence THEN it may be considered a growth stock, even if it currently offers a low dividend yield.",
+            "embedding_summary": "The investor recognizes the potential of growth stocks, prioritizing companies that are rapidly expanding their revenue and market share, even if they don't currently offer high dividend yields."
+        },
+        {
+            "asset_class": "Retail Sector Comparison",
+            "metrics_used": [
+                "Revenue",
+                "Net Profit",
+                "P/E Ratio",
+                "Dividend Yield",
+                "Number of Stores"
+            ],
+            "metrics_ignored": [
+                "Micro-level operational details"
+            ],
+            "logic_rule": "IF evaluating a retail company THEN compare its financial performance (revenue, profit, valuation) and growth metrics (number of stores) to its competitors (e.g., Mr DIY, 7-Eleven) to assess its relative attractiveness.",
+            "embedding_summary": "The investor uses comparative analysis within the retail sector, benchmarking a company's financial performance and growth metrics against its competitors to identify potential investment opportunities and assess relative value."
+        }
+    ]
+}

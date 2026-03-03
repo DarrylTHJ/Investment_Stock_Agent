@@ -65,8 +65,26 @@ if st.button("Analyze") and query:
         inst_ctx = format_context_for_llm(inst_docs)
         retail_ctx = format_context_for_llm(retail_docs)
 
-    # 2. Display Raw Sources (Expandable)
-    with st.expander("📂 View Retrieved Source Documents"):
+# 2. Display Retrieved Logic (Expandable)
+    with st.expander("🧠 View Retrieved Cognitive Logic (The Brain)"):
+        col1, col2 = st.columns(2)
+        with col1:
+            st.subheader("🏛️ Institutional Logic")
+            if not inst_docs: st.write("No institutional rules found (Offline).")
+            for doc, meta in zip(inst_docs, inst_meta):
+                st.markdown(f"**Asset Class:** {meta.get('asset_class', 'Unknown')}")
+                st.markdown(f"**Logic Rule:** `{meta.get('logic_rule', 'None')}`")
+                st.caption(f"📄 Source: {meta.get('filename', 'Unknown')}")
+                st.divider()
+        with col2:
+            st.subheader("🗣️ Retail Logic (Alfred's Rules)")
+            if not retail_docs: st.write("No retail rules found.")
+            for doc, meta in zip(retail_docs, retail_meta):
+                st.markdown(f"**Asset Target:** {meta.get('asset_class', 'Unknown')}")
+                st.markdown(f"**Rule:** `{meta.get('logic_rule', 'None')}`")
+                st.markdown(f"**Key Metrics:** {meta.get('metrics_used', 'None')}")
+                st.caption(f"📄 Source: {meta.get('filename', 'Unknown')}")
+                st.divider()
         col1, col2 = st.columns(2)
         with col1:
             st.subheader("🏛️ Institutional Sources")

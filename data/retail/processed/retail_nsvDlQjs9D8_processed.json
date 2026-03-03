@@ -1,0 +1,69 @@
+{
+    "meta": {
+        "source": "retail_nsvDlQjs9D8.txt",
+        "model": "gemma-3-27b-it",
+        "time": 1772507444.2332294
+    },
+    "data": [
+        {
+            "asset_class": "Equities (specifically Malaysian stocks)",
+            "metrics_used": [
+                "Shareholder activity",
+                "Financial year-end date",
+                "Management commentary in annual reports",
+                "Profitability",
+                "Stock price performance"
+            ],
+            "metrics_ignored": [
+                "Daily charts",
+                "Short-term news (post-annual report)",
+                "AI as a sole predictor"
+            ],
+            "logic_rule": "IF AI-summarized annual reports present an overly optimistic view AND actual financial performance/stock price contradicts this optimism THEN exercise caution and conduct independent analysis, as management tends to present a positive bias in reports.",
+            "embedding_summary": "This rule highlights the importance of critical thinking when using AI to analyze annual reports. The investor recognizes that management is incentivized to present a positive outlook, and AI may amplify this bias. Therefore, if the AI's summary is overly optimistic while the company's financial results or stock price suggest otherwise, investors should be skeptical and perform their own due diligence."
+        },
+        {
+            "asset_class": "Equities",
+            "metrics_used": [
+                "Timeframe of data (annual reports, typically 3 years)",
+                "Shareholder changes",
+                "Management's perspective",
+                "Stock performance"
+            ],
+            "metrics_ignored": [
+                "Real-time data",
+                "News immediately following the financial year-end"
+            ],
+            "logic_rule": "IF the AI's analysis is based on data up to a specific financial year-end date THEN understand that information after that date (e.g., major shareholder sales announced after the year-end) will not be reflected in the AI's summary.",
+            "embedding_summary": "This rule emphasizes the limitations of AI-driven analysis due to the time lag inherent in annual reports. The investor understands that AI summaries are only as current as the data they are trained on, and significant events occurring after the financial year-end will not be captured. Investors should supplement AI analysis with more up-to-date information."
+        },
+        {
+            "asset_class": "Equities",
+            "metrics_used": [
+                "Management commentary",
+                "Stock performance",
+                "Industry cycles",
+                "Economic conditions"
+            ],
+            "metrics_ignored": [
+                "Sole reliance on AI",
+                "Blind trust in management"
+            ],
+            "logic_rule": "IF management presents an optimistic outlook in the annual report BUT stock performance or industry trends are negative THEN be skeptical and conduct independent research, as management is prone to reporting positive news.",
+            "embedding_summary": "This rule underscores the need for independent judgment when evaluating management's statements in annual reports. The investor recognizes that management has an incentive to present a favorable picture, and discrepancies between their outlook and actual results should raise red flags. Investors should not rely solely on AI or management's reports."
+        },
+        {
+            "asset_class": "Equities",
+            "metrics_used": [
+                "Length of historical data (aiming for 5-10 years)",
+                "Economic cycles",
+                "Company performance during downturns"
+            ],
+            "metrics_ignored": [
+                "Short-term performance (3 years is considered insufficient)"
+            ],
+            "logic_rule": "IF analyzing a company's long-term viability THEN prioritize access to at least 5-10 years of historical data to assess performance through various economic cycles and industry conditions.",
+            "embedding_summary": "This rule focuses on the importance of long-term data analysis for assessing a company's resilience. The investor believes that a 3-year timeframe is inadequate and advocates for a longer historical perspective to evaluate performance during both favorable and unfavorable economic conditions."
+        }
+    ]
+}
