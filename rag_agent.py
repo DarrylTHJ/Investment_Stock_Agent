@@ -4,111 +4,73 @@ from chromadb.utils import embedding_functions
 from google import genai
 from dotenv import load_dotenv
 
-# Load .env
+# --- Setup API ---
 load_dotenv()
+client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 
-# --- CONFIGURATION ---
-DB_PATH = "./chroma_db"
-COLLECTION_NAME = "financial_knowledge"
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+# --- Setup ChromaDB ---
+db_path = os.path.join(os.path.dirname(__file__), "chroma_db")
+chroma_client = chromadb.PersistentClient(path=db_path)
 
-# --- API SETUP ---
-api_key = os.environ.get("GEMINI_API_KEY")
-if not api_key:
-    raise ValueError("API Key not found! Check your .env file.")
+embed_fn = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="all-MiniLM-L6-v2")
 
-client = genai.Client(api_key=api_key)
-
-# --- CHROMA SETUP ---
-chroma_client = chromadb.PersistentClient(path=DB_PATH)
-ef = embedding_functions.SentenceTransformerEmbeddingFunction(model_name=EMBEDDING_MODEL)
-collection = chroma_client.get_collection(name=COLLECTION_NAME, embedding_function=ef)
-
-def retrieve_filtered(query, source_type, n=15):
+def query_agent(collection_name, user_query, system_prompt, source_filter=None):
     """
-    Retrieves context SPECIFICALLY for one source type.
+    Searches ChromaDB for relevant rules, extracts metadata for fact-checking,
+    then passes them to Gemini to synthesize. Returns both the LLM answer AND the sources.
     """
-    print(f"  ...searching {source_type} data...")
-    
-    results = collection.query(
-        query_texts=[query],
-        n_results=n,
-        where={"source_type": source_type} # <--- THE MAGIC FILTER
-    )
-
-    context_text = ""
-    if results['documents']:
-        docs = results['documents'][0]
-        # We don't need to fetch metadata for source_type here since we know it!
-        for doc in docs:
-            context_text += f"- {doc}\n"
-    
-    return context_text if context_text else "No relevant data found."
-
-def generate_comparison(query, retail_ctx, inst_ctx):
-    """
-    Asks Gemini to analyze both sides separately.
-    """
-    print("🤖 Analyzing differences...")
-    
-    prompt = f"""
-    You are a Financial Analyst System. You have access to two distinct datasets.
-    
-    USER QUESTION: {query}
-    
-    DATASET 1: INSTITUTIONAL (Official Reports, Principles)
-    {inst_ctx}
-    
-    DATASET 2: RETAIL (Social Sentiment, YouTube Opinions)
-    {retail_ctx}
-    
-    INSTRUCTIONS:
-    Please provide your response in the following strict format:
-    
-    ### 🏛️ Institutional Perspective
-    (Summarize the findings from Dataset 1. Focus on facts, fundamentals, and risk.)
-    
-    ### 🗣️ Retail/Market Sentiment
-    (Summarize the findings from Dataset 2. Focus on opinions, hype, and psychology.)
-    
-    ### ⚖️ Analysis of Divergence
-    (Compare the two. Are they agreeing? Is the retail crowd ignoring a risk the institutions see? Or vice versa?)
-    """
-
     try:
-        response = client.models.generate_content(
-            model='gemma-3-12b-it',
-            contents=prompt
+        collection = chroma_client.get_collection(
+            name=collection_name, 
+            embedding_function=embed_fn
         )
-        return response.text
+        
+        query_params = {
+            "query_texts": [user_query],
+            "n_results": 5
+        }
+        
+        if source_filter:
+            query_params["where"] = {"source_type": source_filter}
+        
+        results = collection.query(**query_params)
+        
+        retrieved_docs = results['documents'][0] if results['documents'] else []
+        retrieved_metadatas = results['metadatas'][0] if results['metadatas'] else []
+        
+        if not retrieved_docs:
+            context = "No specific rules found for this event in the database."
+            unique_sources = []
+        else:
+            context = "\n\n---\n\n".join(retrieved_docs)
+            # Extract unique source filenames to send back to the UI
+            unique_sources = list(set([meta.get('filename', 'Unknown Source') for meta in retrieved_metadatas]))
+            
+        print(f"🔍 Retrieved {len(retrieved_docs)} rules from {collection_name}. Sources: {unique_sources}")
+        
+        full_prompt = f"""
+        {system_prompt}
+        
+        === RETRIEVED LOGIC RULES ===
+        {context}
+        
+        === USER TRIGGER EVENT ===
+        Event: {user_query}
+        
+        Now, analyze the event based strictly on the rules above and output the required JSON.
+        """
+        
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=full_prompt
+        )
+        
+        # Return a dictionary containing both the LLM's text AND the source list
+        return {
+            "llm_response": response.text,
+            "sources": unique_sources
+        }
+
     except Exception as e:
-        return f"Error: {e}"
-
-def main():
-    print("==================================================")
-    print("   Dual-Source Financial Analyst (FYP Agent)      ")
-    print("==================================================")
-    
-    while True:
-        user_input = input("\nEnter Query (or 'exit'): ")
-        if user_input.lower() in ['exit', 'quit']:
-            break
-            
-        # 1. Parallel Retrieval
-        print("\n🔍 Retrieving data...")
-        institutional_data = retrieve_filtered(user_input, "institutional")
-        retail_data = retrieve_filtered(user_input, "retail")
-        
-        # 2. Check if we found ANYTHING
-        if "No relevant data" in institutional_data and "No relevant data" in retail_data:
-            print("❌ No data found in either category.")
-            continue
-            
-        # 3. Generate Answer
-        answer = generate_comparison(user_input, retail_data, institutional_data)
-        
-        print("\n" + answer + "\n")
-        print("-" * 60)
-
-if __name__ == "__main__":
-    main()
+        print(f"❌ Error in query_agent: {e}")
+        return {"llm_response": "{}", "sources": []}
