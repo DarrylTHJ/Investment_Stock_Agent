@@ -82,7 +82,7 @@ def analyze_event_impact(event_query):
         }
 
 if __name__ == "__main__":
-    test_event = "Malaysia announces a complete ban on vapes."
+    test_event = "Post-Pandemic Economic Reopening"
     print("Running local test for Retail Agent...")
     result = analyze_event_impact(test_event)
     print(json.dumps(result, indent=4))
