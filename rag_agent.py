@@ -30,6 +30,7 @@ def query_agent(collection_name, user_query, system_prompt, source_filter=None):
             "n_results": 5
         }
         
+        # Explicit $eq operator for ChromaDB string filtering
         if source_filter:
             query_params["where"] = {"source_type": {"$eq": source_filter}}
         
@@ -40,14 +41,20 @@ def query_agent(collection_name, user_query, system_prompt, source_filter=None):
         
         if not retrieved_docs:
             context = "No specific rules found for this event in the database."
-            unique_sources = []
+            unique_sources = [] 
         else:
-            context = "\n\n---\n\n".join(retrieved_docs)
-            # Extract unique source filenames to send back to the UI
-            unique_sources = list(set([meta.get('filename', 'Unknown Source') for meta in retrieved_metadatas]))
+            # Build the context string AND pass the filename so the LLM can cite it
+            context_blocks = []
+            for doc, meta in zip(retrieved_docs, retrieved_metadatas):
+                filename = meta.get('filename', 'Unknown Source')
+                rule_text = meta.get('logic_rule', doc) # Grab the strict rule if available
+                context_blocks.append(f"SOURCE_FILE: {filename}\nRULE: {rule_text}")
+                
+            context = "\n\n---\n\n".join(context_blocks)
             
-        print(f"🔍 Retrieved {len(retrieved_docs)} rules from {collection_name}. Sources: {unique_sources}")
-        
+            # Pass the actual metadata dicts back to Streamlit for display!
+            unique_sources = retrieved_metadatas
+            
         full_prompt = f"""
         {system_prompt}
         
