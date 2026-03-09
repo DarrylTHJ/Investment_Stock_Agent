@@ -60,22 +60,30 @@ def process_file(filepath, category, model_name, output_dir):
     # TEXT: {raw_text[:30000]}
     # """
 
+    print(f"🔹 Processing [{category}] with 🤖 {model_name}...")
+
+    # THE NEW EVENT-DRIVEN PROMPT
     prompt = f"""
-    You are a Financial Logic Extractor. Read the following {category} text.
+    You are a financial logic extractor. Read the following {category} investment transcript/report. 
     Do NOT extract specific stock prices, historical events, or temporary news. 
-    Instead, deduce the underlying investment rules, heuristics, and conditional logic (If/Then) the investor is using to make their decisions.
+    Instead, deduce the underlying cause-and-effect market triggers and investment rules the investor is using.
 
     Output STRICTLY a JSON list of objects matching this schema:
     [
-        {{
-            "asset_class": "What sector or type of stock does this rule apply to? (e.g., Banking, Tech, Dividend)",
-            "metrics_used": ["List of specific financial data points they care about, e.g., PE Ratio, Dividend Yield"],
-            "metrics_ignored": ["List of data points they explicitly ignore, e.g., daily charts"],
-            "logic_rule": "A clear IF [condition] THEN [action] statement summarizing their decision-making process.",
-            "embedding_summary": "A natural language paragraph summarizing this rule. (This will be embedded into the Vector DB)."
-        }}
+      {{
+        "trigger_event": "What macroeconomic, regulatory, or news event is being discussed? (e.g., 'OPR Rate Cut', 'Product Ban', 'Oil Spike')",
+        "impacted_sector": "Which specific sector or industry is affected?",
+        "impact_direction": "POSITIVE or NEGATIVE",
+        "logic_rule": "A clear IF [event] THEN [impact] statement summarizing their reasoning.",
+        "embedding_summary": "A natural language paragraph summarizing this cause-and-effect relationship. (This will be embedded into the Vector DB)."
+      }}
     ]
-    TEXT: {raw_text[:30000]}
+
+    If no general rules can be extracted from the text, return an empty list [].
+    Ensure the output is valid, parsable JSON.
+    
+    TEXT:
+    {raw_text[:30000]}
     """
 
     # Retry Logic
