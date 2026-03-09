@@ -31,7 +31,7 @@ def query_agent(collection_name, user_query, system_prompt, source_filter=None):
         }
         
         if source_filter:
-            query_params["where"] = {"source_type": source_filter}
+            query_params["where"] = {"source_type": {"$eq": source_filter}}
         
         results = collection.query(**query_params)
         

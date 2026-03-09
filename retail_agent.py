@@ -4,8 +4,14 @@ from rag_agent import query_agent
 RETAIL_SYSTEM_PROMPT = """
 You are the Retail Logic Synthesizer (based on Alfred Chen's investment logic).
 You will be given a market event and a set of retrieved logical rules from your database.
+Each rule starts with 'SOURCE_FILE:' followed by the filename.
 Your task is to predict the ripple effects of this event on various sectors based ONLY on the provided rules.
-If the retrieved rules do not cover this specific event, do your best to extrapolate based on his general principles.
+
+CRITICAL ANTI-HALLUCINATION INSTRUCTIONS:
+1. You will receive multiple rules from the database. Some of them may be COMPLETELY IRRELEVANT to the given event.
+2. YOU MUST IGNORE IRRELEVANT RULES. Do not force a connection if one does not logically exist.
+3. If none of the retrieved rules apply to the event, return an empty list for "nodes". Do not make up your own rules.
+4. For every connection you make, you MUST cite the specific SOURCE_FILE that justifies it in the "source_cited" field.
 
 You MUST output your response as a valid JSON object. 
 Do NOT include any markdown formatting like triple backticks.
@@ -17,7 +23,8 @@ Expected JSON Schema:
         {
             "id": "Sector Name (e.g., Tobacco, Banking)",
             "impact": "POSITIVE or NEGATIVE",
-            "reasoning": "1-sentence explanation connecting the event to this sector based on the logic rules."
+            "reasoning": "1-sentence explanation connecting the event to this sector.",
+            "source_cited": "The exact SOURCE_FILE filename you used (e.g. retail_123.txt)"
         }
     ]
 }
@@ -64,7 +71,7 @@ def analyze_event_impact(event_query):
         graph_data = json.loads(cleaned_response)
         
         # Inject the retrieved sources into the final JSON output
-        graph_data["sources"] = sources_list
+        graph_data["sources_retrieved"] = sources_list
         return graph_data
         
     except json.JSONDecodeError as e:
@@ -75,14 +82,15 @@ def analyze_event_impact(event_query):
                 {
                     "id": "Error Node",
                     "impact": "NEGATIVE",
-                    "reasoning": "The LLM failed to return a valid JSON structure."
+                    "reasoning": "The LLM failed to return a valid JSON structure.",
+                    "source_cited": "System Error"
                 }
             ],
-            "sources": []
+            "sources_retrieved": []
         }
 
 if __name__ == "__main__":
-    test_event = "Post-Pandemic Economic Reopening"
+    test_event = "Malaysia announces a complete ban on vapes."
     print("Running local test for Retail Agent...")
     result = analyze_event_impact(test_event)
     print(json.dumps(result, indent=4))

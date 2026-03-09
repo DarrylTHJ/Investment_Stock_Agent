@@ -99,12 +99,18 @@ if analyze_button and user_input.strip():
         for sector in sector_nodes:
             impact_icon = "🟢" if "POSITIVE" in sector.get("impact", "").upper() else "🔴"
             st.markdown(f"{impact_icon} **{sector.get('id')}**: {sector.get('reasoning')}")
-            st.caption(f"*(**Logic Cited:** {sector.get('source_cited', 'General Extrapolation')})*")
+            st.caption(f"*(**Agent Cited Source:** `{sector.get('source_cited', 'Unknown')}`)*")
             st.markdown("---")
             
-    st.write("### 📚 Raw Sources Retrieved from Brain")
+    st.write("### 📚 Raw Rules Retrieved from Database")
     if retrieved_sources:
-        for source in retrieved_sources:
-            st.caption(f"📄 `{source}`")
+        # retrieved_sources is now a list of metadata dictionaries!
+        seen_files = set()
+        for meta in retrieved_sources:
+            filename = meta.get('filename', 'Unknown')
+            # Use a set to avoid printing the exact same file 5 times if 5 chunks matched
+            if filename not in seen_files:
+                st.info(f"**Source:** `{filename}`\n\n**Logic Rule:** {meta.get('logic_rule', 'N/A')}\n\n**Metrics Used:** {meta.get('metrics_used', 'N/A')}")
+                seen_files.add(filename)
     else:
-        st.caption("No specific database files were retrieved for this query.")
+        st.caption("No specific rules matched the filter criteria.")
