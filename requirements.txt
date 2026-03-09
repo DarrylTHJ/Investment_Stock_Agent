@@ -1,6 +1,7 @@
 streamlit
+google-generativeai
 chromadb
-google-genai
 python-dotenv
-sentence-transformers
-pysqlite3-binary
+youtube-transcript-api
+pdfplumber
+streamlit-agraph
