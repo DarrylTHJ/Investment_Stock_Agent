@@ -6,3 +6,4 @@ youtube-transcript-api
 pdfplumber
 streamlit-agraph
 sentence-transformers
+yt-dlp

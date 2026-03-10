@@ -8,11 +8,14 @@ SOURCE_FILE = "retail_sources.txt"
 OUTPUT_DIR = "data/retail/scraped"
 
 def extract_video_id(url):
-    """Simple helper to grab ID from URL"""
+    """Simple helper to grab ID from URL, or pass through if it's already an ID"""
     if "v=" in url:
         return url.split("v=")[1].split("&")[0]
     elif "youtu.be" in url:
         return url.split("/")[-1]
+    elif "http" not in url:
+        # If it doesn't look like a URL, assume it's already a raw video ID!
+        return url
     return None
 
 def batch_scrape_retail():
@@ -46,7 +49,7 @@ def batch_scrape_retail():
         try:
             # The Robust Method (Instantiate Class)
             api = YouTubeTranscriptApi()
-            transcript = api.fetch(video_id, languages=['zh-Hans', 'zh-Hant', 'en'])
+            transcript = api.fetch(video_id, languages=['zh-Hans', 'zh-Hant', 'en', 'zh-TW', 'zh-CN', 'zh'])
             
             formatter = TextFormatter()
             text_formatted = formatter.format_transcript(transcript)
