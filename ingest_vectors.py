@@ -31,8 +31,13 @@ def ingest_single_file(file_path, source_type):
     metadatas = []
     ids = []
     
-    # In the new schema, the JSON is a direct list of rule objects
-    items = json_content.get("data", [])
+    # In the new schema, the JSON might be a direct list, or nested under "data"
+    if isinstance(json_content, list):
+        items = json_content
+    elif isinstance(json_content, dict):
+        items = json_content.get("data", [])
+    else:
+        items = []
     
     if not items:
         print(f"⚠️ Warning: No rule objects found in {file_path}")
@@ -48,16 +53,21 @@ def ingest_single_file(file_path, source_type):
             continue
 
         # We store the strict logic elements as metadata
-        # Chroma requires metadata values to be strings, ints, or floats (no lists)
-        metrics_used_str = ", ".join(item.get("metrics_used", []))
-        metrics_ignored_str = ", ".join(item.get("metrics_ignored", []))
+        # Safely convert to strings (ChromaDB requirement)
+        metrics_used = item.get("metrics_used", [])
+        metrics_ignored = item.get("metrics_ignored", [])
+        
+        metrics_used_str = ", ".join(metrics_used) if isinstance(metrics_used, list) else str(metrics_used)
+        metrics_ignored_str = ", ".join(metrics_ignored) if isinstance(metrics_ignored, list) else str(metrics_ignored)
 
         documents.append(text_content)
         metadatas.append({
             "source_type": source_type,
             "filename": filename,
-            "asset_class": item.get("asset_class", "UNKNOWN"),
-            "logic_rule": item.get("logic_rule", "UNKNOWN"),
+            "trigger_event": str(item.get("trigger_event", "UNKNOWN")),
+            "impacted_sector": str(item.get("impacted_sector", "UNKNOWN")),
+            "impact_direction": str(item.get("impact_direction", "UNKNOWN")),
+            "logic_rule": str(item.get("logic_rule", "UNKNOWN")),
             "metrics_used": metrics_used_str,
             "metrics_ignored": metrics_ignored_str
         })

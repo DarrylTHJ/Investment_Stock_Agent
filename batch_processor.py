@@ -16,11 +16,11 @@ INSTITUTIONAL_OUTPUT_DIR = "data/institutional/processed"
 
 # --- YOUR MODEL ROSTER ---
 MODEL_ROSTER = [
-    "gemini-3-flash-preview",  # Newest Speed (Corrected name)
+    #"gemini-3-flash-preview",  # Newest Speed (Corrected name)
     #"gemini-2.5-flash",        # Reliable
     "gemma-3-27b-it",          # Strong Open Model (Corrected name)
     "gemma-3-12b-it",          # Good Mid-range
-    "gemini-2.5-flash-lite",   # Fast (might be busy/503)
+    #"gemini-2.5-flash-lite",   # Fast (might be busy/503)
 ]
 
 def clean_json_string(text):

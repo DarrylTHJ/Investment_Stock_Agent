@@ -104,13 +104,27 @@ if analyze_button and user_input.strip():
             
     st.write("### 📚 Raw Rules Retrieved from Database")
     if retrieved_sources:
-        # retrieved_sources is now a list of metadata dictionaries!
-        seen_files = set()
+        seen_rules = set()
         for meta in retrieved_sources:
-            filename = meta.get('filename', 'Unknown')
-            # Use a set to avoid printing the exact same file 5 times if 5 chunks matched
-            if filename not in seen_files:
-                st.info(f"**Source:** `{filename}`\n\n**Logic Rule:** {meta.get('logic_rule', 'N/A')}\n\n**Metrics Used:** {meta.get('metrics_used', 'N/A')}")
-                seen_files.add(filename)
+            # SAFETY NET: Check if meta is a string (old cache) or dict (new logic)
+            if isinstance(meta, str):
+                if meta not in seen_rules:
+                    st.info(f"**Source:** `{meta}`")
+                    seen_rules.add(meta)
+            else:
+                # Normal behavior: It's a dictionary
+                filename = meta.get('filename', 'Unknown')
+                logic_rule = meta.get('logic_rule', 'N/A')
+                
+                # Deduplicate by the exact rule, NOT the filename 
+                # (because 1 file can contain multiple different rules!)
+                if logic_rule not in seen_rules:
+                    st.info(
+                        f"**Source:** `{filename}`\n\n"
+                        f"**Event:** {meta.get('trigger_event', 'N/A')} ➔ **Impact:** {meta.get('impacted_sector', 'N/A')} ({meta.get('impact_direction', 'N/A')})\n\n"
+                        f"**Logic Rule:** {logic_rule}\n\n"
+                        f"**Metrics Used:** {meta.get('metrics_used', 'None')}"
+                    )
+                    seen_rules.add(logic_rule)
     else:
         st.caption("No specific rules matched the filter criteria.")
