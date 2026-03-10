@@ -123,7 +123,7 @@ if analyze_button and user_input.strip():
                         f"**Source:** `{filename}`\n\n"
                         f"**Event:** {meta.get('trigger_event', 'N/A')} ➔ **Impact:** {meta.get('impacted_sector', 'N/A')} ({meta.get('impact_direction', 'N/A')})\n\n"
                         f"**Logic Rule:** {logic_rule}\n\n"
-                        f"**Metrics Used:** {meta.get('metrics_used', 'None')}"
+                        f"**Embedding Summary:** {meta.get('embedding_summary', 'N/A')}"
                     )
                     seen_rules.add(logic_rule)
     else:

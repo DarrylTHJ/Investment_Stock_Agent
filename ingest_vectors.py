@@ -68,8 +68,7 @@ def ingest_single_file(file_path, source_type):
             "impacted_sector": str(item.get("impacted_sector", "UNKNOWN")),
             "impact_direction": str(item.get("impact_direction", "UNKNOWN")),
             "logic_rule": str(item.get("logic_rule", "UNKNOWN")),
-            "metrics_used": metrics_used_str,
-            "metrics_ignored": metrics_ignored_str
+            "embedding_summary": str(item.get("embedding_summary", "UNKNOWN"))
         })
         ids.append(f"{filename}-{uuid.uuid4()}")
 
