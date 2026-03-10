@@ -27,7 +27,7 @@ def query_agent(collection_name, user_query, system_prompt, source_filter=None):
         
         query_params = {
             "query_texts": [user_query],
-            "n_results": 5
+            "n_results": 30
         }
         
         # Explicit $eq operator for ChromaDB string filtering
