@@ -127,10 +127,6 @@ if st.session_state.graph_data:
             width="100%", 
             height=500, 
             directed=True, 
-            physics=False, # Disable bouncy physics for a stable tree
-            hierarchical=True, # Enable Tree layout
-            direction="UD", # Up-Down direction (Event at top, stocks at bottom)
-            collapsible=True, # Double click a node to hide its children
             nodeHighlightBehavior=True,
             highlightColor="#F7A7A6"
         )
