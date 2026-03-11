@@ -121,12 +121,15 @@ if st.session_state.graph_data:
                 
                 edges.append(Edge(source=sector_id, target=ticker))
 
-        # --- FIX: Updated Config for Collapsibility ---
-        # To make nodes collapsible, a hierarchical layout works best.
+        # Config for Collapsibility
         config = Config(
             width="100%", 
             height=500, 
             directed=True, 
+            physics=False, 
+            hierarchical=True, 
+            direction="UD", 
+            collapsible=True, 
             nodeHighlightBehavior=True,
             highlightColor="#F7A7A6"
         )
@@ -179,83 +182,93 @@ if st.session_state.graph_data:
         with col_right:
             st.header("Empirical Reality Check")
             
-            # Calculate dates: 14 days before, 30 days after
-            start_date = event_date - timedelta(days=14)
-            end_date = event_date + timedelta(days=30)
-            
-            # FORMAT DATES AS STRINGS FOR SAFEST YFINANCE PARSING
-            start_str = start_date.strftime('%Y-%m-%d')
-            end_str = end_date.strftime('%Y-%m-%d')
-            
-            correct_predictions = 0
-            total_stocks = len(stocks_to_verify)
-            
-            with st.spinner("Downloading historical market data..."):
-                for stock in stocks_to_verify:
-                    # Clean the ticker to ensure no weird spaces or missing .KL
-                    ticker = stock["ticker"].strip().upper()
-                    if not ticker.endswith(".KL"):
-                        ticker += ".KL"
+            # --- FUTURE DATE SAFEGUARD ---
+            today = datetime.date.today()
+            if event_date > today:
+                st.error(f"❌ Cannot run reality check for future dates. Please select a date before {today}.")
+            else:
+                # Calculate dates: 14 days before, 30 days after (or up to today)
+                start_date = event_date - timedelta(days=14)
+                
+                # Cap the end date at today's date so yfinance doesn't look into the future
+                ideal_end_date = event_date + timedelta(days=30)
+                end_date = min(ideal_end_date, today)
+                
+                # FORMAT DATES AS STRINGS FOR SAFEST YFINANCE PARSING
+                start_str = start_date.strftime('%Y-%m-%d')
+                end_str = end_date.strftime('%Y-%m-%d')
+                
+                correct_predictions = 0
+                total_stocks = len(stocks_to_verify)
+                
+                with st.spinner(f"Downloading historical market data from {start_str} to {end_str}..."):
+                    for stock in stocks_to_verify:
+                        # Clean the ticker to ensure no weird spaces or missing .KL
+                        ticker = stock["ticker"].strip().upper()
+                        if not ticker.endswith(".KL"):
+                            ticker += ".KL"
+                            
+                        prediction = stock["predicted_impact"]
                         
-                    prediction = stock["predicted_impact"]
-                    
-                    with st.container(border=True):
-                        st.subheader(f"{stock['name']} (`{ticker}`)")
-                        st.caption(stock['desc'])
-                        
-                        try:
-                            # Fetch yfinance data using the string dates
-                            df = yf.download(ticker, start=start_str, end=end_str, progress=False)
+                        with st.container(border=True):
+                            st.subheader(f"{stock['name']} (`{ticker}`)")
+                            st.caption(stock['desc'])
                             
-                            if df.empty:
-                                # We now show EXACTLY what failed to help debugging
-                                st.warning(f"⚠️ No market data found for `{ticker}` between {start_str} and {end_str}.")
-                                continue
+                            try:
+                                # Fetch yfinance data using the string dates
+                                df = yf.download(ticker, start=start_str, end=end_str, progress=False)
                                 
-                            # Flatten MultiIndex columns if necessary (yfinance bug workaround)
-                            if isinstance(df.columns, pd.MultiIndex):
-                                df.columns = df.columns.get_level_values(0)
-                            
-                            # FIX: Strip timezone from yfinance data so it matches our UI date!
-                            df.index = df.index.tz_localize(None)
-                            
-                            # Calculate accuracy
-                            close_prices = df['Close'].dropna()
-                            if len(close_prices) < 2:
-                                st.warning("Not enough trading days found in this date range.")
-                                continue
+                                if df.empty:
+                                    st.warning(f"⚠️ No market data found for `{ticker}` between {start_str} and {end_str}.")
+                                    continue
+                                    
+                                # Flatten MultiIndex columns if necessary (yfinance bug workaround)
+                                if isinstance(df.columns, pd.MultiIndex):
+                                    df.columns = df.columns.get_level_values(0)
                                 
-                            price_at_event = float(close_prices.iloc[0]) # Approx starting price
-                            price_end = float(close_prices.iloc[-1])
-                            pct_change = float(((price_end - price_at_event) / price_at_event) * 100)
-                            
-                            # Did reality match the prediction?
-                            actually_went_up = pct_change > 0
-                            predicted_up = "POSITIVE" in prediction
-                            
-                            is_correct = (actually_went_up and predicted_up) or (not actually_went_up and not predicted_up)
-                            if is_correct: correct_predictions += 1
+                                # Strip timezone from yfinance data safely
+                                if df.index.tz is not None:
+                                    df.index = df.index.tz_localize(None)
                                 
-                            # Plotting with Plotly
-                            fig = go.Figure()
-                            dates = df.index.tolist()
-                            prices = close_prices.values.tolist()
-                            
-                            fig.add_trace(go.Scatter(x=dates, y=prices, mode='lines', name='Price', line=dict(color='#2B7CE9')))
-                            
-                            # Use string for the vline to prevent Plotly date math crashes
-                            fig.add_vline(x=str(event_date), line_dash="dash", line_color="red", annotation_text="Event Occurred")
-                            
-                            fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0), xaxis_title="Date", yaxis_title="Price (MYR)")
-                            st.plotly_chart(fig, use_container_width=True)
-                            
-                            # Print Verdict
-                            verdict_color = "green" if is_correct else "red"
-                            st.markdown(f"**Predicted:** {prediction} | **Actual:** {pct_change:.2f}% | <span style='color:{verdict_color}'>**Verdict: {'Correct' if is_correct else 'Wrong'}**</span>", unsafe_allow_html=True)
-                            
-                        except Exception as e:
-                            st.error(f"Failed to load chart for {ticker}: {e}")
-            
-            # --- FINAL SCORE ---
-            st.divider()
-            st.subheader(f"🧠 Retail Logic Accuracy: {correct_predictions} / {total_stocks}")
+                                # Calculate accuracy
+                                close_prices = df['Close'].dropna()
+                                if len(close_prices) < 2:
+                                    st.warning("Not enough trading days found in this date range.")
+                                    continue
+                                    
+                                price_at_event = float(close_prices.iloc[0]) # Approx starting price
+                                price_end = float(close_prices.iloc[-1])
+                                pct_change = float(((price_end - price_at_event) / price_at_event) * 100)
+                                
+                                # Did reality match the prediction?
+                                actually_went_up = pct_change > 0
+                                predicted_up = "POSITIVE" in prediction
+                                
+                                is_correct = (actually_went_up and predicted_up) or (not actually_went_up and not predicted_up)
+                                if is_correct: correct_predictions += 1
+                                    
+                                # Plotting with Plotly
+                                fig = go.Figure()
+                                dates = df.index.tolist()
+                                prices = close_prices.values.tolist()
+                                
+                                fig.add_trace(go.Scatter(x=dates, y=prices, mode='lines', name='Price', line=dict(color='#2B7CE9')))
+                                
+                                # BULLETPROOF PLOTLY FIX: Feed Plotly a pure numeric millisecond timestamp to bypass date-string math crashes
+                                event_timestamp = pd.to_datetime(event_date)
+                                event_ms = event_timestamp.timestamp() * 1000
+                                fig.add_vline(x=event_ms, line_dash="dash", line_color="red", annotation_text="Event Occurred")
+                                
+                                fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0), xaxis_title="Date", yaxis_title="Price (MYR)")
+                                st.plotly_chart(fig, use_container_width=True)
+                                
+                                # Print Verdict
+                                verdict_color = "green" if is_correct else "red"
+                                st.markdown(f"**Predicted:** {prediction} | **Actual:** {pct_change:.2f}% | <span style='color:{verdict_color}'>**Verdict: {'Correct' if is_correct else 'Wrong'}**</span>", unsafe_allow_html=True)
+                                
+                            except Exception as e:
+                                st.error(f"Failed to load chart for {ticker}: {e}")
+                
+                # --- FINAL SCORE ---
+                st.divider()
+                st.subheader(f"🧠 Retail Logic Accuracy: {correct_predictions} / {total_stocks}")
