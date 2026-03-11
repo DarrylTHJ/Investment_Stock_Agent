@@ -102,7 +102,7 @@ def analyze_macro_period(start_date, end_date):
     print("🧠 Querying ChromaDB for each historical headline...")
     
     try:
-        collection = chroma_client.get_collection(name="retail_collection", embedding_function=embed_fn)
+        collection = chroma_client.get_collection(name="financial_knowledge", embedding_function=embed_fn)
     except Exception as e:
         print(f"❌ ChromaDB Error: {e}")
         return {"period_summary": f"Database Error: {e}", "news_events": [], "sectors": [], "sources_retrieved": []}
