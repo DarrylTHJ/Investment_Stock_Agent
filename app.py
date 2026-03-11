@@ -127,10 +127,6 @@ if st.session_state.graph_data:
             width="100%", 
             height=500, 
             directed=True, 
-            physics=False, # Disable bouncy physics for a stable tree
-            hierarchical=True, # Enable Tree layout
-            direction="UD", # Up-Down direction (Event at top, stocks at bottom)
-            collapsible=True, # Double click a node to hide its children
             nodeHighlightBehavior=True,
             highlightColor="#F7A7A6"
         )
@@ -187,12 +183,20 @@ if st.session_state.graph_data:
             start_date = event_date - timedelta(days=14)
             end_date = event_date + timedelta(days=30)
             
+            # FORMAT DATES AS STRINGS FOR SAFEST YFINANCE PARSING
+            start_str = start_date.strftime('%Y-%m-%d')
+            end_str = end_date.strftime('%Y-%m-%d')
+            
             correct_predictions = 0
             total_stocks = len(stocks_to_verify)
             
             with st.spinner("Downloading historical market data..."):
                 for stock in stocks_to_verify:
-                    ticker = stock["ticker"]
+                    # Clean the ticker to ensure no weird spaces or missing .KL
+                    ticker = stock["ticker"].strip().upper()
+                    if not ticker.endswith(".KL"):
+                        ticker += ".KL"
+                        
                     prediction = stock["predicted_impact"]
                     
                     with st.container(border=True):
@@ -200,11 +204,12 @@ if st.session_state.graph_data:
                         st.caption(stock['desc'])
                         
                         try:
-                            # Fetch yfinance data
-                            df = yf.download(ticker, start=start_date, end=end_date, progress=False)
+                            # Fetch yfinance data using the string dates
+                            df = yf.download(ticker, start=start_str, end=end_str, progress=False)
                             
                             if df.empty:
-                                st.warning("No data found for this ticker on these dates.")
+                                # We now show EXACTLY what failed to help debugging
+                                st.warning(f"⚠️ No market data found for `{ticker}` between {start_str} and {end_str}.")
                                 continue
                                 
                             # Flatten MultiIndex columns if necessary (yfinance bug workaround)
@@ -217,10 +222,11 @@ if st.session_state.graph_data:
                             # Calculate accuracy
                             close_prices = df['Close'].dropna()
                             if len(close_prices) < 2:
+                                st.warning("Not enough trading days found in this date range.")
                                 continue
                                 
-                            price_at_event = close_prices.iloc[0] # Approx starting price
-                            price_end = close_prices.iloc[-1]
+                            price_at_event = float(close_prices.iloc[0]) # Approx starting price
+                            price_end = float(close_prices.iloc[-1])
                             pct_change = float(((price_end - price_at_event) / price_at_event) * 100)
                             
                             # Did reality match the prediction?
@@ -232,13 +238,12 @@ if st.session_state.graph_data:
                                 
                             # Plotting with Plotly
                             fig = go.Figure()
-                            # Convert series to flat lists to avoid Plotly typing issues
                             dates = df.index.tolist()
                             prices = close_prices.values.tolist()
                             
                             fig.add_trace(go.Scatter(x=dates, y=prices, mode='lines', name='Price', line=dict(color='#2B7CE9')))
                             
-                            # FIX: Convert event_date to string so Plotly doesn't crash doing date math!
+                            # Use string for the vline to prevent Plotly date math crashes
                             fig.add_vline(x=str(event_date), line_dash="dash", line_color="red", annotation_text="Event Occurred")
                             
                             fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0), xaxis_title="Date", yaxis_title="Price (MYR)")
@@ -249,7 +254,7 @@ if st.session_state.graph_data:
                             st.markdown(f"**Predicted:** {prediction} | **Actual:** {pct_change:.2f}% | <span style='color:{verdict_color}'>**Verdict: {'Correct' if is_correct else 'Wrong'}**</span>", unsafe_allow_html=True)
                             
                         except Exception as e:
-                            st.error(f"Failed to load chart: {e}")
+                            st.error(f"Failed to load chart for {ticker}: {e}")
             
             # --- FINAL SCORE ---
             st.divider()
