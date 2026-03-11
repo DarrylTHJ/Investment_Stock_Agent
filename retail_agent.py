@@ -1,80 +1,172 @@
 import json
-from rag_agent import query_agent
+import os
+import re
+import datetime
+from gnews import GNews
+from rag_agent import chroma_client, embed_fn, client
 
-RETAIL_SYSTEM_PROMPT = """
-You are the Retail Logic Synthesizer (based on Alfred Chen's investment logic).
-You will be given a market event and a set of retrieved logical rules from your database.
+# We split the prompt so we can inject the live ticker database in the middle
+PROMPT_PART_1 = """
+You are the Macro Retail Logic Synthesizer (based on Alfred Chen's investment logic).
+You will receive multiple news headlines from a specific macro period, and Alfred's retrieved logic rules for EACH headline.
 
 CRITICAL INSTRUCTIONS:
-1. Your ONLY reality is the 'RETRIEVED LOGIC RULES' provided below. Do not hallucinate connections.
-2. If the retrieved rules do not explicitly cover the event, return an empty list [] for "nodes". 
+1. Your ONLY reality is the 'RETRIEVED RULES' provided below. Do not hallucinate external financial knowledge.
+2. You must calculate the NET IMPACT of these combined forces on Malaysian economic sectors.
+
+SCORING PROTOCOL (-10 to +10):
+You MUST assign a score to each news event's impact on a sector based ONLY on the urgency/adjectives in Alfred's retrieved rules:
+- Score +/- 8 to 10: Alfred uses absolute terms ('massive', 'always', 'guaranteed', 'crash', 'skyrocket').
+- Score +/- 4 to 7: Standard causative words ('leads to', 'causes', 'hurts', 'benefits').
+- Score +/- 1 to 3: Weak words ('might', 'slight headwind', 'could impact').
+- Score 0: If the rule does not explicitly link the event to the sector. Do not guess.
 
 NEW REQUIREMENT (STOCK PROXIES):
-For every impacted sector you identify, you MUST provide exactly 3 proxy stock tickers from BURSA MALAYSIA that represent that sector.
-- BURSA MALAYSIA TICKERS MUST BE 4 NUMBERS FOLLOWED BY ".KL" (e.g., "1155.KL" for Maybank, "0166.KL" for Inari, "4162.KL" for BAT). 
-- DO NOT use alphabetical tickers like "MAYBANK.KL" or it will fail.
-- You must provide a short 1-sentence description of what the company does to prove it belongs in that sector.
+For every impacted sector, pick exactly 3 proxy stock tickers ONLY from the live database below. Do not invent any tickers!
 
-You MUST output your response as a valid JSON object. Do NOT include Markdown backticks.
+--- LIVE BURSA MALAYSIA DATABASE ---
+"""
 
-Expected JSON Schema:
+PROMPT_PART_2 = """
+------------------------------------
+
+Output your response as a valid JSON object matching this exact schema:
 {
-    "event_name": "Short name of the trigger event",
-    "nodes": [
+    "period_summary": "1-sentence summary of the macro period",
+    "news_events": [
+        {"id": "news_1", "headline": "Exact headline text here"}
+    ],
+    "sectors": [
         {
             "id": "Sector Name (e.g., Banking)",
-            "impact": "POSITIVE or NEGATIVE",
-            "reasoning": "1-sentence explanation connecting the event to this sector.",
-            "source_cited": "The exact SOURCE_FILE filename used",
+            "net_score": 5,
+            "final_verdict": "POSITIVE",
+            "reasoning": "Overall positive because factor A outweighed factor B.",
+            "competing_forces": [
+                {"news_id": "news_1", "score": 8, "reasoning": "Alfred explicitly states this causes massive growth."}
+            ],
             "proxy_stocks": [
-                {
-                    "ticker": "1155.KL",
-                    "name": "Malayan Banking Berhad",
-                    "description": "The largest bank in Malaysia, highly sensitive to interest rate changes."
-                },
-                // ... 2 more stocks
+                {"ticker": "1155.KL", "name": "Maybank", "description": "1-sentence description."}
             ]
         }
     ]
 }
+
+=== USER'S MACRO NEWS EVENTS & RETRIEVED RULES ===
 """
 
-def clean_json_output(text):
-    if not text:
-        return "{}"
-    clean = text.strip()
-    if clean.startswith("```json"): 
-        clean = clean[7:]
-    elif clean.startswith("```"): 
-        clean = clean[3:]
-    if clean.endswith("```"): 
-        clean = clean[:-3]
-    return clean.strip()
+def get_dynamic_prompt():
+    """Reads the live JSON database to prevent hallucinated tickers."""
+    # Ensure it maps to the correct data folder structure
+    db_path = os.path.join(os.path.dirname(__file__), "data", "bursa_tickers.json")
+    try:
+        with open(db_path, "r", encoding="utf-8") as f:
+            ticker_db = json.load(f)
+            
+        db_string = ""
+        for sector, stocks in ticker_db.items():
+            stock_strings = [f'"{s["ticker"]}" ({s["name"]})' for s in stocks]
+            db_string += f"{sector}: {', '.join(stock_strings)}\n"
+    except FileNotFoundError:
+        db_string = "Error: Live database unavailable. Please fall back to generic 4-digit Bursa tickers (e.g., 1155.KL).\n"
+        
+    return PROMPT_PART_1 + db_string + PROMPT_PART_2
 
-def analyze_event_impact(event_query):
-    print(f"🧠 Synthesizing impact for event: '{event_query}'...")
+def clean_json_output(text):
+    """Bulletproof JSON extractor using Regex to ignore conversational LLM filler."""
+    if not text: 
+        return "{}"
     
-    rag_result = query_agent(
-        collection_name="financial_knowledge", 
-        user_query=event_query, 
-        system_prompt=RETAIL_SYSTEM_PROMPT,
-        source_filter="retail"
-    )
+    # Hunt for the first '{' and the last '}' across multiple lines
+    match = re.search(r'\{.*\}', text, re.DOTALL)
+    if match:
+        return match.group(0)
     
-    raw_json_string = rag_result.get("llm_response", "{}")
-    sources_list = rag_result.get("sources", [])
+    return "{}"
+
+def fetch_macro_news(start_date, end_date):
+    """Fetches real historical headlines using GNews."""
+    gnews = GNews(language='en', country='MY', max_results=3) # Top 3 major events to prevent context bloat
+    gnews.start_date = (start_date.year, start_date.month, start_date.day)
+    gnews.end_date = (end_date.year, end_date.month, end_date.day)
+    query = "Malaysia economy OR Bursa Malaysia OR Bank Negara"
+    return gnews.get_news(query)
+
+def analyze_macro_period(start_date, end_date):
+    print(f"🌍 Fetching Macro News between {start_date} and {end_date}...")
+    news_articles = fetch_macro_news(start_date, end_date)
+    
+    if not news_articles:
+        return {"period_summary": "Error: No news found for this period. Try a different date range.", "news_events": [], "sectors": [], "sources_retrieved": []}
+
+    print("🧠 Querying ChromaDB for each historical headline...")
     
     try:
-        cleaned_response = clean_json_output(raw_json_string)
+        collection = chroma_client.get_collection(name="retail_collection", embedding_function=embed_fn)
+    except Exception as e:
+        print(f"❌ ChromaDB Error: {e}")
+        return {"period_summary": f"Database Error: {e}", "news_events": [], "sectors": [], "sources_retrieved": []}
+
+    context_blocks = []
+    all_sources = []
+    
+    # 1. Loop through each piece of news and fetch Alfred's specific rules for it
+    for i, article in enumerate(news_articles):
+        news_id = f"news_{i+1}"
+        headline = article.get('title', 'Unknown Event')
+        
+        # Query the vector DB using the actual headline text
+        try:
+            results = collection.query(
+                query_texts=[headline], 
+                n_results=2, # Get top 2 rules per headline
+                where={"source_type": {"$eq": "retail"}}
+            )
+            
+            # Safely handle empty ChromaDB returns
+            retrieved_docs = results['documents'][0] if results.get('documents') and len(results['documents']) > 0 else []
+            retrieved_metadatas = results['metadatas'][0] if results.get('metadatas') and len(results['metadatas']) > 0 else []
+            
+        except Exception as e:
+            print(f"⚠️ Warning: Failed to query headline '{headline}': {e}")
+            retrieved_docs, retrieved_metadatas = [], []
+
+        rule_texts = []
+        for doc, meta in zip(retrieved_docs, retrieved_metadatas):
+            all_sources.append(meta) # Save for UI citations
+            rule_texts.append(f"- SOURCE: {meta.get('filename', 'Unknown')} | RULE: {meta.get('logic_rule', doc)}")
+            
+        rules_string = "\n".join(rule_texts) if rule_texts else "- No explicit rules found for this event."
+        
+        context_blocks.append(f"NEWS EVENT ID [{news_id}]: {headline}\nALFRED's RETRIEVED RULES:\n{rules_string}\n")
+
+    # 2. Build the final prompt
+    final_context = "\n".join(context_blocks)
+    full_prompt = get_dynamic_prompt() + final_context
+    
+    print("⚖️ Calculating Net Weighting via LLM...")
+    try:
+        response = client.models.generate_content(
+            model="gemini-2.5-flash",
+            contents=full_prompt
+        )
+    except Exception as e:
+        print(f"❌ LLM API Error: {e}")
+        return {"period_summary": f"API Error: {e}", "news_events": [], "sectors": [], "sources_retrieved": []}
+    
+    # 3. Parse JSON safely
+    try:
+        cleaned_response = clean_json_output(response.text)
         graph_data = json.loads(cleaned_response)
-        graph_data["sources_retrieved"] = sources_list
+        graph_data["sources_retrieved"] = all_sources # Attach raw metadata for the Streamlit Expander
         return graph_data
     except json.JSONDecodeError as e:
         print(f"❌ Error parsing JSON from LLM: {e}")
-        return {"event_name": "Error", "nodes": [], "sources_retrieved": []}
+        print(f"--- RAW LLM RESPONSE ---\n{response.text}\n------------------------")
+        return {"period_summary": "Error: The AI failed to format its response as JSON.", "news_events": [], "sectors": [], "sources_retrieved": []}
 
 if __name__ == "__main__":
-    test_event = "Malaysia announces an OPR rate hike."
-    print("Running local test for Retail Agent...")
-    result = analyze_event_impact(test_event)
+    test_start = datetime.date(2023, 11, 1)
+    test_end = datetime.date(2023, 11, 30)
+    result = analyze_macro_period(test_start, test_end)
     print(json.dumps(result, indent=4))

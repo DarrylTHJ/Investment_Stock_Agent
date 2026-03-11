@@ -1,270 +1,254 @@
 import streamlit as st
 from streamlit_agraph import agraph, Node, Edge, Config
-from retail_agent import analyze_event_impact
-import pdfplumber
+from retail_agent import analyze_macro_period
 import yfinance as yf
 import plotly.graph_objects as go
 import datetime
 from datetime import timedelta
 import pandas as pd
 
-st.set_page_config(page_title="Event-Driven Impact Visualizer", layout="wide")
+st.set_page_config(page_title="Macro Event & Weighting Engine", layout="wide")
 
-st.title("Event-Driven Market Impact Visualizer 🕸️")
-st.markdown("Analyze macroeconomic events and news to visualize the ripple effects on various industries, then backtest against reality.")
+st.title("Macro Event & Retail Weighting Visualizer 🕸️")
+st.markdown("Select a historical date range. The system will fetch real market news, query Alfred Chen's logic, and visualize the weighted 'tug-of-war' on specific sectors.")
 
 # --- 1. User Input Section ---
-st.header("1. Input Market Context")
+st.header("1. Define Macro Environment")
 
-col_input1, col_input2 = st.columns([2, 1])
+today = datetime.date.today()
+default_start = today - timedelta(days=180) # Default to ~6 months ago
+default_end = today - timedelta(days=150)
 
-with col_input1:
-    input_type = st.radio("Select Input Mode:", ["Text Description", "Upload PDF Document"], horizontal=True)
-    user_input = ""
-    if input_type == "Text Description":
-        user_input = st.text_area("Describe the event:", "Malaysia announces a complete ban on vapes.")
-    else:
-        uploaded_file = st.file_uploader("Upload a News Article (PDF)", type="pdf")
-        if uploaded_file is not None:
-            with st.spinner("Extracting text..."):
-                with pdfplumber.open(uploaded_file) as pdf:
-                    pages_text = [page.extract_text() for page in pdf.pages[:3] if page.extract_text()]
-                    user_input = "\n".join(pages_text)
-                st.success("✅ Extracted from PDF!")
+# Date range picker
+date_range = st.date_input("Select Historical Period (Start Date - End Date):", value=(default_start, default_end))
 
-with col_input2:
-    st.markdown("**Reality Check Setup**")
-    # Date picker for backtesting
-    event_date = st.date_input("When did this happen? (Required for Backtesting)", value=None)
+if len(date_range) != 2:
+    st.warning("Please select both a Start Date and an End Date.")
+    st.stop()
 
-analyze_button = st.button("Synthesize Impact Graph", type="primary")
+start_date, end_date = date_range
+
+if end_date > today:
+    st.error("❌ End date cannot be in the future.")
+    st.stop()
+
+analyze_button = st.button("Synthesize Macro Impact Graph", type="primary")
 
 st.divider()
 
-# We need session state to hold the graph data so it survives the "Verify" button click
 if "graph_data" not in st.session_state:
     st.session_state.graph_data = None
 
 # --- 2. Generate Graph Data ---
-if analyze_button and user_input.strip():
-    with st.spinner("Retrieving logic rules from Vector DB and synthesizing impact..."):
-        st.session_state.graph_data = analyze_event_impact(user_input)
+if analyze_button:
+    with st.spinner(f"Fetching news between {start_date} and {end_date} & weighting logic..."):
+        st.session_state.graph_data = analyze_macro_period(start_date, end_date)
 
 # --- 3. Render Main View OR Split Screen ---
 if st.session_state.graph_data:
     graph_data = st.session_state.graph_data
     
-    # Check if user clicked Verify
+    if "period_summary" in graph_data and "Error" in graph_data["period_summary"]:
+        st.error(graph_data["period_summary"])
+        st.stop()
+        
+    st.markdown(f"**Period Summary:** {graph_data.get('period_summary', 'N/A')}")
+    
     verify_clicked = st.button("🔍 Verify against Historical Data", type="secondary")
     
-    if verify_clicked and event_date:
-        # --- SPLIT SCREEN MODE ---
+    if verify_clicked:
         col_left, col_right = st.columns([1, 1])
-    elif verify_clicked and not event_date:
-        st.warning("⚠️ Please provide an 'Event Date' at the top to run a Reality Check.")
-        col_left = st.container()
-        col_right = None
     else:
-        # --- DEFAULT FULL SCREEN MODE ---
         col_left = st.container()
         col_right = None
 
     # --- LEFT COLUMN: The Graph ---
     with col_left:
-        st.header("Retail Logic Graph")
+        st.header("Weighted Logic Graph")
         nodes = []
         edges = []
         added_node_ids = set()
 
-        event_name = graph_data.get("event_name", "Trigger Event")
-        sector_nodes = graph_data.get("nodes", [])
+        news_events = graph_data.get("news_events", [])
+        sector_nodes = graph_data.get("sectors", [])
 
-        # Layer 1: Event (Root node)
-        nodes.append(Node(id="Event", label=f"Event:\n{event_name}", size=35, shape="diamond", color="#2B7CE9"))
-        added_node_ids.add("Event")
+        # Layer 1: Macro Period (Center)
+        nodes.append(Node(id="Macro", label=f"Period:\n{start_date}\nto\n{end_date}", size=35, shape="diamond", color="#2B7CE9"))
+        added_node_ids.add("Macro")
 
-        stocks_to_verify = [] # Collect stocks for the right column
-
-        for sector in sector_nodes:
-            # Layer 2: Sector
-            sector_id = sector.get("id", "Unknown Sector")
-            impact = sector.get("impact", "POSITIVE").upper()
+        # Layer 2: News Events
+        for news in news_events:
+            n_id = news.get("id")
+            n_title = news.get("headline")
             
-            node_color = "#00CC96" if "POSITIVE" in impact else "#FF4B4B"
+            nodes.append(Node(id=n_id, label=n_title[:30]+"...", title=n_title, size=20, shape="ellipse", color="#FFD700")) # Yellow for news
+            added_node_ids.add(n_id)
+            edges.append(Edge(source="Macro", target=n_id))
+
+        stocks_to_verify = [] 
+
+        # Layer 3 & 4: Sectors & Stocks
+        for sector in sector_nodes:
+            sector_id = sector.get("id", "Unknown Sector")
+            net_score = sector.get("net_score", 0)
+            
+            # Color Sector based on NET Score
+            node_color = "#00CC96" if net_score > 0 else ("#FF4B4B" if net_score < 0 else "#D3D3D3")
             
             if sector_id not in added_node_ids:
-                nodes.append(Node(id=sector_id, label=sector_id, size=25, color=node_color))
+                nodes.append(Node(id=sector_id, label=f"{sector_id}\n(Net: {net_score})", size=25, shape="box", color=node_color))
                 added_node_ids.add(sector_id)
             
-            edges.append(Edge(source="Event", target=sector_id, label=impact))
+            # Draw Weighted Edges from News to Sector (The Tug of War)
+            competing_forces = sector.get("competing_forces", [])
+            for force in competing_forces:
+                force_news_id = force.get("news_id")
+                force_score = force.get("score", 0)
+                
+                if force_score != 0:
+                    edge_color = "#00CC96" if force_score > 0 else "#FF4B4B"
+                    is_dashed = abs(force_score) <= 4 # Weak scores are dashed
+                    
+                    edges.append(Edge(
+                        source=force_news_id, 
+                        target=sector_id, 
+                        label=f"Score: {force_score}", 
+                        color=edge_color,
+                        dashes=is_dashed,
+                        width=max(1, min(abs(force_score), 5)) # Thickness correlates to score strength
+                    ))
             
-            # Layer 3: Stocks
+            # Layer 4: Stocks
             proxy_stocks = sector.get("proxy_stocks", [])
             for stock in proxy_stocks:
                 ticker = stock.get("ticker")
                 name = stock.get("name")
-                desc = stock.get("description")
                 
-                # Keep track for the Reality Check
                 stocks_to_verify.append({
-                    "ticker": ticker, "name": name, "desc": desc, 
-                    "predicted_impact": impact, "sector": sector_id
+                    "ticker": ticker, "name": name, 
+                    "net_score": net_score, "sector": sector_id
                 })
                 
                 if ticker not in added_node_ids:
-                    # Draw stocks as smaller, gray squares
-                    nodes.append(Node(
-                        id=ticker, label=name, size=15, shape="square", color="#808080",
-                        title=f"{desc} ({ticker})" # Hover text
-                    ))
+                    nodes.append(Node(id=ticker, label=name, size=15, shape="square", color="#808080", title=ticker))
                     added_node_ids.add(ticker)
                 
                 edges.append(Edge(source=sector_id, target=ticker))
 
-        # Config for Collapsibility
-        config = Config(
-            width="100%", 
-            height=500, 
-            directed=True, 
-            nodeHighlightBehavior=True,
-            highlightColor="#F7A7A6"
-        )
+        config = Config(width="100%", height=600, directed=True, physics=False, hierarchical=True, direction="UD", collapsible=True)
         
         if len(nodes) > 1:
             agraph(nodes=nodes, edges=edges, config=config)
-            st.caption("💡 *Tip: Double-click a colored Sector node to expand/collapse its stocks.*")
+            st.caption("💡 *Tip: Arrow thickness indicates the strength of the logic score. Green = Positive Force, Red = Negative Force.*")
         else:
-            st.warning("No relevant historical rules found to map an impact.")
+            st.warning("Graph could not be generated.")
 
-        # Show reasoning & Agent Cited Source
+        # Show reasoning Expander
         if sector_nodes:
-            with st.expander("View Agent Reasoning & Cited Sources", expanded=False):
+            with st.expander("View Agent Weighting Reasoning", expanded=False):
                 for sector in sector_nodes:
-                    impact_icon = "🟢" if "POSITIVE" in sector.get("impact", "").upper() else "🔴"
-                    st.markdown(f"{impact_icon} **{sector.get('id')}**: {sector.get('reasoning')}")
-                    st.caption(f"*(**Agent Cited Source:** `{sector.get('source_cited', 'Unknown')}`)*")
+                    st.markdown(f"### **{sector.get('id')} (Net Score: {sector.get('net_score')})**")
+                    st.write(f"**Final Verdict:** {sector.get('final_verdict')}")
+                    st.write(f"**Reasoning:** {sector.get('reasoning')}")
+                    st.markdown("#### Competing Forces:")
+                    for force in sector.get('competing_forces', []):
+                        st.write(f"- News [{force.get('news_id')}]: Score **{force.get('score')}** -> {force.get('reasoning')}")
                     st.markdown("---")
                     
-        # Raw Rules Section (Restored as an Expander)
+        # Raw Rules Section
         retrieved_sources = graph_data.get("sources_retrieved", [])
         with st.expander("📚 Raw Rules Retrieved from Database", expanded=False):
             if retrieved_sources:
                 seen_rules = set()
                 for meta in retrieved_sources:
-                    # SAFETY NET: Check if meta is a string (old cache) or dict (new logic)
-                    if isinstance(meta, str):
-                        if meta not in seen_rules:
-                            st.info(f"**Source:** `{meta}`")
-                            seen_rules.add(meta)
-                    else:
-                        # Normal behavior: It's a dictionary
-                        filename = meta.get('filename', 'Unknown')
+                    if isinstance(meta, dict):
                         logic_rule = meta.get('logic_rule', 'N/A')
-                        
-                        # Deduplicate by the exact rule, NOT the filename 
                         if logic_rule not in seen_rules:
-                            st.info(
-                                f"**Source:** `{filename}`\n\n"
-                                f"**Event:** {meta.get('trigger_event', 'N/A')} ➔ **Impact:** {meta.get('impacted_sector', 'N/A')} ({meta.get('impact_direction', 'N/A')})\n\n"
-                                f"**Logic Rule:** {logic_rule}\n\n"
-                                f"**Metrics Used:** {meta.get('metrics_used', 'None')}"
-                            )
+                            st.info(f"**Source:** `{meta.get('filename')}`\n\n**Logic Rule:** {logic_rule}")
                             seen_rules.add(logic_rule)
-            else:
-                st.caption("No specific rules matched the filter criteria.")
 
     # --- RIGHT COLUMN: The Reality Check (Backtesting) ---
     if col_right and stocks_to_verify:
         with col_right:
             st.header("Empirical Reality Check")
             
-            # --- FUTURE DATE SAFEGUARD ---
-            today = datetime.date.today()
-            if event_date > today:
-                st.error(f"❌ Cannot run reality check for future dates. Please select a date before {today}.")
-            else:
-                # Calculate dates: 14 days before, 30 days after (or up to today)
-                start_date = event_date - timedelta(days=14)
-                
-                # Cap the end date at today's date so yfinance doesn't look into the future
-                ideal_end_date = event_date + timedelta(days=30)
-                end_date = min(ideal_end_date, today)
-                
-                # FORMAT DATES AS STRINGS FOR SAFEST YFINANCE PARSING
-                start_str = start_date.strftime('%Y-%m-%d')
-                end_str = end_date.strftime('%Y-%m-%d')
-                
-                correct_predictions = 0
-                total_stocks = len(stocks_to_verify)
-                
-                with st.spinner(f"Downloading historical market data from {start_str} to {end_str}..."):
-                    for stock in stocks_to_verify:
-                        # Clean the ticker to ensure no weird spaces or missing .KL
-                        ticker = stock["ticker"].strip().upper()
-                        if not ticker.endswith(".KL"):
-                            ticker += ".KL"
-                            
-                        prediction = stock["predicted_impact"]
+            # We fetch data starting 7 days before the period, and ending 30 days AFTER the period
+            fetch_start = start_date - timedelta(days=7)
+            ideal_end = end_date + timedelta(days=30)
+            fetch_end = min(ideal_end, today)
+            
+            fetch_start_str = fetch_start.strftime('%Y-%m-%d')
+            fetch_end_str = fetch_end.strftime('%Y-%m-%d')
+            
+            correct_predictions = 0
+            total_stocks = len(stocks_to_verify)
+            
+            with st.spinner("Downloading historical market data..."):
+                for stock in stocks_to_verify:
+                    ticker = stock["ticker"].strip().upper()
+                    if not ticker.endswith(".KL"): ticker += ".KL"
                         
-                        with st.container(border=True):
-                            st.subheader(f"{stock['name']} (`{ticker}`)")
-                            st.caption(stock['desc'])
+                    predicted_net = stock["net_score"]
+                    predicted_direction = "POSITIVE" if predicted_net > 0 else ("NEGATIVE" if predicted_net < 0 else "NEUTRAL")
+                    
+                    with st.container(border=True):
+                        st.subheader(f"{stock['name']} (`{ticker}`)")
+                        
+                        try:
+                            df = yf.download(ticker, start=fetch_start_str, end=fetch_end_str, progress=False)
+                            if df.empty:
+                                st.warning(f"⚠️ No data found.")
+                                continue
+                                
+                            if isinstance(df.columns, pd.MultiIndex):
+                                df.columns = df.columns.get_level_values(0)
                             
-                            try:
-                                # Fetch yfinance data using the string dates
-                                df = yf.download(ticker, start=start_str, end=end_str, progress=False)
+                            # Safely strip timezone if it exists
+                            if getattr(df.index, 'tz', None) is not None:
+                                df.index = df.index.tz_localize(None)
+                            
+                            close_prices = df['Close'].dropna()
+                            if len(close_prices) < 2: continue
                                 
-                                if df.empty:
-                                    st.warning(f"⚠️ No market data found for `{ticker}` between {start_str} and {end_str}.")
-                                    continue
-                                    
-                                # Flatten MultiIndex columns if necessary (yfinance bug workaround)
-                                if isinstance(df.columns, pd.MultiIndex):
-                                    df.columns = df.columns.get_level_values(0)
+                            # Calculate Reality vs Prediction
+                            price_start = float(close_prices.iloc[0]) 
+                            price_end = float(close_prices.iloc[-1])
+                            pct_change = float(((price_end - price_start) / price_start) * 100)
+                            
+                            actually_went_up = pct_change > 0
+                            
+                            # A Neutral (0) prediction is counted as a failure if the stock moved significantly
+                            is_correct = (actually_went_up and predicted_net > 0) or (not actually_went_up and predicted_net < 0)
+                            if is_correct: correct_predictions += 1
                                 
-                                # Strip timezone from yfinance data safely
-                                if df.index.tz is not None:
-                                    df.index = df.index.tz_localize(None)
-                                
-                                # Calculate accuracy
-                                close_prices = df['Close'].dropna()
-                                if len(close_prices) < 2:
-                                    st.warning("Not enough trading days found in this date range.")
-                                    continue
-                                    
-                                price_at_event = float(close_prices.iloc[0]) # Approx starting price
-                                price_end = float(close_prices.iloc[-1])
-                                pct_change = float(((price_end - price_at_event) / price_at_event) * 100)
-                                
-                                # Did reality match the prediction?
-                                actually_went_up = pct_change > 0
-                                predicted_up = "POSITIVE" in prediction
-                                
-                                is_correct = (actually_went_up and predicted_up) or (not actually_went_up and not predicted_up)
-                                if is_correct: correct_predictions += 1
-                                    
-                                # Plotting with Plotly
-                                fig = go.Figure()
-                                dates = df.index.tolist()
-                                prices = close_prices.values.tolist()
-                                
-                                fig.add_trace(go.Scatter(x=dates, y=prices, mode='lines', name='Price', line=dict(color='#2B7CE9')))
-                                
-                                # BULLETPROOF PLOTLY FIX: Feed Plotly a pure numeric millisecond timestamp to bypass date-string math crashes
-                                event_timestamp = pd.to_datetime(event_date)
-                                event_ms = event_timestamp.timestamp() * 1000
-                                fig.add_vline(x=event_ms, line_dash="dash", line_color="red", annotation_text="Event Occurred")
-                                
-                                fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0), xaxis_title="Date", yaxis_title="Price (MYR)")
-                                st.plotly_chart(fig, use_container_width=True)
-                                
-                                # Print Verdict
-                                verdict_color = "green" if is_correct else "red"
-                                st.markdown(f"**Predicted:** {prediction} | **Actual:** {pct_change:.2f}% | <span style='color:{verdict_color}'>**Verdict: {'Correct' if is_correct else 'Wrong'}**</span>", unsafe_allow_html=True)
-                                
-                            except Exception as e:
-                                st.error(f"Failed to load chart for {ticker}: {e}")
-                
-                # --- FINAL SCORE ---
-                st.divider()
-                st.subheader(f"🧠 Retail Logic Accuracy: {correct_predictions} / {total_stocks}")
+                            # Plotting with Plotly
+                            fig = go.Figure()
+                            dates = df.index.tolist()
+                            prices = close_prices.values.tolist()
+                            
+                            fig.add_trace(go.Scatter(x=dates, y=prices, mode='lines', name='Price', line=dict(color='#2B7CE9')))
+                            
+                            # BULLETPROOF RECTANGLE HIGHLIGHTING THE MACRO PERIOD
+                            # We use pure numeric datetimes to avoid Plotly string conversion bugs
+                            start_ms = pd.to_datetime(start_date).timestamp() * 1000
+                            end_ms = pd.to_datetime(end_date).timestamp() * 1000
+                            
+                            fig.add_vrect(
+                                x0=start_ms, x1=end_ms, 
+                                fillcolor="rgba(255, 215, 0, 0.2)", # Transparent Yellow
+                                line_width=0, 
+                                annotation_text="News Window", 
+                                annotation_position="top left"
+                            )
+                            
+                            fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0), xaxis_title="Date", yaxis_title="Price (MYR)")
+                            st.plotly_chart(fig, use_container_width=True)
+                            
+                            verdict_color = "green" if is_correct else "red"
+                            st.markdown(f"**Net Prediction:** {predicted_direction} ({predicted_net}) | **Actual:** {pct_change:.2f}% | <span style='color:{verdict_color}'>**Verdict: {'Correct' if is_correct else 'Wrong'}**</span>", unsafe_allow_html=True)
+                            
+                        except Exception as e:
+                            st.error(f"Failed to load chart for {ticker}: {e}")
+            
+            st.divider()
+            st.subheader(f"🧠 Retail Logic Accuracy: {correct_predictions} / {total_stocks}")
