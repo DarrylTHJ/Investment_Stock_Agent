@@ -126,10 +126,6 @@ if st.session_state.graph_data:
             width="100%", 
             height=500, 
             directed=True, 
-            physics=False, 
-            hierarchical=True, 
-            direction="UD", 
-            collapsible=True, 
             nodeHighlightBehavior=True,
             highlightColor="#F7A7A6"
         )
