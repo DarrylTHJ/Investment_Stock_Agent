@@ -7,3 +7,6 @@ pdfplumber
 streamlit-agraph
 sentence-transformers
 yt-dlp
+yfinance
+plotly
+pandas
