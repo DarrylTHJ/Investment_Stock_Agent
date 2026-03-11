@@ -135,7 +135,7 @@ if st.session_state.graph_data:
                 
                 edges.append(Edge(source=sector_id, target=ticker))
 
-        config = Config(width="100%", height=600, directed=True, physics=False, hierarchical=True, direction="UD", collapsible=True)
+        config = Config(width="100%", height=600, directed=True)
         
         if len(nodes) > 1:
             agraph(nodes=nodes, edges=edges, config=config)
