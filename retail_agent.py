@@ -11,7 +11,8 @@ CRITICAL INSTRUCTIONS:
 
 NEW REQUIREMENT (STOCK PROXIES):
 For every impacted sector you identify, you MUST provide exactly 3 proxy stock tickers from BURSA MALAYSIA that represent that sector.
-- You must append ".KL" to every ticker (e.g., "MAYBANK.KL", "INARI.KL").
+- BURSA MALAYSIA TICKERS MUST BE 4 NUMBERS FOLLOWED BY ".KL" (e.g., "1155.KL" for Maybank, "0166.KL" for Inari, "4162.KL" for BAT). 
+- DO NOT use alphabetical tickers like "MAYBANK.KL" or it will fail.
 - You must provide a short 1-sentence description of what the company does to prove it belongs in that sector.
 
 You MUST output your response as a valid JSON object. Do NOT include Markdown backticks.
@@ -30,7 +31,8 @@ Expected JSON Schema:
                     "ticker": "1155.KL",
                     "name": "Malayan Banking Berhad",
                     "description": "The largest bank in Malaysia, highly sensitive to interest rate changes."
-                }
+                },
+                // ... 2 more stocks
             ]
         }
     ]

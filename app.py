@@ -6,6 +6,7 @@ import yfinance as yf
 import plotly.graph_objects as go
 import datetime
 from datetime import timedelta
+import pandas as pd
 
 st.set_page_config(page_title="Event-Driven Impact Visualizer", layout="wide")
 
@@ -78,7 +79,7 @@ if st.session_state.graph_data:
         event_name = graph_data.get("event_name", "Trigger Event")
         sector_nodes = graph_data.get("nodes", [])
 
-        # Layer 1: Event
+        # Layer 1: Event (Root node)
         nodes.append(Node(id="Event", label=f"Event:\n{event_name}", size=35, shape="diamond", color="#2B7CE9"))
         added_node_ids.add("Event")
 
@@ -120,10 +121,23 @@ if st.session_state.graph_data:
                 
                 edges.append(Edge(source=sector_id, target=ticker))
 
-        config = Config(width="100%", height=500, directed=True, physics=True, collapsible=True)
+        # --- FIX: Updated Config for Collapsibility ---
+        # To make nodes collapsible, a hierarchical layout works best.
+        config = Config(
+            width="100%", 
+            height=500, 
+            directed=True, 
+            physics=False, # Disable bouncy physics for a stable tree
+            hierarchical=True, # Enable Tree layout
+            direction="UD", # Up-Down direction (Event at top, stocks at bottom)
+            collapsible=True, # Double click a node to hide its children
+            nodeHighlightBehavior=True,
+            highlightColor="#F7A7A6"
+        )
         
         if len(nodes) > 1:
             agraph(nodes=nodes, edges=edges, config=config)
+            st.caption("💡 *Tip: Double-click a colored Sector node to expand/collapse its stocks.*")
         else:
             st.warning("No relevant historical rules found to map an impact.")
 
@@ -197,6 +211,9 @@ if st.session_state.graph_data:
                             if isinstance(df.columns, pd.MultiIndex):
                                 df.columns = df.columns.get_level_values(0)
                             
+                            # FIX: Strip timezone from yfinance data so it matches our UI date!
+                            df.index = df.index.tz_localize(None)
+                            
                             # Calculate accuracy
                             close_prices = df['Close'].dropna()
                             if len(close_prices) < 2:
@@ -204,7 +221,7 @@ if st.session_state.graph_data:
                                 
                             price_at_event = close_prices.iloc[0] # Approx starting price
                             price_end = close_prices.iloc[-1]
-                            pct_change = ((price_end - price_at_event) / price_at_event) * 100
+                            pct_change = float(((price_end - price_at_event) / price_at_event) * 100)
                             
                             # Did reality match the prediction?
                             actually_went_up = pct_change > 0
@@ -215,11 +232,15 @@ if st.session_state.graph_data:
                                 
                             # Plotting with Plotly
                             fig = go.Figure()
-                            fig.add_trace(go.Scatter(x=df.index, y=df['Close'], mode='lines', name='Price'))
+                            # Convert series to flat lists to avoid Plotly typing issues
+                            dates = df.index.tolist()
+                            prices = close_prices.values.tolist()
+                            
+                            fig.add_trace(go.Scatter(x=dates, y=prices, mode='lines', name='Price', line=dict(color='#2B7CE9')))
                             # Add vertical line for the Event Date
                             fig.add_vline(x=event_date, line_dash="dash", line_color="red", annotation_text="Event Occurred")
                             
-                            fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0))
+                            fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0), xaxis_title="Date", yaxis_title="Price (MYR)")
                             st.plotly_chart(fig, use_container_width=True)
                             
                             # Print Verdict
