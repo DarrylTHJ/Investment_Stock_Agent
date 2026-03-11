@@ -127,12 +127,42 @@ if st.session_state.graph_data:
         else:
             st.warning("No relevant historical rules found to map an impact.")
 
-        # Show reasoning
+        # Show reasoning & Agent Cited Source
         if sector_nodes:
-            with st.expander("View Agent Reasoning", expanded=False):
+            with st.expander("View Agent Reasoning & Cited Sources", expanded=False):
                 for sector in sector_nodes:
                     impact_icon = "🟢" if "POSITIVE" in sector.get("impact", "").upper() else "🔴"
                     st.markdown(f"{impact_icon} **{sector.get('id')}**: {sector.get('reasoning')}")
+                    st.caption(f"*(**Agent Cited Source:** `{sector.get('source_cited', 'Unknown')}`)*")
+                    st.markdown("---")
+                    
+        # Raw Rules Section (Restored as an Expander)
+        retrieved_sources = graph_data.get("sources_retrieved", [])
+        with st.expander("📚 Raw Rules Retrieved from Database", expanded=False):
+            if retrieved_sources:
+                seen_rules = set()
+                for meta in retrieved_sources:
+                    # SAFETY NET: Check if meta is a string (old cache) or dict (new logic)
+                    if isinstance(meta, str):
+                        if meta not in seen_rules:
+                            st.info(f"**Source:** `{meta}`")
+                            seen_rules.add(meta)
+                    else:
+                        # Normal behavior: It's a dictionary
+                        filename = meta.get('filename', 'Unknown')
+                        logic_rule = meta.get('logic_rule', 'N/A')
+                        
+                        # Deduplicate by the exact rule, NOT the filename 
+                        if logic_rule not in seen_rules:
+                            st.info(
+                                f"**Source:** `{filename}`\n\n"
+                                f"**Event:** {meta.get('trigger_event', 'N/A')} ➔ **Impact:** {meta.get('impacted_sector', 'N/A')} ({meta.get('impact_direction', 'N/A')})\n\n"
+                                f"**Logic Rule:** {logic_rule}\n\n"
+                                f"**Metrics Used:** {meta.get('metrics_used', 'None')}"
+                            )
+                            seen_rules.add(logic_rule)
+            else:
+                st.caption("No specific rules matched the filter criteria.")
 
     # --- RIGHT COLUMN: The Reality Check (Backtesting) ---
     if col_right and stocks_to_verify:
