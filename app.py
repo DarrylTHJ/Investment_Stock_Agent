@@ -127,6 +127,10 @@ if st.session_state.graph_data:
             width="100%", 
             height=500, 
             directed=True, 
+            physics=False, # Disable bouncy physics for a stable tree
+            hierarchical=True, # Enable Tree layout
+            direction="UD", # Up-Down direction (Event at top, stocks at bottom)
+            collapsible=True, # Double click a node to hide its children
             nodeHighlightBehavior=True,
             highlightColor="#F7A7A6"
         )
@@ -233,8 +237,9 @@ if st.session_state.graph_data:
                             prices = close_prices.values.tolist()
                             
                             fig.add_trace(go.Scatter(x=dates, y=prices, mode='lines', name='Price', line=dict(color='#2B7CE9')))
-                            # Add vertical line for the Event Date
-                            fig.add_vline(x=event_date, line_dash="dash", line_color="red", annotation_text="Event Occurred")
+                            
+                            # FIX: Convert event_date to string so Plotly doesn't crash doing date math!
+                            fig.add_vline(x=str(event_date), line_dash="dash", line_color="red", annotation_text="Event Occurred")
                             
                             fig.update_layout(height=250, margin=dict(l=0, r=0, t=30, b=0), xaxis_title="Date", yaxis_title="Price (MYR)")
                             st.plotly_chart(fig, use_container_width=True)
