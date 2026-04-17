@@ -44,6 +44,8 @@ def ingest_single_file(file_path, source_type):
         return
 
     filename = os.path.basename(file_path)
+    # Extract Video ID for YouTube Linking: retail_abc123_processed.json -> abc123
+    video_id = filename.replace("retail_", "").replace("_processed.json", "")
 
     for item in items:
         # We embed the natural language summary
@@ -63,6 +65,8 @@ def ingest_single_file(file_path, source_type):
         documents.append(text_content)
         metadatas.append({
             "source_type": source_type,
+            "video_id": video_id, # Added for direct linking
+            "verbatim_quote": str(item.get("verbatim_quote", "N/A")), # Added for XAI
             "filename": filename,
             "trigger_event": str(item.get("trigger_event", "UNKNOWN")),
             "impacted_sector": str(item.get("impacted_sector", "UNKNOWN")),

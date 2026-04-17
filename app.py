@@ -1,7 +1,6 @@
 import streamlit as st
 from streamlit_agraph import agraph, Node, Edge, Config
-from retail_agent import analyze_macro_period
-import yfinance as yf
+from retail_agent import analyze_event_logic
 import plotly.graph_objects as go
 import datetime
 from datetime import timedelta

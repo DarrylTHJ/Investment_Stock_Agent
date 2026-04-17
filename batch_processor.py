@@ -62,26 +62,21 @@ def process_file(filepath, category, model_name, output_dir):
 
     print(f"🔹 Processing [{category}] with 🤖 {model_name}...")
 
-    # THE NEW EVENT-DRIVEN PROMPT
     prompt = f"""
-    You are a financial logic extractor. Read the following {category} investment transcript/report. 
-    Do NOT extract specific stock prices, historical events, or temporary news. 
-    Instead, deduce the underlying cause-and-effect market triggers and investment rules the investor is using.
-
-    Output STRICTLY a JSON list of objects matching this schema:
+    You are a financial logic extractor for Explainable AI. 
+    Read this {category} transcript. Deduce underlying market triggers.
+    
+    Output STRICTLY a JSON list of objects:
     [
       {{
-        "trigger_event": "What macroeconomic, regulatory, or news event is being discussed? (e.g., 'OPR Rate Cut', 'Product Ban', 'Oil Spike')",
-        "impacted_sector": "Which specific sector or industry is affected?",
+        "trigger_event": "Macro event (e.g., 'OPR Rate Cut')",
+        "impacted_sector": "Specific sector affected",
         "impact_direction": "POSITIVE or NEGATIVE",
-        "logic_rule": "A clear IF [event] THEN [impact] statement summarizing their reasoning.",
-        "embedding_summary": "A natural language paragraph summarizing this cause-and-effect relationship. (This will be embedded into the Vector DB)."
+        "logic_rule": "IF [event] THEN [impact] statement.",
+        "verbatim_quote": "THE EXACT CHINESE/ENGLISH PHRASE FROM THE TEXT THAT PROVES THIS.",
+        "embedding_summary": "Natural language summary for vector search."
       }}
     ]
-
-    If no general rules can be extracted from the text, return an empty list [].
-    Ensure the output is valid, parsable JSON.
-    
     TEXT:
     {raw_text[:30000]}
     """

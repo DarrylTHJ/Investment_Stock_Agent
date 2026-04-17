@@ -1,172 +1,129 @@
-import json
-import os
-import re
-import datetime
-from gnews import GNews
-from rag_agent import chroma_client, embed_fn, client
+import streamlit as st
+from streamlit_agraph import agraph, Node, Edge, Config
+from retail_agent import analyze_event_logic
 
-# We split the prompt so we can inject the live ticker database in the middle
-PROMPT_PART_1 = """
-You are the Macro Retail Logic Synthesizer (based on Alfred Chen's investment logic).
-You will receive multiple news headlines from a specific macro period, and Alfred's retrieved logic rules for EACH headline.
+st.set_page_config(page_title="Alfred Chen Logic Engine", layout="wide")
 
-CRITICAL INSTRUCTIONS:
-1. Your ONLY reality is the 'RETRIEVED RULES' provided below. Do not hallucinate external financial knowledge.
-2. You must calculate the NET IMPACT of these combined forces on Malaysian economic sectors.
+st.title("Alfred Chen Logic Mimicry Engine 🧠")
+st.markdown("Input a macroeconomic event. The AI will retrieve Alfred Chen's past investment rules, resolve any conflicting logic, and map out the expected sector impact with verbatim proof.")
 
-SCORING PROTOCOL (-10 to +10):
-You MUST assign a score to each news event's impact on a sector based ONLY on the urgency/adjectives in Alfred's retrieved rules:
-- Score +/- 8 to 10: Alfred uses absolute terms ('massive', 'always', 'guaranteed', 'crash', 'skyrocket').
-- Score +/- 4 to 7: Standard causative words ('leads to', 'causes', 'hurts', 'benefits').
-- Score +/- 1 to 3: Weak words ('might', 'slight headwind', 'could impact').
-- Score 0: If the rule does not explicitly link the event to the sector. Do not guess.
-
-NEW REQUIREMENT (STOCK PROXIES):
-For every impacted sector, pick exactly 3 proxy stock tickers ONLY from the live database below. Do not invent any tickers!
-
---- LIVE BURSA MALAYSIA DATABASE ---
-"""
-
-PROMPT_PART_2 = """
-------------------------------------
-
-Output your response as a valid JSON object matching this exact schema:
-{
-    "period_summary": "1-sentence summary of the macro period",
-    "news_events": [
-        {"id": "news_1", "headline": "Exact headline text here"}
-    ],
-    "sectors": [
-        {
-            "id": "Sector Name (e.g., Banking)",
-            "net_score": 5,
-            "final_verdict": "POSITIVE",
-            "reasoning": "Overall positive because factor A outweighed factor B.",
-            "competing_forces": [
-                {"news_id": "news_1", "score": 8, "reasoning": "Alfred explicitly states this causes massive growth."}
-            ],
-            "proxy_stocks": [
-                {"ticker": "1155.KL", "name": "Maybank", "description": "1-sentence description."}
-            ]
-        }
-    ]
-}
-
-=== USER'S MACRO NEWS EVENTS & RETRIEVED RULES ===
-"""
-
-def get_dynamic_prompt():
-    """Reads the live JSON database to prevent hallucinated tickers."""
-    # Ensure it maps to the correct data folder structure
-    db_path = os.path.join(os.path.dirname(__file__), "data", "bursa_tickers.json")
-    try:
-        with open(db_path, "r", encoding="utf-8") as f:
-            ticker_db = json.load(f)
-            
-        db_string = ""
-        for sector, stocks in ticker_db.items():
-            stock_strings = [f'"{s["ticker"]}" ({s["name"]})' for s in stocks]
-            db_string += f"{sector}: {', '.join(stock_strings)}\n"
-    except FileNotFoundError:
-        db_string = "Error: Live database unavailable. Please fall back to generic 4-digit Bursa tickers (e.g., 1155.KL).\n"
-        
-    return PROMPT_PART_1 + db_string + PROMPT_PART_2
-
-def clean_json_output(text):
-    """Bulletproof JSON extractor using Regex to ignore conversational LLM filler."""
-    if not text: 
-        return "{}"
+# --- 1. USER INPUT (SIDEBAR) ---
+with st.sidebar:
+    st.header("1. Define Scenario")
+    mode = st.radio(
+        "Analysis Mode", 
+        ["General Macro Impact", "Specific Industry/Stock Target"],
+        help="General mode maps all affected sectors. Specific mode focuses the AI's reasoning on a single target."
+    )
     
-    # Hunt for the first '{' and the last '}' across multiple lines
-    match = re.search(r'\{.*\}', text, re.DOTALL)
-    if match:
-        return match.group(0)
+    event_input = st.text_area(
+        "Trigger Event / Scenario", 
+        placeholder="e.g., Bank Negara unexpectedly hikes OPR by 25bps...",
+        height=100
+    )
     
-    return "{}"
-
-def fetch_macro_news(start_date, end_date):
-    """Fetches real historical headlines using GNews."""
-    gnews = GNews(language='en', country='MY', max_results=3) # Top 3 major events to prevent context bloat
-    gnews.start_date = (start_date.year, start_date.month, start_date.day)
-    gnews.end_date = (end_date.year, end_date.month, end_date.day)
-    query = "Malaysia economy OR Bursa Malaysia OR Bank Negara"
-    return gnews.get_news(query)
-
-def analyze_macro_period(start_date, end_date):
-    print(f"🌍 Fetching Macro News between {start_date} and {end_date}...")
-    news_articles = fetch_macro_news(start_date, end_date)
-    
-    if not news_articles:
-        return {"period_summary": "Error: No news found for this period. Try a different date range.", "news_events": [], "sectors": [], "sources_retrieved": []}
-
-    print("🧠 Querying ChromaDB for each historical headline...")
-    
-    try:
-        collection = chroma_client.get_collection(name="financial_knowledge", embedding_function=embed_fn)
-    except Exception as e:
-        print(f"❌ ChromaDB Error: {e}")
-        return {"period_summary": f"Database Error: {e}", "news_events": [], "sectors": [], "sources_retrieved": []}
-
-    context_blocks = []
-    all_sources = []
-    
-    # 1. Loop through each piece of news and fetch Alfred's specific rules for it
-    for i, article in enumerate(news_articles):
-        news_id = f"news_{i+1}"
-        headline = article.get('title', 'Unknown Event')
-        
-        # Query the vector DB using the actual headline text
-        try:
-            results = collection.query(
-                query_texts=[headline], 
-                n_results=2, # Get top 2 rules per headline
-                where={"source_type": {"$eq": "retail"}}
-            )
-            
-            # Safely handle empty ChromaDB returns
-            retrieved_docs = results['documents'][0] if results.get('documents') and len(results['documents']) > 0 else []
-            retrieved_metadatas = results['metadatas'][0] if results.get('metadatas') and len(results['metadatas']) > 0 else []
-            
-        except Exception as e:
-            print(f"⚠️ Warning: Failed to query headline '{headline}': {e}")
-            retrieved_docs, retrieved_metadatas = [], []
-
-        rule_texts = []
-        for doc, meta in zip(retrieved_docs, retrieved_metadatas):
-            all_sources.append(meta) # Save for UI citations
-            rule_texts.append(f"- SOURCE: {meta.get('filename', 'Unknown')} | RULE: {meta.get('logic_rule', doc)}")
-            
-        rules_string = "\n".join(rule_texts) if rule_texts else "- No explicit rules found for this event."
-        
-        context_blocks.append(f"NEWS EVENT ID [{news_id}]: {headline}\nALFRED's RETRIEVED RULES:\n{rules_string}\n")
-
-    # 2. Build the final prompt
-    final_context = "\n".join(context_blocks)
-    full_prompt = get_dynamic_prompt() + final_context
-    
-    print("⚖️ Calculating Net Weighting via LLM...")
-    try:
-        response = client.models.generate_content(
-            model="gemini-2.5-flash",
-            contents=full_prompt
+    target_input = None
+    if mode == "Specific Industry/Stock Target":
+        target_input = st.text_input(
+            "Target Industry or Stock", 
+            placeholder="e.g., Banking, or Maybank"
         )
-    except Exception as e:
-        print(f"❌ LLM API Error: {e}")
-        return {"period_summary": f"API Error: {e}", "news_events": [], "sectors": [], "sources_retrieved": []}
-    
-    # 3. Parse JSON safely
-    try:
-        cleaned_response = clean_json_output(response.text)
-        graph_data = json.loads(cleaned_response)
-        graph_data["sources_retrieved"] = all_sources # Attach raw metadata for the Streamlit Expander
-        return graph_data
-    except json.JSONDecodeError as e:
-        print(f"❌ Error parsing JSON from LLM: {e}")
-        print(f"--- RAW LLM RESPONSE ---\n{response.text}\n------------------------")
-        return {"period_summary": "Error: The AI failed to format its response as JSON.", "news_events": [], "sectors": [], "sources_retrieved": []}
+        
+    analyze_button = st.button("Synthesize Logic Path", type="primary", use_container_width=True)
 
-if __name__ == "__main__":
-    test_start = datetime.date(2023, 11, 1)
-    test_end = datetime.date(2023, 11, 30)
-    result = analyze_macro_period(test_start, test_end)
-    print(json.dumps(result, indent=4))
+# --- MAIN EXECUTION ---
+if analyze_button:
+    if not event_input:
+        st.warning("⚠️ Please enter a Trigger Event to proceed.")
+        st.stop()
+        
+    with st.spinner("🧠 Searching vector database and reasoning..."):
+        # We pass both the event and the optional target to the agent
+        data = analyze_event_logic(event_input, target_input)
+        
+    if not data or "sectors" not in data:
+        st.error("❌ Failed to generate logic. Please try again.")
+        st.stop()
+        
+    # --- 2. THE GRAPH (Top Layer) ---
+    st.header("🕸️ Logic Graph Visualizer")
+    
+    nodes, edges = [], []
+    added_nodes = set()
+    
+    # Center Node (The User's Event)
+    event_node_id = "Event"
+    nodes.append(Node(id=event_node_id, label="Trigger Event", size=30, shape="diamond", color="#FFD700", title=event_input))
+    
+    for sector in data.get("sectors", []):
+        s_id = sector.get("id", "Unknown Sector")
+        net_score = sector.get("net_score", 0)
+        
+        # Color coding based on impact
+        node_color = "#00CC96" if net_score > 0 else ("#FF4B4B" if net_score < 0 else "#D3D3D3")
+        
+        if s_id not in added_nodes:
+            nodes.append(Node(id=s_id, label=f"{s_id}\n(Impact: {net_score})", size=25, shape="box", color=node_color))
+            added_nodes.add(s_id)
+            
+        # Edge from Event to Sector
+        edges.append(Edge(source=event_node_id, target=s_id, label=sector.get("logic_path", ""), color=node_color))
+        
+        # Plot the Proxy Stocks
+        for stock in sector.get("proxy_stocks", []):
+            ticker = stock.get("ticker", "UNKNOWN")
+            name = stock.get("name", "Unknown")
+            
+            if ticker not in added_nodes:
+                nodes.append(Node(id=ticker, label=name, size=15, shape="ellipse", color="#808080", title=ticker))
+                added_nodes.add(ticker)
+                
+            edges.append(Edge(source=s_id, target=ticker, color="#A9A9A9"))
+            
+    config = Config(width="100%", height=500, directed=True, physics=True, hierarchical=False)
+    
+    if len(nodes) > 1:
+        agraph(nodes=nodes, edges=edges, config=config)
+        st.caption("💡 *Tip: Hover over nodes to see details. Green = Positive Impact, Red = Negative Impact.*")
+    else:
+        st.warning("Not enough data to draw the graph.")
+
+    st.divider()
+
+    # --- 3. CHAIN OF THOUGHT (Middle Layer) ---
+    st.header("🧠 Chain of Thought")
+    st.markdown("How the AI resolved conflicts and applied Alfred's logic to your specific scenario.")
+    
+    # st.status creates a great animated "thinking" box
+    with st.status("AI Thinking Trace (Resolving Conflicting Logic)...", expanded=True):
+        for step in data.get("thinking_trace", []):
+            step_num = step.get('step', '?')
+            thought = step.get('thought', '...')
+            st.markdown(f"**Step {step_num}:** {thought}")
+            
+    st.divider()
+    
+    # --- 4. EVIDENCE & PROOF (Bottom Layer) ---
+    st.header("🔍 Evidence & Verification")
+    st.markdown("Verify the AI's logic directly against Alfred Chen's historical transcripts.")
+    
+    for sector in data.get("sectors", []):
+        net_score = sector.get("net_score", 0)
+        emoji = "📈" if net_score > 0 else ("📉" if net_score < 0 else "➖")
+        
+        with st.expander(f"{emoji} Proof: Impact on {sector.get('id')} (Score: {net_score})", expanded=True):
+            st.markdown(f"**Agent's Final Reasoning:** {sector.get('reasoning')}")
+            
+            proof = sector.get("proof", {})
+            quote = proof.get("quote", "No quote provided.")
+            video_id = proof.get("video_id", "UNKNOWN")
+            
+            # Highlight the exact phrase pulled from the vector DB
+            st.info(f"**Verbatim Source Quote:**\n> *\"{quote}\"*")
+            
+            # Construct the clickable YouTube link
+            if video_id and video_id != "UNKNOWN" and video_id != "N/A":
+                youtube_url = f"https://www.youtube.com/watch?v={video_id}"
+                st.link_button("📺 Watch Source Video on YouTube", youtube_url)
+            else:
+                st.warning("⚠️ Source Video ID not found for this quote.")
