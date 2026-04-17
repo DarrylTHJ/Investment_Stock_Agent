@@ -9,11 +9,11 @@ PROMPT_PART_1 = """
 You are the Alfred Chen Logic Mimicry Engine for Explainable AI (XAI).
 Your goal is to deduce the impact of a specific user event on Malaysian stock sectors, strictly using the retrieved rules below.
 
-CRITICAL INSTRUCTIONS:
-1. Your ONLY reality is the 'DATASET' provided below. Do not hallucinate external financial knowledge. 
-2. You must calculate a NET SCORE (-10 to +10) for the impacted sectors.
-3. [IMPORTANT] IF Target Industry is 'None', you MUST map out MULTIPLE SECTORS if the retrieved rules suggest widespread impact. Do not limit yourself to just one sector.
-4. For every impacted sector, pick exactly 1 to 3 proxy stock tickers ONLY from the live database below. Do not invent any tickers!
+CRITICAL INSTRUCTIONS (PENALTY FOR VIOLATION):
+1. ZERO-INFERENCE RULE: Your ONLY reality is the 'DATASET'. Do not hallucinate external macroeconomic theories. If the retrieved rules do not EXPLICITLY link the event to a specific sector (e.g., Banks or Property), YOU MUST NOT INCLUDE THAT SECTOR. Do not guess or extrapolate.
+2. EXHAUSTIVE EXTRACTION: IF the Target Industry is 'None', you MUST extract and map out EVERY DISTINCT SECTOR explicitly mentioned in the dataset. Failure to map all affected sectors is a failure of the task.
+3. You must calculate a NET SCORE (-10 to +10) for the impacted sectors based ONLY on the provided rules.
+4. For every impacted sector, pick exactly 1 to 3 proxy stock tickers ONLY from the live database below. Do not invent tickers!
 
 --- LIVE BURSA MALAYSIA DATABASE ---
 """
@@ -23,25 +23,27 @@ PROMPT_PART_2 = """
 
 Output your response as a valid JSON object matching this EXACT schema:
 {
+    "raw_rules_established": [
+        {
+            "rule_id": "Rule 1",
+            "rule_text": "The exact logic rule retrieved from the dataset.",
+            "quote": "The exact verbatim phrase from the dataset.",
+            "video_id": "THE_VIDEO_ID"
+        }
+    ],
     "thinking_trace": [
         {"step": 1, "thought": "Identifying the primary trigger based on input..."},
-        {"step": 2, "thought": "Checking for conflicting retail rules in the database..."}
+        {"step": 2, "thought": "I found Rule 1 linking tariffs to tech, but no rules linking it to banks. I will drop banks to obey the Zero-Inference Rule."}
     ],
     "sectors": [
         {
-            "id": "Sector Name (e.g., Banking)",
-            "net_score": 5,
-            "logic_path": "Short Summary (Max 5 words!)",
-            "reasoning": "Detailed explanation of the thinking process and why this score was given.",
-            "evidence_used": [
-                {
-                    "rule": "The exact logic rule retrieved from the dataset that you used for this sector.",
-                    "quote": "The exact verbatim phrase from the dataset.",
-                    "video_id": "THE_VIDEO_ID"
-                }
-            ],
+            "id": "Sector Name (e.g., Technology)",
+            "net_score": -5,
+            "edge_label_max_5_words": "Short summary max five words",
+            "reasoning": "Detailed explanation of why this score was given, explicitly referencing [Rule 1].",
+            "citations": ["Rule 1"],
             "proxy_stocks": [
-                {"ticker": "1155.KL", "name": "Maybank"}
+                {"ticker": "0166.KL", "name": "Inari Amertron"}
             ]
         }
     ]
@@ -62,7 +64,7 @@ def get_dynamic_prompt():
             stock_strings = [f'"{s["ticker"]}" ({s["name"]})' for s in stocks]
             db_string += f"{sector}: {', '.join(stock_strings)}\n"
     except FileNotFoundError:
-        db_string = "Error: Live database unavailable. Fall back to generic 4-digit Bursa tickers (e.g., 1155.KL).\n"
+        db_string = "Error: Live database unavailable. Fall back to generic 4-digit Bursa tickers.\n"
         
     return PROMPT_PART_1 + db_string + PROMPT_PART_2
 
@@ -80,10 +82,6 @@ def clean_json_output(text):
 # --- 3. CORE LOGIC ENGINE ---
 
 def analyze_event_logic(user_event, target_industry=None):
-    """
-    Takes a user event and optionally a target industry.
-    Searches ChromaDB, extracts rules/quotes, and synthesizes the CoT.
-    """
     print(f"\n🌍 Analyzing Event: '{user_event}'")
     if target_industry:
         print(f"🎯 Target Focus: {target_industry}")
@@ -95,14 +93,13 @@ def analyze_event_logic(user_event, target_industry=None):
         return {"error": str(e)}
 
     # 1. Query ChromaDB directly using the user's event
-    # If specific target is provided, we weave it into the search to force the vector DB to find overlaps
     search_query = f"{user_event} impact on {target_industry}" if target_industry else user_event
     
     print("🧠 Querying Vector Database for historical rules...")
     try:
         results = collection.query(
             query_texts=[search_query], 
-            n_results=6, # Fetch top 6 rules to allow the AI to find conflicts and build a Chain of Thought
+            n_results=8, # Increased to 8 to ensure we capture all branches for General mode
             where={"source_type": {"$eq": "retail"}}
         )
         
@@ -113,17 +110,10 @@ def analyze_event_logic(user_event, target_industry=None):
         print(f"⚠️ Vector Search Error: {e}")
         retrieved_docs, retrieved_metadatas = [], []
 
-    # Handle empty database returns gracefully
     if not retrieved_docs:
-        return {
-            "thinking_trace": [
-                {"step": 1, "thought": f"Searched the database for '{search_query}'."},
-                {"step": 2, "thought": "No specific rules from Alfred Chen were found matching this scenario."}
-            ],
-            "sectors": []
-        }
+        return {"error": "No rules found."}
 
-    # 2. Extract rules and build the evidence context for the LLM
+    # 2. Extract rules and build the evidence context explicitly labeled as Rule 1, Rule 2...
     context_blocks = []
     for i, (doc, meta) in enumerate(zip(retrieved_docs, retrieved_metadatas)):
         rule = meta.get('logic_rule', doc)
@@ -131,7 +121,7 @@ def analyze_event_logic(user_event, target_industry=None):
         v_id = meta.get('video_id', 'UNKNOWN')
         
         context_blocks.append(
-            f"[RULE {i+1}]\n"
+            f"[Rule {i+1}]\n"
             f"LOGIC: {rule}\n"
             f"VERBATIM QUOTE: {quote}\n"
             f"VIDEO_ID: {v_id}\n"
