@@ -11,8 +11,8 @@ Your goal is to deduce the impact of a specific user event on Malaysian stock se
 
 CRITICAL INSTRUCTIONS:
 1. Your ONLY reality is the 'DATASET' provided below. Do not hallucinate external financial knowledge. 
-2. You must show your Chain of Thought (how you weigh conflicting rules or apply specific conditions).
-3. You must calculate a NET SCORE (-10 to +10) for the impacted sectors.
+2. You must calculate a NET SCORE (-10 to +10) for the impacted sectors.
+3. [IMPORTANT] IF Target Industry is 'None', you MUST map out MULTIPLE SECTORS if the retrieved rules suggest widespread impact. Do not limit yourself to just one sector.
 4. For every impacted sector, pick exactly 1 to 3 proxy stock tickers ONLY from the live database below. Do not invent any tickers!
 
 --- LIVE BURSA MALAYSIA DATABASE ---
@@ -25,19 +25,21 @@ Output your response as a valid JSON object matching this EXACT schema:
 {
     "thinking_trace": [
         {"step": 1, "thought": "Identifying the primary trigger based on input..."},
-        {"step": 2, "thought": "Checking for conflicting retail rules in the database..."},
-        {"step": 3, "thought": "Resolving contradictions by weighing factors..."}
+        {"step": 2, "thought": "Checking for conflicting retail rules in the database..."}
     ],
     "sectors": [
         {
             "id": "Sector Name (e.g., Banking)",
             "net_score": 5,
-            "logic_path": "Event -> Logic -> Sector",
+            "logic_path": "Short Summary (Max 5 words!)",
             "reasoning": "Detailed explanation of the thinking process and why this score was given.",
-            "proof": {
-                "quote": "The exact verbatim phrase from the dataset that proves this.",
-                "video_id": "THE_VIDEO_ID"
-            },
+            "evidence_used": [
+                {
+                    "rule": "The exact logic rule retrieved from the dataset that you used for this sector.",
+                    "quote": "The exact verbatim phrase from the dataset.",
+                    "video_id": "THE_VIDEO_ID"
+                }
+            ],
             "proxy_stocks": [
                 {"ticker": "1155.KL", "name": "Maybank"}
             ]
