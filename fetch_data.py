@@ -5,41 +5,35 @@ import yt_dlp
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api.formatters import TextFormatter
 
-# --- CONFIGURATION ---
+# Define file paths where data will be stored
 DATA_RAW_RETAIL = "./data/retail/scraped"
 DATA_RAW_INST = "./data/institutional/scraped"
+# Define target youtube channle url to scrape
+TARGET_URLS = ["https://www.youtube.com/@AlfredChenOfficial/videos"]
 
-# TARGET: The "Videos" tab of the channel
-# Example: https://www.youtube.com/@SparkLiang/videos
-TARGET_URLS = [
-    "https://www.youtube.com/@AlfredChenOfficial/videos", 
-]
-
+# Cleans the filenames (special characters and length) to avoid issues when saving files
 def sanitize_filename(name):
-    # Aggressive cleaning to avoid Windows file path errors
     clean = "".join([c for c in name if c.isalpha() or c.isdigit() or c in " .-_"]).strip()
-    return clean[:100] # Limit filename length
+    return clean[:100] 
 
+# Fetches youtube transcripts
 def fetch_youtube_transcripts():
-    print("\n📺 Starting Full Channel Scan...")
     
     ydl_opts = {
-        'extract_flat': True,       # Fast scan (metadata only)
-        'quiet': True,
-        'ignoreerrors': True,
-        # 'playlistend': 50,  <--- DELETED: Now fetches EVERYTHING
+        'extract_flat': True,       # Bypass video and audio extraction for just the metadata
+        'quiet': True,            
+        'ignoreerrors': True        # If a video is unavailable, skip it and continue with the rest
     }
 
-    formatter = TextFormatter()
+    formatter = TextFormatter()    
 
     for url in TARGET_URLS:
         print(f"   Scanning Channel: {url}")
-        print("   (This may take a minute if the channel is huge...)")
         
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             try:
-                # 1. Get the list of ALL videos
-                info = ydl.extract_info(url, download=False)
+                # Gets the list of all videos without actually downloading them
+                info = ydl.extract_info(url, download=False) 
                 
                 if 'entries' not in info: 
                     print("   ❌ No videos found.")

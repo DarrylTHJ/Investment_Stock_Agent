@@ -141,7 +141,7 @@ def analyze_event_logic(user_event, target_industry=None):
     print("⚖️ Synthesizing Chain of Thought via LLM...")
     try:
         response = client.models.generate_content(
-            model="gemini-2.0-flash",
+            model="gemini-2.5-flash",
             contents=full_prompt
         )
     except Exception as e:
